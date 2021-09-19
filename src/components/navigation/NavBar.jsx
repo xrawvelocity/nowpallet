@@ -1,32 +1,26 @@
 import { ShoppingCartOutlined } from '@mui/icons-material'
-import PhoneIcon from '@mui/icons-material/Phone'
+import CloseIcon from '@mui/icons-material/Close'
 import FlightIcon from '@mui/icons-material/Flight'
 import MenuIcon from '@mui/icons-material/Menu'
+import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
-import CloseIcon from '@mui/icons-material/Close'
-
 import {
-	Badge,
-	Slide,
-	IconButton,
-	Typography,
-	Autocomplete,
-	Popper,
 	Drawer,
+	IconButton,
 	List,
 	ListItem,
+	Slide,
+	Typography,
 } from '@mui/material'
+import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
+import logo from '../../assets/images/micturbologo.png'
 import { useStore } from '../../context/storeCtx'
+import { DropDown } from '../inputs/DropDown'
 import Flex from '../structure/Flex'
 import { NavLink } from './NavLink'
-import { Box } from '@mui/system'
-import { Search } from '../inputs/Search'
-import { DropDown } from '../inputs/DropDown'
-
-import logo from '../../assets/images/micturbologo.png'
 
 export const NavBar = () => {
 	const { cart, products } = useStore()
@@ -50,7 +44,7 @@ export const NavBar = () => {
 					alignItems: 'center',
 				}}
 				sx={{
-					bgcolor: 'background.paper',
+					bgcolor: 'background.default',
 					justifyContent: { xs: 'center', sm: 'space-between' },
 				}}
 			>
@@ -79,7 +73,7 @@ export const NavBar = () => {
 						<PhoneIcon style={{ marginRight: '1rem' }} />
 						<Typography
 							variant="body1"
-							sx={{ fontSize: { xs: '2rem', sm: '1.5rem' } }}
+							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
 						>
 							(305) 123-4567
 						</Typography>
@@ -93,7 +87,7 @@ export const NavBar = () => {
 						<FlightIcon style={{ marginRight: '1rem' }} />
 						<Typography
 							variant="body1"
-							sx={{ fontSize: { xs: '2rem', sm: '1.5rem' } }}
+							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
 						>
 							Free Shipping in the US
 						</Typography>
@@ -137,7 +131,7 @@ export const NavBar = () => {
 			</Box>
 			<Flex
 				component="nav"
-				sx={{ bgcolor: 'background.black' }}
+				sx={{ bgcolor: 'background.darkBlack' }}
 				justify="space-between"
 				align="center"
 				style={{
@@ -168,7 +162,7 @@ export const NavBar = () => {
 						}}
 					/>
 					<SearchIcon
-						onClick={() => setSearchOpen(true)}
+						onClick={() => setSearchOpen((prev) => !prev)}
 						fontSize="large"
 						sx={{
 							color: 'background.paper',
@@ -182,16 +176,37 @@ export const NavBar = () => {
 				<Link to="/">
 					<Box
 						sx={{
-							height: '4rem',
+							height: { xs: '5rem', sm: '4rem' },
 							width: 'auto',
 							marginLeft: { xs: '-3rem', sm: '0' },
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'flex-end',
+
+							fontFamily: 'Saira',
+							color: 'primary.main',
 						}}
 					>
-						<img
-							src={logo}
-							alt="logo"
-							style={{ height: '100%', width: '100%' }}
-						/>
+						<Typography
+							sx={{
+								lineHeight: '1.2',
+								fontWeight: '900',
+								fontStyle: 'italic',
+								fontSize: { xs: '2.75rem', sm: '2.5rem' },
+							}}
+						>
+							MIC Turbo
+						</Typography>
+						<Typography
+							sx={{
+								lineHeight: '1.2',
+								fontWeight: '900',
+								fontStyle: 'italic',
+								fontSize: { xs: '1.5rem', sm: '2rem' },
+							}}
+						>
+							& Injection. INC
+						</Typography>
 					</Box>
 				</Link>
 				<Flex align="center" justify="flex-end" style={{ width: 'auto' }}>
@@ -214,7 +229,7 @@ export const NavBar = () => {
 							sx={{ display: { xs: 'none', sm: 'block' } }}
 						/>
 						<SearchIcon
-							onClick={() => setSearchOpen(true)}
+							onClick={() => setSearchOpen((prev) => !prev)}
 							fontSize="large"
 							sx={{
 								marginLeft: '4rem',
@@ -274,10 +289,11 @@ export const NavBar = () => {
 							height: '77px',
 						}}
 						sx={{
-							bgcolor: 'background.black',
+							bgcolor: 'background.darkBlack',
 							float: { sm: 'right' },
 							width: { xs: '100%', sm: '400px' },
 							marginRight: { sm: '5%' },
+							boxShadow: 5,
 						}}
 					>
 						<DropDown
@@ -288,7 +304,15 @@ export const NavBar = () => {
 							renderOption={(option) => {
 								return (
 									<Flex justify="space-between" width="100%">
-										<Typography variant="h6" style={{ fontWeight: '600' }}>
+										<Typography
+											variant="h6"
+											style={{
+												fontWeight: '600',
+												width: '60%',
+												overflowX: 'hidden',
+												textOverflow: 'ellipsis',
+											}}
+										>
 											{option.name}
 										</Typography>
 										<Typography variant="h6">
@@ -316,20 +340,43 @@ export const NavBar = () => {
 				anchor="left"
 				open={drawerOpen}
 				onClose={() => setDrawerOpen(false)}
-				PaperProps={{
-					style: { width: '40%' },
-				}}
+				disableBackdropTransition={true}
+				disableDiscovery={true}
 			>
 				<Box>
 					<List>
-						<ListItem>
-							<Typography>Store</Typography>
+						<ListItem
+							sx={{
+								':hover': { cursor: 'pointer', color: 'primary.main' },
+							}}
+							onClick={() => {
+								history.push('/store')
+								setDrawerOpen(false)
+							}}
+						>
+							<Typography sx={{ fontSize: '2rem' }}>Store</Typography>
 						</ListItem>
-						<ListItem>
-							<Typography>About</Typography>
+						<ListItem
+							sx={{
+								':hover': { cursor: 'pointer', color: 'primary.main' },
+							}}
+							onClick={() => {
+								history.push('/about')
+								setDrawerOpen(false)
+							}}
+						>
+							<Typography sx={{ fontSize: '2rem' }}>About</Typography>
 						</ListItem>
-						<ListItem>
-							<Typography>Contact</Typography>
+						<ListItem
+							sx={{
+								':hover': { cursor: 'pointer', color: 'primary.main' },
+							}}
+							onClick={() => {
+								history.push('/contact')
+								setDrawerOpen(false)
+							}}
+						>
+							<Typography sx={{ fontSize: '2rem' }}>Contact</Typography>
 						</ListItem>
 					</List>
 				</Box>
