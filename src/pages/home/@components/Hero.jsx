@@ -10,8 +10,9 @@ export const Hero = () => {
 	return (
 		<Box
 			sx={{
-				bgcolor: 'background.black',
-				height: 'calc(100vh - 110px)',
+				bgcolor: 'background.darkGray',
+				height: 'auto',
+				maxHeight: 'calc(100vh - 110px)',
 				width: '100%',
 			}}
 		>
@@ -23,28 +24,36 @@ export const Hero = () => {
 						sm: 'column-reverse',
 						md: 'row',
 					},
-					alignItems: { xs: 'center', sm: 'center', md: 'flex-start' },
-					justifyContent: { xs: 'flex-end', sm: 'flex-end', md: 'center' },
+					alignItems: { xs: 'center', sm: 'center', md: 'center' },
+					justifyContent: {
+						xs: 'flex-end',
+						sm: 'flex-end',
+						md: 'space-between',
+					},
 					height: '100%',
 					width: '100%',
-					padding: { xs: '5rem 0 0', sm: '10rem 0 0' },
+					padding: { xs: '6rem 0', sm: '6rem 0' },
 				}}
 			>
 				<Flex
 					direction="column"
-					sx={{ width: { sm: '40%', md: '35%' }, paddingTop: { sm: '5rem' } }}
+					sx={{
+						width: { xs: '100%', sm: '100%', md: '45%' },
+						alignItems: { xs: 'center', sm: 'flex-start' },
+					}}
 				>
 					<Typography
 						sx={{
 							color: 'text.white',
-							fontSize: { xs: '3.2rem', sm: '3.8rem', md: '4.2rem' },
+							fontSize: { xs: '3rem', sm: '3.5rem', md: '4rem' },
 							fontWeight: '700',
 							textAlign: { xs: 'center', sm: 'start' },
+							width: { xs: '100%' },
 							marginTop: { xs: '5rem' },
-							lineHeight: { sm: '1.3' },
+							lineHeight: { xs: '1.2' },
 						}}
 					>
-						Need to rebuild, overhaul, or upgrade a turbocharger?
+						Do you need to rebuild, overhaul, or upgrade a turbocharger?
 					</Typography>
 					<Typography
 						sx={{
@@ -56,14 +65,15 @@ export const Hero = () => {
 							lineHeight: { sm: '1.7' },
 						}}
 					>
-						We have you covered; whether its for marine, automotive, industrial,
-						trucking, construction, high performance, or agriculture.
+						We've got you covered; whether its for marine, automotive,
+						industrial, trucking, construction, high performance, or
+						agriculture.
 					</Typography>
 					<Box
 						sx={{
 							display: 'flex',
 							alignItems: { xs: 'center' },
-							justifyContent: { xs: 'space-evenly', sm: 'flex-start' },
+							justifyContent: { xs: 'center', sm: 'flex-start' },
 							width: { xs: '100%' },
 							marginBottom: { xs: '10rem' },
 						}}
@@ -75,9 +85,9 @@ export const Hero = () => {
 							color="primary"
 							sx={{
 								color: 'text.darkblack',
-								fontSize: { xs: '1.5rem', sm: '1.8rem' },
+								fontSize: { xs: '1.4rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
-								marginRight: { sm: '3rem' },
+								mr: { xs: '1.5rem' },
 							}}
 						>
 							View All Products
@@ -89,8 +99,9 @@ export const Hero = () => {
 							color="primary"
 							sx={{
 								color: 'text.white',
-								fontSize: { xs: '1.5rem', sm: '1.8rem' },
+								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
+								ml: { xs: '1.5rem' },
 							}}
 						>
 							Contact Us
@@ -99,12 +110,12 @@ export const Hero = () => {
 				</Flex>
 				<Box
 					sx={{
-						height: { xs: '25rem', sm: '50rem' },
-						width: { xs: '100%', sm: '40%' },
-						marginLeft: { sm: '10rem' },
+						height: { xs: '25rem', sm: '40rem', md: '55rem' },
+						width: { xs: '100%', sm: '100%', md: '50%' },
+						marginLeft: { md: '10rem' },
 						boxShadow: 15,
 						borderRadius: '20px',
-						objectPosition: { xs: 'bottom', sm: 'left' },
+						objectPosition: { xs: 'bottom', sm: 'left', md: '-50px' },
 					}}
 				>
 					<img
@@ -114,9 +125,9 @@ export const Hero = () => {
 							height: '100%',
 							width: '100%',
 							objectFit: 'cover',
-							objectPosition: 'inherit',
 							overflow: 'hidden',
 							borderRadius: '20px',
+							filter: 'grayscale(1)',
 						}}
 					/>
 				</Box>

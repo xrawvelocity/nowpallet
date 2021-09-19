@@ -30,6 +30,8 @@ export const NavBar = () => {
 
 	const handleOnClick = useCallback((text) => history.push(text), [history])
 
+	console.log(products)
+
 	return (
 		<Flex direction="column">
 			<Box
@@ -141,6 +143,7 @@ export const NavBar = () => {
 					top: '40px',
 					maxHeight: '70px',
 					zIndex: '100',
+					borderBottom: '2px solid #000',
 				}}
 			>
 				<Box
@@ -152,7 +155,7 @@ export const NavBar = () => {
 					<MenuIcon
 						onClick={() => setDrawerOpen(true)}
 						fontSize="large"
-						style={{ marginRight: '3rem' }}
+						style={{ marginRight: '2rem' }}
 						sx={{
 							color: 'background.paper',
 							':hover': {
@@ -176,13 +179,13 @@ export const NavBar = () => {
 				<Link to="/">
 					<Box
 						sx={{
-							height: { xs: '5rem', sm: '4rem' },
+							height: { xs: '70px', sm: '4rem' },
 							width: 'auto',
 							marginLeft: { xs: '-3rem', sm: '0' },
 							display: 'flex',
 							flexDirection: 'column',
-							alignItems: 'flex-end',
-
+							alignItems: 'center',
+							justifyContent: 'center',
 							fontFamily: 'Saira',
 							color: 'primary.main',
 						}}
@@ -192,7 +195,8 @@ export const NavBar = () => {
 								lineHeight: '1.2',
 								fontWeight: '900',
 								fontStyle: 'italic',
-								fontSize: { xs: '2.75rem', sm: '2.5rem' },
+								fontSize: '3rem',
+								textShadow: '0 0 .5rem #FF3D00',
 							}}
 						>
 							MIC Turbo
@@ -202,12 +206,28 @@ export const NavBar = () => {
 								lineHeight: '1.2',
 								fontWeight: '900',
 								fontStyle: 'italic',
-								fontSize: { xs: '1.5rem', sm: '2rem' },
+								fontSize: '1.5rem',
+								marginRight: { xs: '.5rem' },
+								textShadow: '0 0 .5rem #FF3D00',
 							}}
 						>
 							& Injection. INC
 						</Typography>
 					</Box>
+					{/* <Box
+						sx={{
+							height: { xs: '5rem', sm: '4rem' },
+							width: 'auto',
+							marginLeft: { xs: '-3rem', sm: '0' },
+							marginTop: '1rem',
+						}}
+					>
+						<img
+							src={logo}
+							alt="logo"
+							style={{ height: '100%', width: '100%' }}
+						/>
+					</Box> */}
 				</Link>
 				<Flex align="center" justify="flex-end" style={{ width: 'auto' }}>
 					<Flex align="center" justify="space-between">
@@ -261,10 +281,7 @@ export const NavBar = () => {
 							onClick={() => handleOnClick('/cart')}
 							style={{ color: 'inherit' }}
 						>
-							<ShoppingCartOutlined
-								fontSize="large"
-								style={{ marginRight: '.5rem' }}
-							/>
+							<ShoppingCartOutlined fontSize="large" />
 						</IconButton>
 						<Typography style={{ fontSize: '2rem', fontWeight: '700' }}>
 							{cart?.total_items}
@@ -285,8 +302,8 @@ export const NavBar = () => {
 						style={{
 							display: 'flex',
 							alignItems: 'center',
-							padding: '2rem',
-							height: '77px',
+							padding: '1.5rem 2rem',
+							maxHeight: '70px',
 						}}
 						sx={{
 							bgcolor: 'background.darkBlack',
@@ -294,6 +311,7 @@ export const NavBar = () => {
 							width: { xs: '100%', sm: '400px' },
 							marginRight: { sm: '5%' },
 							boxShadow: 5,
+							// borderTop: '2px solid #000',
 						}}
 					>
 						<DropDown
@@ -340,10 +358,14 @@ export const NavBar = () => {
 				anchor="left"
 				open={drawerOpen}
 				onClose={() => setDrawerOpen(false)}
-				disableBackdropTransition={true}
-				disableDiscovery={true}
 			>
-				<Box>
+				<Box
+					sx={{
+						bgcolor: 'background.black',
+						height: '100%',
+						color: 'text.white',
+					}}
+				>
 					<List>
 						<ListItem
 							sx={{

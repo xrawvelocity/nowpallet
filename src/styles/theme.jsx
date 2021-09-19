@@ -11,6 +11,8 @@ export const coloring = {
 	default: '#F5F6F8',
 	darker: '#DEDEDE',
 	shadow: '#C2C2C2',
+	gray: '#3D3D3D',
+	darkGray: '#2D2D2D',
 	black: '#1D1D1D',
 	darkBlack: '#121212',
 	text: '#5C5C5C',
@@ -19,6 +21,9 @@ export const coloring = {
 }
 
 export const theme = createTheme({
+	breakpoints: {
+		values: { xs: 0, s: 350, sm: 640, md: 1024, lg: 1280 },
+	},
 	typography: {
 		fontFamily: "'Roboto', sans-serif ",
 		fontWeight: '400',
@@ -45,6 +50,8 @@ export const theme = createTheme({
 			default: coloring.default, //#F5F6F8
 			darker: coloring.darker, //#DEDEDE
 			shadow: coloring.shadow, //#C2C2C2
+			gray: coloring.gray, //#3D3D3D
+			darkGray: coloring.darkGray, //#2D2D2D
 			black: coloring.black, //#1D1D1D
 			darkBlack: coloring.darkBlack, //#121212
 		},

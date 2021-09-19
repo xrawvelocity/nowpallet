@@ -22,7 +22,14 @@ export default function App() {
 			<Router>
 				<NavBar />
 				<Switch>
-					<Box component="main" sx={{ '& > *': { padding: '0 5%' } }}>
+					<Box
+						component="main"
+						sx={{
+							'& > *': { padding: '0 5%' },
+							bgcolor: 'background.darkGray',
+							height: 'calc(100vh - 110px)',
+						}}
+					>
 						<Route exact path={['', '/']}>
 							<Home />
 						</Route>

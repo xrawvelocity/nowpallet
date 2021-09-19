@@ -17,6 +17,7 @@ import React, { useRef, useState } from 'react'
 
 import { InputField } from './InputField'
 import Flex from '../structure/Flex'
+import { Box } from '@mui/system'
 
 export const DropDown = ({
 	onChange = () => {},
@@ -39,6 +40,7 @@ export const DropDown = ({
 	const useStyles = makeStyles((theme) => ({
 		sizing: {
 			width: width,
+
 			'& > * > *': {
 				borderColor: theme.palette.text.border,
 			},
@@ -127,6 +129,7 @@ export const DropDown = ({
 				onChange={onInputChange}
 				value={value}
 				placeholder={placeholder}
+				size="small"
 				InputProps={{
 					startAdornment: searchIcon && (
 						<InputAdornment style={{ marginRight: '1rem' }}>
@@ -144,7 +147,7 @@ export const DropDown = ({
 						</InputAdornment>
 					),
 				}}
-				sx={{ bgcolor: 'background.paper', width: '100%' }}
+				sx={{ bgcolor: 'background.paper', width: '100%', borderRadius: '4px' }}
 			/>
 			<Popper
 				open={open}
@@ -156,8 +159,6 @@ export const DropDown = ({
 				className={classes.popper}
 				style={{
 					zIndex: '100',
-					display: 'flex',
-					justifyContent: 'center',
 				}}
 			>
 				{({ TransitionProps, placement }) => (
@@ -171,8 +172,11 @@ export const DropDown = ({
 						<Paper
 							className={classes.paper}
 							sx={{
-								width: { xs: 'calc(100% - 32px)', sm: '400px' },
-								margin: { xs: '0 0 0 0', sm: '10px 5% 0 0' },
+								width: { xs: 'calc(90% - 32px)', sm: '400px' },
+								margin: { xs: '0 52px 0 0', sm: '10px 5% 0 0' },
+								display: 'flex',
+								justifyContent: { xs: 'center', sm: 'flex-end' },
+								float: { xs: 'right' },
 							}}
 						>
 							<ClickAwayListener onClickAway={handleClose}>
