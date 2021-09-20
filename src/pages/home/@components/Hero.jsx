@@ -26,11 +26,11 @@ export const Hero = () => {
 					},
 					alignItems: { xs: 'center', sm: 'center', md: 'center' },
 					justifyContent: {
-						xs: 'flex-end',
-						sm: 'flex-end',
+						xs: 'center',
+						sm: 'center',
 						md: 'space-between',
 					},
-					height: '100%',
+					height: 'calc(90vh - 110px)',
 					width: '100%',
 					padding: { xs: '6rem 0', sm: '6rem 0' },
 				}}
@@ -72,10 +72,11 @@ export const Hero = () => {
 					<Box
 						sx={{
 							display: 'flex',
+							flexDirection: { xs: 'column', sm: 'row' },
 							alignItems: { xs: 'center' },
 							justifyContent: { xs: 'center', sm: 'flex-start' },
 							width: { xs: '100%' },
-							marginBottom: { xs: '10rem' },
+							marginBottom: { xs: '5rem' },
 						}}
 					>
 						<Button
@@ -87,10 +88,10 @@ export const Hero = () => {
 								color: 'text.darkblack',
 								fontSize: { xs: '1.4rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
-								mr: { xs: '1.5rem' },
+								mr: { xs: '0', sm: '1.5rem' },
 							}}
 						>
-							View All Products
+							Shop Now
 						</Button>
 						<Button
 							component={Link}
@@ -101,7 +102,8 @@ export const Hero = () => {
 								color: 'text.white',
 								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
-								ml: { xs: '1.5rem' },
+								mt: { xs: '3rem', sm: '0' },
+								ml: { xs: '0', sm: '1.5rem' },
 							}}
 						>
 							Contact Us

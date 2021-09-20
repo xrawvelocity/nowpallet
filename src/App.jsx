@@ -25,7 +25,7 @@ export default function App() {
 					<Box
 						component="main"
 						sx={{
-							'& > *': { padding: '0 5%' },
+							'& > *': { padding: { xs: '0 5%', sm: '0 10%' } },
 							bgcolor: 'background.darkGray',
 							height: 'calc(100vh - 110px)',
 						}}

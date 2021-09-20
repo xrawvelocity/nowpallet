@@ -4,22 +4,15 @@ import FlightIcon from '@mui/icons-material/Flight'
 import MenuIcon from '@mui/icons-material/Menu'
 import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
-import {
-	Drawer,
-	IconButton,
-	List,
-	ListItem,
-	Slide,
-	Typography,
-} from '@mui/material'
+import { IconButton, Slide, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
-import logo from '../../assets/images/micturbologo.png'
 import { useStore } from '../../context/storeCtx'
 import { DropDown } from '../inputs/DropDown'
 import Flex from '../structure/Flex'
+import { DrawerMenu } from './DrawerMenu'
 import { NavLink } from './NavLink'
 
 export const NavBar = () => {
@@ -35,8 +28,8 @@ export const NavBar = () => {
 	return (
 		<Flex direction="column">
 			<Box
-				style={{
-					padding: '20px 5%',
+				sx={{
+					padding: { xs: '20px 5%', sm: '20px 10%' },
 					position: 'fixed',
 					width: '100%',
 					top: 0,
@@ -44,8 +37,6 @@ export const NavBar = () => {
 					zIndex: '101',
 					display: 'flex',
 					alignItems: 'center',
-				}}
-				sx={{
 					bgcolor: 'background.default',
 					justifyContent: { xs: 'center', sm: 'space-between' },
 				}}
@@ -77,7 +68,7 @@ export const NavBar = () => {
 							variant="body1"
 							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
 						>
-							(305) 123-4567
+							(305) 685-1061
 						</Typography>
 					</Flex>
 					<Flex
@@ -133,17 +124,18 @@ export const NavBar = () => {
 			</Box>
 			<Flex
 				component="nav"
-				sx={{ bgcolor: 'background.darkBlack' }}
 				justify="space-between"
 				align="center"
-				style={{
-					padding: '20px 5%',
+				sx={{
+					padding: { xs: '20px 5%', sm: '20px 10%' },
 					position: 'fixed',
 					width: '100%',
 					top: '40px',
 					maxHeight: '70px',
 					zIndex: '100',
+					borderTop: '2px solid #000',
 					borderBottom: '2px solid #000',
+					bgcolor: 'background.darkBlack',
 				}}
 			>
 				<Box
@@ -354,55 +346,7 @@ export const NavBar = () => {
 					</Box>
 				</Box>
 			</Slide>
-			<Drawer
-				anchor="left"
-				open={drawerOpen}
-				onClose={() => setDrawerOpen(false)}
-			>
-				<Box
-					sx={{
-						bgcolor: 'background.black',
-						height: '100%',
-						color: 'text.white',
-					}}
-				>
-					<List>
-						<ListItem
-							sx={{
-								':hover': { cursor: 'pointer', color: 'primary.main' },
-							}}
-							onClick={() => {
-								history.push('/store')
-								setDrawerOpen(false)
-							}}
-						>
-							<Typography sx={{ fontSize: '2rem' }}>Store</Typography>
-						</ListItem>
-						<ListItem
-							sx={{
-								':hover': { cursor: 'pointer', color: 'primary.main' },
-							}}
-							onClick={() => {
-								history.push('/about')
-								setDrawerOpen(false)
-							}}
-						>
-							<Typography sx={{ fontSize: '2rem' }}>About</Typography>
-						</ListItem>
-						<ListItem
-							sx={{
-								':hover': { cursor: 'pointer', color: 'primary.main' },
-							}}
-							onClick={() => {
-								history.push('/contact')
-								setDrawerOpen(false)
-							}}
-						>
-							<Typography sx={{ fontSize: '2rem' }}>Contact</Typography>
-						</ListItem>
-					</List>
-				</Box>
-			</Drawer>
+			<DrawerMenu drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
 		</Flex>
 	)
 }
