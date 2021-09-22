@@ -1,28 +1,35 @@
 import { createTheme } from '@mui/material/styles'
 
 export const coloring = {
-	primaryMain: '#FF8C00',
-	primarySecond: '#FFA639',
-	primaryThird: '#C66D00',
-	secondaryMain: '#FF3D00',
-	secondarySecond: '#FF6939',
-	secondaryThird: '#C63000',
-	paper: '#FFFFFF',
-	default: '#F5F6F8',
-	darker: '#DEDEDE',
-	shadow: '#C2C2C2',
-	gray: '#3D3D3D',
-	darkGray: '#2D2D2D',
-	black: '#1D1D1D',
-	darkBlack: '#121212',
-	text: '#5C5C5C',
-	lightText: '#8D8D8D',
+	orange: '#FF8303',
+	orange2: '#FF9323',
+	red: '#FF3D00',
+	green: '#138A36',
+	blue: '#009DDC',
+
+	default: '#EAEAE0',
+	paper: '#F7F7F7',
 	border: '#A5A5A5',
+	text1: '#0f0f0f',
+	text2: '#EAEAE0',
+
+	white1: '#F7F7F7',
+	white2: '#F0F0F0',
+	white3: '#EAEAE0',
+	white4: '#C2C2C2',
+	white5: '#A5A5A5',
+	gray1: '#8D8D8D',
+	gray2: '#5C5C5C',
+	gray3: '#343330',
+	gray4: '#2D2D2D',
+	black1: '#1B1A17',
+	black2: '#121212',
+	black3: '#0f0f0f',
 }
 
 export const theme = createTheme({
 	breakpoints: {
-		values: { xs: 0, s: 350, sm: 640, md: 1024, lg: 1280 },
+		values: { xs: 0, s: 350, sm: 640, m: 800, md: 1024, lg: 1280 },
 	},
 	typography: {
 		fontFamily: "'Roboto', sans-serif ",
@@ -36,34 +43,38 @@ export const theme = createTheme({
 	palette: {
 		type: 'light',
 		primary: {
-			main: coloring.primaryMain, // #FF8C00
-			second: coloring.primarySecond, //#FFA639
-			third: coloring.primaryThird, //#C66D00
+			main: coloring.orange,
 		},
 		secondary: {
-			main: coloring.secondaryMain, //#FF3D00
-			second: coloring.secondarySecond, //#FF6939
-			third: coloring.secondaryThird, // #C63000
+			main: coloring.red,
 		},
 		background: {
-			paper: coloring.paper, //#FFFFFF
-			default: coloring.default, //#F5F6F8
-			darker: coloring.darker, //#DEDEDE
-			shadow: coloring.shadow, //#C2C2C2
-			gray: coloring.gray, //#3D3D3D
-			darkGray: coloring.darkGray, //#2D2D2D
-			black: coloring.black, //#1D1D1D
-			darkBlack: coloring.darkBlack, //#121212
+			default: coloring.default, //white3
+			paper: coloring.paper, //white1
+			border: coloring.border, //white5
 		},
-
 		text: {
-			primary: coloring.text, // #5C5C5C
-			white: coloring.default, //#F5F6F8
-			darkWhite: coloring.darker, //#DEDEDE
-			lightText: coloring.lightText, // #8D8D8D
-			border: coloring.border, //#a5a5a5
-			black: coloring.black, //#1D1D1D
-			darkBlack: coloring.darkBlack, //#121212
+			main: coloring.text1, //black3
+			secondary: coloring.text2, //white3
+		},
+		permanent: {
+			orange: coloring.orange,
+			orange2: coloring.orange2,
+			red: coloring.red,
+			green: coloring.green,
+			blue: coloring.blue,
+			white1: coloring.white1,
+			white2: coloring.white2,
+			white3: coloring.white3,
+			white4: coloring.white4,
+			white5: coloring.white5,
+			gray1: coloring.gray1,
+			gray2: coloring.gray2,
+			gray3: coloring.gray3,
+			gray4: coloring.gray4,
+			black1: coloring.black1,
+			black2: coloring.black2,
+			black3: coloring.black3,
 		},
 	},
 	components: {

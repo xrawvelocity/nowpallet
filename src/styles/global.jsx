@@ -51,11 +51,11 @@ const globalStyles = (coloring) => {
 			outline: 'none',
 		},
 		'::-moz-selection': {
-			backgroundColor: coloring.primaryMain,
+			backgroundColor: coloring.orange,
 			color: 'transparent',
 		},
 		'::selection': {
-			backgroundColor: coloring.primaryMain,
+			backgroundColor: coloring.orange,
 			color: coloring.paper,
 		},
 		'*::-webkit-scrollbar-track': {
@@ -75,7 +75,7 @@ const globalStyles = (coloring) => {
 		},
 		'*::-webkit-scrollbar-thumb': {
 			borderRadius: '10px',
-			backgroundColor: coloring.darker,
+			backgroundColor: coloring.orange,
 		},
 		'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus':
 			{

@@ -1,10 +1,12 @@
 import CloseIcon from '@mui/icons-material/Close'
-import { Drawer, List, ListItem, Typography } from '@mui/material'
+import { Drawer, List, ListItem, Switch, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
+import { useStore } from '../../context/storeCtx'
 
 export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
+	const { lightThemeSelected, setLightThemeSelected } = useStore()
 	const history = useHistory()
 	return (
 		<Drawer
@@ -12,30 +14,18 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 			open={drawerOpen}
 			onClose={() => setDrawerOpen(false)}
 			PaperProps={{
-				style: { width: '35%' },
+				style: { width: '35%', marginTop: '110px' },
 			}}
+			sx={{ marginTop: '110px', zIndex: '98' }}
 		>
 			<Box
 				sx={{
-					bgcolor: 'background.black',
+					bgcolor: 'permanent.black2',
 					height: '100%',
 					width: '100%',
-					color: 'text.white',
+					color: 'permanent.white1',
 				}}
 			>
-				<CloseIcon
-					sx={{
-						float: 'right',
-						height: '4rem',
-						width: '4rem',
-						padding: '.5rem',
-						margin: '.5rem',
-						color: 'text.white',
-						cursor: 'pointer',
-						zIndex: '10',
-						':hover': { color: 'secondary.main' },
-					}}
-				/>
 				<List style={{ height: 'auto', zIndex: '2' }}>
 					<ListItem
 						sx={{
@@ -69,6 +59,17 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 						}}
 					>
 						<Typography sx={{ fontSize: '2rem' }}>Contact</Typography>
+					</ListItem>
+					<ListItem
+						sx={{
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
+							setLightThemeSelected((prev) => !prev)
+						}}
+					>
+						<Switch size="small" checked={!lightThemeSelected} />
+						<Typography>Dark Mode</Typography>
 					</ListItem>
 				</List>
 			</Box>

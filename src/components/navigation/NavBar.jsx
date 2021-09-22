@@ -4,7 +4,7 @@ import FlightIcon from '@mui/icons-material/Flight'
 import MenuIcon from '@mui/icons-material/Menu'
 import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
-import { IconButton, Slide, Typography } from '@mui/material'
+import { IconButton, Slide, Typography, Switch } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
@@ -16,7 +16,8 @@ import { DrawerMenu } from './DrawerMenu'
 import { NavLink } from './NavLink'
 
 export const NavBar = () => {
-	const { cart, products } = useStore()
+	const { cart, products, lightThemeSelected, setLightThemeSelected } =
+		useStore()
 	const history = useHistory()
 	const [searchOpen, setSearchOpen] = useState(false)
 	const [drawerOpen, setDrawerOpen] = useState(false)
@@ -29,21 +30,23 @@ export const NavBar = () => {
 		<Flex direction="column">
 			<Box
 				sx={{
-					padding: { xs: '20px 5%', sm: '20px 10%' },
+					padding: { xs: '10px 5%', sm: '10px 15%' },
 					position: 'fixed',
 					width: '100%',
 					top: 0,
-					height: '0',
+					minHeight: '20px',
+					height: '40px',
 					zIndex: '101',
 					display: 'flex',
 					alignItems: 'center',
-					bgcolor: 'background.default',
+					bgcolor: 'permanent.white3',
 					justifyContent: { xs: 'center', sm: 'space-between' },
 				}}
 			>
 				<Box
 					style={{
 						display: 'flex',
+						height: '20px',
 						alignItems: 'center',
 					}}
 					sx={{
@@ -54,7 +57,7 @@ export const NavBar = () => {
 					<Flex
 						align="center"
 						sx={{
-							color: 'background.black',
+							color: 'permanent.black1',
 							':hover': {
 								color: 'primary.main',
 							},
@@ -74,7 +77,7 @@ export const NavBar = () => {
 					<Flex
 						align="center"
 						sx={{
-							color: 'background.black',
+							color: 'permanent.black1',
 						}}
 					>
 						<FlightIcon style={{ marginRight: '1rem' }} />
@@ -86,48 +89,63 @@ export const NavBar = () => {
 						</Typography>
 					</Flex>
 				</Box>
-				<Box
-					style={{ alignItems: 'center' }}
-					sx={{
-						color: 'background.black',
-						':hover': {
-							cursor: 'pointer',
-							color: 'primary.main',
-						},
-						display: {
-							xs: 'none',
-							sm: 'flex',
-						},
-					}}
-					onClick={() => handleOnClick('/cart')}
-				>
-					<IconButton
-						aria-label="Show cart items"
-						onClick={() => handleOnClick('/cart')}
-						style={{ marginLeft: '5rem', color: 'inherit' }}
-					>
-						<ShoppingCartOutlined />
-					</IconButton>
-					<Typography
-						style={{
-							fontSize: '1.5rem',
-							marginRight: '.5rem',
-							fontWeight: '700',
+				<Flex align="center">
+					<Box
+						sx={{
+							display: { xs: 'none', sm: 'flex' },
+							alignItems: 'center',
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
+							setLightThemeSelected((prev) => !prev)
 						}}
 					>
-						Cart
-					</Typography>
-					<Typography style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-						{cart?.total_items}
-					</Typography>
-				</Box>
+						<Switch size="small" checked={!lightThemeSelected} />
+						<Typography>Dark Mode</Typography>
+					</Box>
+					<Box
+						style={{ alignItems: 'center' }}
+						sx={{
+							color: 'permanent.black1',
+							':hover': {
+								cursor: 'pointer',
+								color: 'primary.main',
+							},
+							display: {
+								xs: 'none',
+								sm: 'flex',
+							},
+						}}
+						onClick={() => handleOnClick('/cart')}
+					>
+						<IconButton
+							aria-label="Show cart items"
+							onClick={() => handleOnClick('/cart')}
+							style={{ marginLeft: '5rem', color: 'inherit' }}
+						>
+							<ShoppingCartOutlined />
+						</IconButton>
+						<Typography
+							style={{
+								fontSize: '1.5rem',
+								marginRight: '.5rem',
+								fontWeight: '700',
+							}}
+						>
+							Cart
+						</Typography>
+						<Typography style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+							{cart?.total_items}
+						</Typography>
+					</Box>
+				</Flex>
 			</Box>
 			<Flex
 				component="nav"
 				justify="space-between"
 				align="center"
 				sx={{
-					padding: { xs: '20px 5%', sm: '20px 10%' },
+					padding: { xs: '20px 5%', sm: '20px 15%' },
 					position: 'fixed',
 					width: '100%',
 					top: '40px',
@@ -135,7 +153,7 @@ export const NavBar = () => {
 					zIndex: '100',
 					borderTop: '2px solid #000',
 					borderBottom: '2px solid #000',
-					bgcolor: 'background.darkBlack',
+					bgcolor: 'permanent.black2',
 				}}
 			>
 				<Box
@@ -144,23 +162,39 @@ export const NavBar = () => {
 						display: { xs: 'flex', sm: 'none' },
 					}}
 				>
-					<MenuIcon
-						onClick={() => setDrawerOpen(true)}
-						fontSize="large"
-						style={{ marginRight: '2rem' }}
-						sx={{
-							color: 'background.paper',
-							':hover': {
+					{!drawerOpen ? (
+						<MenuIcon
+							onClick={() => {
+								setSearchOpen(false)
+								setDrawerOpen(true)
+							}}
+							fontSize="large"
+							sx={{
+								mr: '2rem',
+								color: 'permanent.white1',
 								cursor: 'pointer',
-								color: 'primary.main',
-							},
-						}}
-					/>
+								':hover': {
+									color: 'primary.main',
+								},
+							}}
+						/>
+					) : (
+						<CloseIcon
+							onClick={() => setDrawerOpen(false)}
+							fontSize="large"
+							sx={{
+								mr: '2rem',
+								color: 'permanent.white1',
+								cursor: 'pointer',
+								':hover': { color: 'secondary.main' },
+							}}
+						/>
+					)}
 					<SearchIcon
 						onClick={() => setSearchOpen((prev) => !prev)}
 						fontSize="large"
 						sx={{
-							color: 'background.paper',
+							color: 'permanent.white1',
 							':hover': {
 								cursor: 'pointer',
 								color: 'primary.main',
@@ -246,7 +280,7 @@ export const NavBar = () => {
 							sx={{
 								marginLeft: '4rem',
 								display: { xs: 'none', sm: 'block' },
-								color: 'background.paper',
+								color: 'permanent.white1',
 								':hover': {
 									cursor: 'pointer',
 									color: 'primary.main',
@@ -257,7 +291,7 @@ export const NavBar = () => {
 					<Box
 						style={{ alignItems: 'center' }}
 						sx={{
-							color: 'background.paper',
+							color: 'permanent.white1',
 							':hover': {
 								color: 'primary.main',
 							},
@@ -298,12 +332,11 @@ export const NavBar = () => {
 							maxHeight: '70px',
 						}}
 						sx={{
-							bgcolor: 'background.darkBlack',
+							bgcolor: 'permanent.black2',
 							float: { sm: 'right' },
 							width: { xs: '100%', sm: '400px' },
-							marginRight: { sm: '5%' },
+							marginRight: { sm: '14%' },
 							boxShadow: 5,
-							// borderTop: '2px solid #000',
 						}}
 					>
 						<DropDown
@@ -331,14 +364,16 @@ export const NavBar = () => {
 									</Flex>
 								)
 							}}
-							onSelect={(val) => {
-								console.log(val)
+							onSelect={(option) => {
+								setSearchOpen(false)
+								history.push(`/product/${option.id}`)
 							}}
+							closeOnClick
 						/>
 						<CloseIcon
 							onClick={() => setSearchOpen(false)}
 							sx={{
-								color: 'background.paper',
+								color: 'permanent.white1',
 								':hover': { color: 'primary.main', cursor: 'pointer' },
 								marginLeft: '20px',
 							}}

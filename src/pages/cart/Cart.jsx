@@ -12,7 +12,11 @@ export const Cart = () => {
 	const EmptyCart = () => {
 		return (
 			<Paper style={{ padding: '6rem 0' }} align="center">
-				<Typography variant="h6" style={{ marginBottom: '3rem' }}>
+				<Typography
+					variant="h6"
+					style={{ marginBottom: '3rem' }}
+					sx={{ color: 'text.main' }}
+				>
 					Your cart is empty, please add a product.
 				</Typography>
 				<LinkButton to="/store">Go To Store</LinkButton>
@@ -30,10 +34,13 @@ export const Cart = () => {
 				>
 					Your Shopping Cart
 				</Typography>
+				<LinkButton to="/checkout" style={{ margin: '2rem 0' }}>
+					Checkout Securely
+				</LinkButton>
 				<Grid container spacing={3}>
 					{cart.line_items.map((each) => {
 						return (
-							<Grid item xs={12} sm={3}>
+							<Grid item xs={3}>
 								<CartItem product={each} />
 							</Grid>
 						)
@@ -43,6 +50,7 @@ export const Cart = () => {
 					justify="space-between"
 					align="center"
 					style={{ width: '100%', marginTop: '4rem' }}
+					sx={{ flexDirection: { xs: 'column', sm: 'row' } }}
 				>
 					<Typography variant="h5">
 						Subtotal: {cart.subtotal.formatted_with_symbol}
@@ -55,18 +63,14 @@ export const Cart = () => {
 						>
 							Empty Cart
 						</Button>
-						<Button
-							component={Link}
+						<LinkButton
 							to="/checkout"
-							variant="contained"
 							sx={{
-								bgcolor: 'primary.main',
-								color: 'background.paper',
 								marginLeft: '2rem',
 							}}
 						>
-							Checkout
-						</Button>
+							Checkout Securely
+						</LinkButton>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -74,8 +78,8 @@ export const Cart = () => {
 	}
 
 	return (
-		<Container style={{ paddingTop: '4rem' }}>
+		<Box style={{ paddingTop: '4rem' }}>
 			{cart.total_items ? <FilledCart /> : <EmptyCart />}
-		</Container>
+		</Box>
 	)
 }

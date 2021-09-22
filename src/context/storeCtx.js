@@ -14,6 +14,8 @@ const StoreProvider = ({ children }) => {
 	const [order, setOrder] = useState({})
 	const [errorMessage, setErrorMessage] = useState('')
 
+	const [lightThemeSelected, setLightThemeSelected] = useState(true)
+
 	useEffect(() => {
 		const getData = async () => {
 			try {
@@ -104,6 +106,8 @@ const StoreProvider = ({ children }) => {
 				order,
 				setErrorMessage,
 				errorMessage,
+				lightThemeSelected,
+				setLightThemeSelected,
 			}}
 		>
 			{children}

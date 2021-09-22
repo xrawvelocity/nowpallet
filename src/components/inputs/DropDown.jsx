@@ -42,7 +42,7 @@ export const DropDown = ({
 			width: width,
 
 			'& > * > *': {
-				borderColor: theme.palette.text.border,
+				borderColor: theme.palette.background.border,
 			},
 		},
 		popper: {
@@ -51,25 +51,25 @@ export const DropDown = ({
 			...popperStyle,
 		},
 		paper: {
-			border: `2px solid ${theme.palette.background.default}`,
-			boxShadow: `0 .2rem .4rem ${theme.palette.background.default}`,
+			border: `2px solid ${theme.palette.permanent.white1}`,
+			boxShadow: `0 .2rem .4rem ${theme.palette.permanent.white1}`,
 		},
 		menuList: {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'start',
-			backgroundColor: theme.palette.background.paper,
+			backgroundColor: theme.palette.permanent.white1,
 			padding: '0',
+			color: theme.palette.permanent.black3,
 
 			'& > * > * > *': {
 				fontSize: '1.5rem !important',
 			},
 			'& :hover': {
-				backgroundColor: theme.palette.background.default,
-				color: theme.palette.text.primary,
+				backgroundColor: theme.palette.permanent.white3,
 			},
 			'& > *': {
-				border: `1px solid ${theme.palette.background.default}`,
+				border: `1px solid ${theme.palette.permanent.white1}`,
 			},
 		},
 	}))
@@ -147,7 +147,7 @@ export const DropDown = ({
 						</InputAdornment>
 					),
 				}}
-				sx={{ bgcolor: 'background.paper', width: '100%', borderRadius: '4px' }}
+				sx={{ bgcolor: 'permanent.white1', width: '100%', borderRadius: '4px' }}
 			/>
 			<Popper
 				open={open}
@@ -172,8 +172,8 @@ export const DropDown = ({
 						<Paper
 							className={classes.paper}
 							sx={{
-								width: { xs: 'calc(90% - 32px)', sm: '400px' },
-								margin: { xs: '0 52px 0 0', sm: '10px 5% 0 0' },
+								width: { xs: 'calc(90% - 28px)', sm: '400px' },
+								margin: { xs: '0 52px 0 0', sm: '0 14% 0 0' },
 								display: 'flex',
 								justifyContent: { xs: 'center', sm: 'flex-end' },
 								float: { xs: 'right' },

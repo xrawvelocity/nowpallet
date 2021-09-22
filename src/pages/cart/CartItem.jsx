@@ -14,12 +14,12 @@ import Flex from '../../components/structure/Flex'
 import { useStore } from '../../context/storeCtx'
 
 export const CartItem = ({ product }) => {
-	const { updateQty, removeFromCart, emptyCart } = useStore()
-	emptyCart()
+	const { updateQty, removeFromCart } = useStore()
+
 	console.log(product)
 
 	return (
-		<Card>
+		<Card sx={{ color: 'text.main' }}>
 			<CardMedia
 				image={product.media.source}
 				alt={product.name}
@@ -36,6 +36,7 @@ export const CartItem = ({ product }) => {
 					<IconButton
 						size="small"
 						style={{ width: '3rem', height: '3rem' }}
+						sx={{ color: 'text.main' }}
 						onClick={() => updateQty(product.id, product.quantity - 1)}
 					>
 						<RemoveIcon />
@@ -46,6 +47,7 @@ export const CartItem = ({ product }) => {
 					<IconButton
 						size="small"
 						style={{ width: '3rem', height: '3rem' }}
+						sx={{ color: 'text.main' }}
 						onClick={() => updateQty(product.id, product.quantity + 1)}
 					>
 						<AddIcon />

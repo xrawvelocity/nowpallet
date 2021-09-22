@@ -13,11 +13,16 @@ import { ProductDetail } from './pages/productDetail/ProductDetail'
 import Store from './pages/store/Store'
 import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
+import { darkColoring, darkTheme } from './styles/darkTheme'
+import { useStore } from './context/storeCtx'
 
 export default function App() {
+	const { lightThemeSelected } = useStore()
 	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyles styles={globalStyles(coloring)} />
+		<ThemeProvider theme={lightThemeSelected ? theme : darkTheme}>
+			<GlobalStyles
+				styles={globalStyles(lightThemeSelected ? coloring : darkColoring)}
+			/>
 			<CssBaseline />
 			<Router>
 				<NavBar />
@@ -25,15 +30,17 @@ export default function App() {
 					<Box
 						component="main"
 						sx={{
-							'& > *': { padding: { xs: '0 5%', sm: '0 10%' } },
-							bgcolor: 'background.darkGray',
-							height: 'calc(100vh - 110px)',
+							'& > *': { padding: { xs: '0 5%', sm: '0 15%' } },
+							bgcolor: 'background.default',
+							color: 'text.main',
+							height: 'auto',
+							minHeight: 'calc(100vh - 110px)',
 						}}
 					>
 						<Route exact path={['', '/']}>
 							<Home />
 						</Route>
-						<Route path="/store">
+						<Route path={['/store/:category', '/store']}>
 							<Store />
 						</Route>
 						<Route path="/cart">

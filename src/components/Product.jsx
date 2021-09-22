@@ -4,6 +4,7 @@ import {
 	CardActions,
 	CardContent,
 	CardMedia,
+	Paper,
 	Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
@@ -19,24 +20,34 @@ export const Product = ({ product }) => {
 	console.log(product)
 
 	return (
-		<Box
+		<Paper
+			onClick={() => history.push(`/product/${product.id}`)}
 			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-				bgcolor: 'background.black',
-				padding: '4rem',
-				color: 'text.white',
+				height: 'auto',
+				width: 'auto',
+				borderRadius: '10px',
+				overflow: 'hidden',
+				padding: '1rem 3rem',
+				cursor: 'pointer',
+				color: 'text.main',
+				':hover': { boxShadow: 6 },
 			}}
 		>
-			<Box sx={{ height: '20rem', width: '20rem' }}>
-				<img
-					src={product.assets[0]?.url}
-					alt={product.name}
-					style={{ height: '100%', width: '100%' }}
-				/>
-			</Box>
-		</Box>
+			<Flex direction="column" align="center">
+				<Box sx={{ height: { xs: '110px', sm: '150px', md: '200px' } }}>
+					<img
+						src={product.assets[0]?.url}
+						alt={product.name}
+						style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+					/>
+				</Box>
+				<Typography variant="h6" sx={{ textAlign: 'left' }}>
+					{product.name}
+				</Typography>
+				<Typography variant="h6" sx={{ py: '2rem' }}>
+					{product.price.formatted_with_symbol}
+				</Typography>
+			</Flex>
+		</Paper>
 	)
 }
