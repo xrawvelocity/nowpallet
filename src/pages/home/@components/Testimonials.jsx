@@ -6,7 +6,7 @@ import { Title } from '../../../components/typography/Title'
 
 export const Testimonials = () => {
 	return (
-		<Flex direction="column" align="center" sx={{ my: '6rem' }}>
+		<Flex direction="column" align="center" sx={{ m: '6rem 0 9rem' }}>
 			<Title>Customer Testimonials</Title>
 			<Flex
 				sx={{

@@ -18,7 +18,7 @@ export const TopCategories = () => {
 				direction="column"
 				align="center"
 				justify="center"
-				sx={{ width: '100%', marginTop: { xs: '0rem', sm: '12rem' } }}
+				sx={{ width: '100%' }}
 			>
 				<Grid
 					container

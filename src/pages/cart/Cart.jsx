@@ -47,7 +47,9 @@ export const Cart = () => {
 					justify="space-between"
 					align="center"
 					style={{ width: '100%', margin: '4rem 0' }}
-					sx={{ flexDirection: { xs: 'column !important', sm: 'row' } }}
+					sx={{
+						flexDirection: { xs: 'column !important', sm: 'row !important' },
+					}}
 				>
 					<Typography variant="h5" sx={{ mb: { xs: '2rem', sm: '0' } }}>
 						Subtotal: {cart.subtotal.formatted_with_symbol}
