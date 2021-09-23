@@ -4,7 +4,7 @@ import FlightIcon from '@mui/icons-material/Flight'
 import MenuIcon from '@mui/icons-material/Menu'
 import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
-import { IconButton, Slide, Typography, Switch } from '@mui/material'
+import { IconButton, Slide, Typography, SwitchUnstyled } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
@@ -14,6 +14,9 @@ import { DropDown } from '../inputs/DropDown'
 import Flex from '../structure/Flex'
 import { DrawerMenu } from './DrawerMenu'
 import { NavLink } from './NavLink'
+
+import logo from '../../assets/images/micturbologo.png'
+import ThemeSwitch from '../inputs/ThemeSwitch'
 
 export const NavBar = () => {
 	const { cart, products, lightThemeSelected, setLightThemeSelected } =
@@ -39,7 +42,7 @@ export const NavBar = () => {
 					zIndex: '101',
 					display: 'flex',
 					alignItems: 'center',
-					bgcolor: 'permanent.white3',
+					bgcolor: 'background.default',
 					justifyContent: { xs: 'center', sm: 'space-between' },
 				}}
 			>
@@ -57,7 +60,7 @@ export const NavBar = () => {
 					<Flex
 						align="center"
 						sx={{
-							color: 'permanent.black1',
+							color: 'text.main',
 							':hover': {
 								color: 'primary.main',
 							},
@@ -77,7 +80,7 @@ export const NavBar = () => {
 					<Flex
 						align="center"
 						sx={{
-							color: 'permanent.black1',
+							color: 'text.main',
 						}}
 					>
 						<FlightIcon style={{ marginRight: '1rem' }} />
@@ -100,13 +103,12 @@ export const NavBar = () => {
 							setLightThemeSelected((prev) => !prev)
 						}}
 					>
-						<Switch size="small" checked={!lightThemeSelected} />
-						<Typography>Dark Mode</Typography>
+						<ThemeSwitch checked={!lightThemeSelected} />
 					</Box>
 					<Box
 						style={{ alignItems: 'center' }}
 						sx={{
-							color: 'permanent.black1',
+							color: 'text.main',
 							':hover': {
 								cursor: 'pointer',
 								color: 'primary.main',
@@ -121,7 +123,7 @@ export const NavBar = () => {
 						<IconButton
 							aria-label="Show cart items"
 							onClick={() => handleOnClick('/cart')}
-							style={{ marginLeft: '5rem', color: 'inherit' }}
+							style={{ marginLeft: '2rem', color: 'inherit' }}
 						>
 							<ShoppingCartOutlined />
 						</IconButton>
@@ -203,7 +205,7 @@ export const NavBar = () => {
 					/>
 				</Box>
 				<Link to="/">
-					<Box
+					{/* <Box
 						sx={{
 							height: { xs: '70px', sm: '4rem' },
 							width: 'auto',
@@ -239,13 +241,13 @@ export const NavBar = () => {
 						>
 							& Injection. INC
 						</Typography>
-					</Box>
-					{/* <Box
+					</Box> */}
+					<Box
 						sx={{
-							height: { xs: '5rem', sm: '4rem' },
+							height: { xs: '4rem', sm: '4rem' },
 							width: 'auto',
 							marginLeft: { xs: '-3rem', sm: '0' },
-							marginTop: '1rem',
+							marginTop: '.5rem',
 						}}
 					>
 						<img
@@ -253,7 +255,7 @@ export const NavBar = () => {
 							alt="logo"
 							style={{ height: '100%', width: '100%' }}
 						/>
-					</Box> */}
+					</Box>
 				</Link>
 				<Flex align="center" justify="flex-end" style={{ width: 'auto' }}>
 					<Flex align="center" justify="space-between">

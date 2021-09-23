@@ -7,7 +7,7 @@ export const coloring = {
 	green: '#138A36',
 	blue: '#009DDC',
 
-	default: '#EAEAE0',
+	default: '#EAEAEA',
 	paper: '#F7F7F7',
 	border: '#A5A5A5',
 	text1: '#0f0f0f',
@@ -15,7 +15,7 @@ export const coloring = {
 
 	white1: '#F7F7F7',
 	white2: '#F0F0F0',
-	white3: '#EAEAE0',
+	white3: '#EAEAEA',
 	white4: '#C2C2C2',
 	white5: '#A5A5A5',
 	gray1: '#8D8D8D',
@@ -41,7 +41,7 @@ export const theme = createTheme({
 		},
 	},
 	palette: {
-		type: 'light',
+		mode: 'light',
 		primary: {
 			main: coloring.orange,
 		},

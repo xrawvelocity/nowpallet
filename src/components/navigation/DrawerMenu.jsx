@@ -1,9 +1,10 @@
-import CloseIcon from '@mui/icons-material/Close'
-import { Drawer, List, ListItem, Switch, Typography } from '@mui/material'
+import { Drawer, List, ListItem, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
+
 import { useStore } from '../../context/storeCtx'
+import ThemeSwitch from '../inputs/ThemeSwitch'
 
 export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 	const { lightThemeSelected, setLightThemeSelected } = useStore()
@@ -26,7 +27,7 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 					color: 'permanent.white1',
 				}}
 			>
-				<List style={{ height: 'auto', zIndex: '2' }}>
+				<List style={{ height: '100%', zIndex: '2' }}>
 					<ListItem
 						sx={{
 							':hover': { cursor: 'pointer', color: 'primary.main' },
@@ -62,14 +63,14 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 					</ListItem>
 					<ListItem
 						sx={{
+							marginLeft: '-1rem',
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
 						onClick={() => {
 							setLightThemeSelected((prev) => !prev)
 						}}
 					>
-						<Switch size="small" checked={!lightThemeSelected} />
-						<Typography>Dark Mode</Typography>
+						<ThemeSwitch checked={!lightThemeSelected} />
 					</ListItem>
 				</List>
 			</Box>

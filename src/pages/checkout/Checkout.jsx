@@ -76,7 +76,7 @@ export const Checkout = () => {
 
 	return (
 		<Container maxWidth="sm" style={{ paddingTop: '4rem', height: '100%' }}>
-			<Paper style={{ padding: '4rem' }}>
+			<Paper style={{ padding: '4rem' }} sx={{ color: 'text.main' }}>
 				{activeStep !== steps.length && (
 					<Typography variant="h4" align="center" gutterBottom>
 						Checkout
@@ -92,11 +92,14 @@ export const Checkout = () => {
 									<Stepper
 										activeStep={activeStep}
 										style={{ margin: '2rem 0 4rem' }}
+										sx={{ color: 'text.main' }}
 									>
 										{steps.map((each) => {
 											return (
-												<Step key={each}>
-													<StepLabel>{each}</StepLabel>
+												<Step key={each} style={{ color: 'inherit' }}>
+													<StepLabel style={{ color: 'inherit' }}>
+														{each}
+													</StepLabel>
 												</Step>
 											)
 										})}

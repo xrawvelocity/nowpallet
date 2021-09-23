@@ -3,6 +3,7 @@ import React from 'react'
 
 import CategoryCard from '../../../components/cards/CategoryCard'
 import Flex from '../../../components/structure/Flex'
+import { Title } from '../../../components/typography/Title'
 import { useStore } from '../../../context/storeCtx'
 
 export const TopCategories = () => {
@@ -11,30 +12,33 @@ export const TopCategories = () => {
 	let productCategories = categories.filter((each) => !each.description)
 
 	return (
-		<Flex
-			direction="column"
-			align="center"
-			justify="center"
-			sx={{ width: '100%', marginTop: { xs: '0rem', sm: '12rem' } }}
-		>
-			<Grid
-				container
-				spacing={3}
+		<Flex direction="column" align="center">
+			<Title>Top Categories</Title>
+			<Flex
+				direction="column"
+				align="center"
 				justify="center"
-				style={{ marginBottom: '4rem' }}
+				sx={{ width: '100%', marginTop: { xs: '0rem', sm: '12rem' } }}
 			>
-				{productCategories.map((each, index) => {
-					if (index < 6) {
-						return (
-							<CategoryCard
-								image={each.assets[0]?.url}
-								text={each.name}
-								path={`/store/${each.slug}`}
-							/>
-						)
-					} else return
-				})}
-			</Grid>
+				<Grid
+					container
+					spacing={3}
+					justify="center"
+					style={{ marginBottom: '4rem' }}
+				>
+					{productCategories.map((each, index) => {
+						if (index < 6) {
+							return (
+								<CategoryCard
+									image={each.assets[0]?.url}
+									text={each.name}
+									path={`/store/${each.slug}`}
+								/>
+							)
+						} else return
+					})}
+				</Grid>
+			</Flex>
 		</Flex>
 	)
 }

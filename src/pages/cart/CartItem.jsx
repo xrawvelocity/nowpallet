@@ -26,7 +26,9 @@ export const CartItem = ({ product }) => {
 				style={{ height: '20rem' }}
 			/>
 			<CardContent>
-				<Typography variant="h5">{product.name}</Typography>
+				<Typography variant="h5" gutterBottom>
+					{product.name}
+				</Typography>
 				<Typography variant="h6">
 					{product.line_total.formatted_with_symbol}
 				</Typography>
@@ -37,6 +39,7 @@ export const CartItem = ({ product }) => {
 						size="small"
 						style={{ width: '3rem', height: '3rem' }}
 						sx={{ color: 'text.main' }}
+						disabled={product.quantity < 2}
 						onClick={() => updateQty(product.id, product.quantity - 1)}
 					>
 						<RemoveIcon />
@@ -56,6 +59,7 @@ export const CartItem = ({ product }) => {
 				<Button
 					variant="outlined"
 					color="secondary"
+					sx={{ color: 'text.main' }}
 					onClick={() => removeFromCart(product.id)}
 				>
 					Remove

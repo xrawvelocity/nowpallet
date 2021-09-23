@@ -1,3 +1,5 @@
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
@@ -23,9 +25,10 @@ export const Hero = () => {
 					sm: 'center',
 					md: 'space-between',
 				},
-				height: 'calc(90vh - 110px)',
+				height: { xs: 'calc(95vh - 110px)', sm: 'calc(100vh - 110px)' },
 				width: '100%',
-				padding: { xs: '6rem 5%', sm: '6rem 10%' },
+				padding: { xs: '3rem 0 3rem', sm: '3rem 0 9rem' },
+				position: 'relative',
 			}}
 		>
 			<Flex
@@ -56,8 +59,9 @@ export const Hero = () => {
 						lineHeight: { sm: '1.7' },
 					}}
 				>
-					We've got you covered; whether its for marine, automotive, industrial,
-					trucking, construction, high performance, or agriculture.
+					We've provided great service to our customers since 1968; whether its
+					for marine, automotive, industrial, trucking, construction, high
+					performance, or agriculture.
 				</Typography>
 				<Box
 					sx={{
@@ -76,6 +80,7 @@ export const Hero = () => {
 							mr: { xs: '0', sm: '1.5rem' },
 						}}
 						to="/store"
+						size="large"
 					>
 						Shop Now
 					</LinkButton>
@@ -91,8 +96,9 @@ export const Hero = () => {
 							ml: { xs: '0', sm: '1.5rem' },
 							color: 'text.main',
 						}}
+						size="large"
 					>
-						Contact Us
+						Contact Us <ChevronRightIcon />
 					</Button>
 				</Box>
 			</Flex>
@@ -119,6 +125,16 @@ export const Hero = () => {
 					}}
 				/>
 			</Box>
+			<KeyboardArrowDownIcon
+				sx={{
+					position: 'absolute',
+					bottom: '5%',
+					width: '100%',
+					height: '4rem',
+					margin: '0 auto',
+				}}
+				size="large"
+			/>
 		</Box>
 	)
 }

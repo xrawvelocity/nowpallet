@@ -42,6 +42,7 @@ export const ProductDetail = () => {
 						sx={{
 							flexDirection: { xs: 'column', m: 'row' },
 							justifyContent: { xs: 'flex-start', m: 'space-between' },
+							color: 'text.main',
 						}}
 					>
 						<Box
@@ -102,6 +103,7 @@ export const ProductDetail = () => {
 							>
 								<Flex align="center">
 									<IconButton
+										sx={{ color: 'text.main' }}
 										size="small"
 										style={{ width: '3rem', height: '3rem' }}
 										disabled={qty < 2}
@@ -113,6 +115,7 @@ export const ProductDetail = () => {
 										{qty}
 									</Typography>
 									<IconButton
+										sx={{ color: 'text.main' }}
 										size="small"
 										style={{ width: '3rem', height: '3rem' }}
 										onClick={() => setQty((prev) => prev + 1)}

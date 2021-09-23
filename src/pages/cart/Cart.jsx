@@ -34,13 +34,10 @@ export const Cart = () => {
 				>
 					Your Shopping Cart
 				</Typography>
-				<LinkButton to="/checkout" style={{ margin: '2rem 0' }}>
-					Checkout Securely
-				</LinkButton>
 				<Grid container spacing={3}>
 					{cart.line_items.map((each) => {
 						return (
-							<Grid item xs={3}>
+							<Grid item xs={12} sm={3}>
 								<CartItem product={each} />
 							</Grid>
 						)
@@ -49,17 +46,19 @@ export const Cart = () => {
 				<Flex
 					justify="space-between"
 					align="center"
-					style={{ width: '100%', marginTop: '4rem' }}
-					sx={{ flexDirection: { xs: 'column', sm: 'row' } }}
+					style={{ width: '100%', margin: '4rem 0' }}
+					sx={{ flexDirection: { xs: 'column !important', sm: 'row' } }}
 				>
-					<Typography variant="h5">
+					<Typography variant="h5" sx={{ mb: { xs: '2rem', sm: '0' } }}>
 						Subtotal: {cart.subtotal.formatted_with_symbol}
 					</Typography>
 					<Flex>
 						<Button
 							variant="outlined"
 							color="secondary"
+							sx={{ color: 'text.main' }}
 							onClick={() => emptyCart()}
+							size="large"
 						>
 							Empty Cart
 						</Button>
@@ -68,8 +67,9 @@ export const Cart = () => {
 							sx={{
 								marginLeft: '2rem',
 							}}
+							size="large"
 						>
-							Checkout Securely
+							Checkout
 						</LinkButton>
 					</Flex>
 				</Flex>

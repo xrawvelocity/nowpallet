@@ -7,7 +7,7 @@ export const darkColoring = {
 	green: '#138A36',
 	blue: '#009DDC',
 
-	default: '#1B1A17',
+	default: '#2D2D2D',
 	paper: '#0f0f0f',
 	border: '#0f0f0f',
 	text1: '#EAEAE0',
@@ -41,7 +41,7 @@ export const darkTheme = createTheme({
 		},
 	},
 	palette: {
-		type: 'dark',
+		mode: 'dark',
 		primary: {
 			main: darkColoring.orange,
 		},
