@@ -19,14 +19,14 @@ export const CartItem = ({ product }) => {
 	console.log(product)
 
 	return (
-		<Card sx={{ color: 'text.main' }}>
+		<Card sx={{ color: 'text.main' }} elevation={4}>
 			<CardMedia
 				image={product.media.source}
 				alt={product.name}
 				style={{ height: '20rem' }}
 			/>
 			<CardContent>
-				<Typography variant="h5" gutterBottom>
+				<Typography variant="h5" sx={{ mb: '2rem' }}>
 					{product.name}
 				</Typography>
 				<Typography variant="h6">

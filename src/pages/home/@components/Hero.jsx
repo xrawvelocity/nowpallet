@@ -4,8 +4,14 @@ import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {
+	ReactCompareSlider,
+	ReactCompareSliderImage,
+} from 'react-compare-slider'
 
 import background from '../../../assets/images/turbowallpaper.png'
+import badturbo from '../../../assets/images/badturbo.jpg'
+import goodturbo from '../../../assets/images/goodturbo.jpg'
 import { LinkButton } from '../../../components/buttons/LinkButton'
 import Flex from '../../../components/structure/Flex'
 
@@ -87,7 +93,7 @@ export const Hero = () => {
 					<Button
 						component={Link}
 						to="/contact"
-						variant="text"
+						variant="outlined"
 						color="primary"
 						sx={{
 							fontSize: { xs: '1.5rem', s: '1.7rem' },
@@ -98,13 +104,13 @@ export const Hero = () => {
 						}}
 						size="large"
 					>
-						Contact Us <ChevronRightIcon />
+						Contact Us
 					</Button>
 				</Box>
 			</Flex>
 			<Box
 				sx={{
-					height: { xs: '25rem', sm: '40rem', md: '55rem' },
+					height: { xs: '30rem', sm: '40rem', md: '55rem' },
 					width: { xs: '100%', sm: '100%', md: '50%' },
 					marginLeft: { md: '10rem' },
 					boxShadow: 15,
@@ -124,8 +130,35 @@ export const Hero = () => {
 						filter: 'grayscale(1)',
 					}}
 				/>
+				{/* <ReactCompareSlider
+					style={{ height: '100%' }}
+					itemOne={
+						<img
+							src={badturbo}
+							alt="turbo"
+							style={{
+								height: '100%',
+								width: '100%',
+								objectFit: 'cover',
+								overflow: 'hidden',
+							}}
+						/>
+					}
+					itemTwo={
+						<img
+							src={goodturbo}
+							alt="turbo"
+							style={{
+								height: '100%',
+								width: '100%',
+								objectFit: 'cover',
+								overflow: 'hidden',
+							}}
+						/>
+					}
+				/> */}
 			</Box>
-			<KeyboardArrowDownIcon
+			{/* <KeyboardArrowDownIcon
 				sx={{
 					position: 'absolute',
 					bottom: '5%',
@@ -134,7 +167,7 @@ export const Hero = () => {
 					margin: '0 auto',
 				}}
 				size="large"
-			/>
+			/> */}
 		</Box>
 	)
 }

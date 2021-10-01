@@ -30,8 +30,8 @@ export const Product = ({ product }) => {
 				padding: '1rem 3rem',
 				cursor: 'pointer',
 				color: 'text.main',
-				':hover': { boxShadow: 6 },
 			}}
+			elevation={4}
 		>
 			<Flex direction="column" align="center">
 				<Box sx={{ height: { xs: '110px', sm: '150px', md: '200px' } }}>

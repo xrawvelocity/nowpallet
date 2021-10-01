@@ -75,8 +75,12 @@ export const Checkout = () => {
 		)
 
 	return (
-		<Container maxWidth="m" style={{ paddingTop: '4rem', height: '100%' }}>
-			<Paper style={{ padding: '4rem' }} sx={{ color: 'text.main' }}>
+		<Container maxWidth="m" sx={{ py: '4rem', height: '100%' }}>
+			<Paper
+				style={{ padding: '4rem' }}
+				sx={{ color: 'text.main' }}
+				elevation={4}
+			>
 				{activeStep !== steps.length && (
 					<Typography variant="h4" align="center" gutterBottom>
 						Checkout

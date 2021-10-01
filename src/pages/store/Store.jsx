@@ -1,5 +1,5 @@
 import { Breadcrumbs, Grid, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import CategoryCard from '../../components/cards/CategoryCard'
@@ -16,6 +16,14 @@ export default function Store() {
 
 	let productCategories = categories.filter((each) => !each.description)
 
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		})
+	}, [category])
+
 	const showProducts = () => {
 		return products
 			.filter((each) =>
@@ -31,9 +39,9 @@ export default function Store() {
 	}
 
 	return (
-		<Flex direction="column" align="center" style={{ paddingTop: '4rem' }}>
+		<Flex direction="column" align="center" sx={{ py: '4rem' }}>
 			<Breadcrumbs
-				sx={{ alignSelf: 'flex-start', mb: '2rem' }}
+				sx={{ alignSelf: 'flex-start', mb: '4rem' }}
 				aria-label="breadcrumb"
 				separator={
 					<NavigateNextIcon sx={{ color: 'text.main' }} fontSize="small" />

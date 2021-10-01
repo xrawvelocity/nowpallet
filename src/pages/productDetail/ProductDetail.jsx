@@ -25,7 +25,7 @@ export const ProductDetail = () => {
 
 	return (
 		<Box sx={{ py: '4rem' }}>
-			<Paper
+			<Box
 				style={{
 					width: '100%',
 					padding: ' 2rem 4rem',
@@ -87,7 +87,7 @@ export const ProductDetail = () => {
 									fontSize: '1.6rem',
 									textTransform: 'uppercase',
 									fontWeight: '400',
-									maxHeight: '200px',
+									maxHeight: '300px',
 									overflowY: 'scroll',
 									padding: '1rem 3rem',
 								}}
@@ -96,12 +96,17 @@ export const ProductDetail = () => {
 								}}
 							></Typography>
 							<Flex
-								justify="space-between"
 								width="100%"
 								align="center"
-								sx={{ mt: '4rem' }}
+								sx={{
+									mt: '4rem',
+									justifyContent: {
+										xs: 'space-between !important',
+										sm: 'flex-start !important',
+									},
+								}}
 							>
-								<Flex align="center">
+								<Flex align="center" sx={{ mr: '4rem' }}>
 									<IconButton
 										sx={{ color: 'text.main' }}
 										size="small"
@@ -139,7 +144,7 @@ export const ProductDetail = () => {
 						<CircularProgress />
 					</Flex>
 				)}
-			</Paper>
+			</Box>
 		</Box>
 	)
 }

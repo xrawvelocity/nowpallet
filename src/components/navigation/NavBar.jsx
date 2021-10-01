@@ -275,6 +275,12 @@ export const NavBar = () => {
 							to="/contact"
 							text="Contact"
 							sx={{ display: { xs: 'none', sm: 'block' } }}
+							style={{ marginRight: '2rem' }}
+						/>
+						<NavLink
+							to="/faq"
+							text="FAQ"
+							sx={{ display: { xs: 'none', sm: 'block' } }}
 						/>
 						<SearchIcon
 							onClick={() => setSearchOpen((prev) => !prev)}

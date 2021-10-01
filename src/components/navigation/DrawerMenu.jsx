@@ -63,6 +63,17 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 					</ListItem>
 					<ListItem
 						sx={{
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
+							history.push('/faq')
+							setDrawerOpen(false)
+						}}
+					>
+						<Typography sx={{ fontSize: '2rem' }}>FAQ</Typography>
+					</ListItem>
+					<ListItem
+						sx={{
 							marginLeft: '-1rem',
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
