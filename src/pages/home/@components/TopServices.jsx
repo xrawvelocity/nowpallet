@@ -31,7 +31,7 @@ export const TopServices = () => {
 							xs: 'center !important',
 							sm: 'space-between !important',
 						},
-						flexDirection: { xs: 'column !important' },
+						flexDirection: { xs: 'column !important', sm: 'row !important' },
 					}}
 				>
 					<Box
@@ -122,9 +122,51 @@ export const TopServices = () => {
 							xs: 'center !important',
 							sm: 'space-between !important',
 						},
-						flexDirection: { xs: 'column !important' },
+						flexDirection: {
+							xs: 'column-reverse !important',
+							sm: 'row !important',
+						},
 					}}
 				>
+					<Flex
+						direction="column"
+						sx={{
+							ml: { sm: '8rem' },
+							width: { xs: '100%', sm: '40%' },
+							alignItems: {
+								xs: 'center !important',
+								sm: 'flex-start !important',
+							},
+						}}
+					>
+						<Typography
+							variant="h5"
+							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
+						>
+							Selling Turbos
+						</Typography>
+						<Typography
+							variant="h6"
+							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
+						>
+							If what you need is a brand new turbo instead of repairing your
+							old one, you can check out our expansive collection.
+						</Typography>
+						<Button
+							component={Link}
+							to="/store/turbochargers"
+							variant="outlined"
+							color="primary"
+							sx={{
+								fontSize: { xs: '1.5rem', s: '1.7rem' },
+								alignSelf: { sm: 'start' },
+								mt: '2rem',
+								color: 'text.main',
+							}}
+						>
+							Shop Turbos
+						</Button>
+					</Flex>
 					<Box
 						sx={{
 							width: { xs: '100%', sm: '50%' },
@@ -161,46 +203,6 @@ export const TopServices = () => {
 							}
 						/>
 					</Box>
-					<Flex
-						direction="column"
-						sx={{
-							ml: { sm: '8rem' },
-							width: { xs: '100%', sm: '40%' },
-							alignItems: {
-								xs: 'center !important',
-								sm: 'flex-start !important',
-							},
-						}}
-					>
-						<Typography
-							variant="h5"
-							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
-						>
-							Repairing Turbos
-						</Typography>
-						<Typography
-							variant="h6"
-							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
-						>
-							No matter how rusty or damaged your turbo is, we will leave it as
-							new as the first day it was installed in a car. Send us a message
-							with your information for a free estimate.
-						</Typography>
-						<Button
-							component={Link}
-							to="/contact"
-							variant="outlined"
-							color="primary"
-							sx={{
-								fontSize: { xs: '1.5rem', s: '1.7rem' },
-								alignSelf: { sm: 'start' },
-								mt: '2rem',
-								color: 'text.main',
-							}}
-						>
-							Contact Us
-						</Button>
-					</Flex>
 				</Flex>
 			</Fade>
 			<Fade left>
@@ -213,7 +215,7 @@ export const TopServices = () => {
 							xs: 'center !important',
 							sm: 'space-between !important',
 						},
-						flexDirection: { xs: 'column !important' },
+						flexDirection: { xs: 'column !important', sm: 'row !important' },
 					}}
 				>
 					<Box
@@ -267,19 +269,18 @@ export const TopServices = () => {
 							variant="h5"
 							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
 						>
-							Repairing Turbos
+							Selling Parts
 						</Typography>
 						<Typography
 							variant="h6"
 							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
 						>
-							No matter how rusty or damaged your turbo is, we will leave it as
-							new as the first day it was installed in a car. Send us a message
-							with your information for a free estimate.
+							In case you just need a specific part like housings, cartridges,
+							etc. then you should take a look at all our categories.
 						</Typography>
 						<Button
 							component={Link}
-							to="/contact"
+							to="/store"
 							variant="outlined"
 							color="primary"
 							sx={{
@@ -289,7 +290,7 @@ export const TopServices = () => {
 								color: 'text.main',
 							}}
 						>
-							Contact Us
+							All Categories
 						</Button>
 					</Flex>
 				</Flex>

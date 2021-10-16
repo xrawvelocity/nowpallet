@@ -72,7 +72,7 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 					>
 						<Typography sx={{ fontSize: '2rem' }}>FAQ</Typography>
 					</ListItem>
-					<ListItem
+					{/* <ListItem
 						sx={{
 							marginLeft: '-1rem',
 							':hover': { cursor: 'pointer', color: 'primary.main' },
@@ -82,7 +82,7 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 						}}
 					>
 						<ThemeSwitch checked={!lightThemeSelected} />
-					</ListItem>
+					</ListItem> */}
 				</List>
 			</Box>
 		</Drawer>

@@ -1,6 +1,7 @@
-import { Grid } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import { Link } from 'react-router-dom'
 
 import CategoryCard from '../../../components/cards/CategoryCard'
 import Flex from '../../../components/structure/Flex'
@@ -44,6 +45,19 @@ export const TopCategories = () => {
 					</Grid>
 				</Fade>
 			</Flex>
+			<Button
+				component={Link}
+				to="/store"
+				variant="outlined"
+				color="primary"
+				sx={{
+					fontSize: { xs: '1.5rem', s: '1.7rem' },
+					mb: '4rem',
+					color: 'text.main',
+				}}
+			>
+				See all categories
+			</Button>
 		</Flex>
 	)
 }

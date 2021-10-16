@@ -13,6 +13,12 @@ import { useStore } from '../../context/storeCtx'
 import RemoveIcon from '@mui/icons-material/Remove'
 import AddIcon from '@mui/icons-material/Add'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import {
+	FacebookIcon,
+	FacebookShareButton,
+	WhatsappIcon,
+	WhatsappShareButton,
+} from 'react-share'
 
 export const ProductDetail = () => {
 	const { products, addToCart } = useStore()
@@ -28,7 +34,7 @@ export const ProductDetail = () => {
 			<Box
 				style={{
 					width: '100%',
-					padding: ' 2rem 4rem',
+					padding: ' 2rem 0',
 					height: 'auto',
 				}}
 			>
@@ -42,14 +48,15 @@ export const ProductDetail = () => {
 						sx={{
 							flexDirection: { xs: 'column', m: 'row' },
 							justifyContent: { xs: 'flex-start', m: 'space-between' },
+							alignItems: 'flex-start',
 							color: 'text.main',
 						}}
 					>
 						<Box
 							sx={{
-								height: { xs: 'auto', m: '250px' },
+								height: { xs: 'auto', m: 'auto' },
 								width: { xs: '100%', m: '50%' },
-								mt: '2rem',
+								mt: '1rem',
 								mb: { xs: '4rem', m: '0' },
 								mr: { m: '4rem' },
 							}}
@@ -62,7 +69,11 @@ export const ProductDetail = () => {
 						</Box>
 						<Flex
 							direction="column"
-							sx={{ width: { xs: '100%', m: '50%' }, height: '100%' }}
+							sx={{
+								width: { xs: '100%', m: '50%' },
+								height: '100%',
+								ml: { xs: '0', sm: '5rem' },
+							}}
 						>
 							<Typography
 								sx={{
@@ -73,15 +84,32 @@ export const ProductDetail = () => {
 							>
 								{product.name}
 							</Typography>
-							<Typography
-								sx={{
-									fontSize: '2.2rem',
-									fontWeight: '600',
-									mb: '4rem',
-								}}
-							>
-								{product.price.formatted_with_symbol}
-							</Typography>
+							<Flex align="center" sx={{ mb: '2rem' }}>
+								<Typography
+									sx={{
+										fontSize: '2.2rem',
+										fontWeight: '600',
+									}}
+								>
+									{product.price.formatted_with_symbol}
+								</Typography>
+								<Flex align="center" style={{ marginLeft: '4rem' }}>
+									<Typography>Share product to:</Typography>
+									<Flex style={{ margin: '.5rem 0 0 1rem' }}>
+										<FacebookShareButton
+											url={'micturbo.netlify.app'}
+											quote="Check this out"
+											style={{ marginRight: '1rem' }}
+										>
+											<FacebookIcon size={28} round />
+										</FacebookShareButton>
+										<WhatsappShareButton url={'micturbo.netlify.app'}>
+											<WhatsappIcon size={28} round />
+										</WhatsappShareButton>
+									</Flex>
+								</Flex>
+							</Flex>
+
 							<Typography
 								style={{
 									fontSize: '1.6rem',
@@ -97,13 +125,10 @@ export const ProductDetail = () => {
 							></Typography>
 							<Flex
 								width="100%"
-								align="center"
+								align="flex-start"
 								sx={{
 									mt: '4rem',
-									justifyContent: {
-										xs: 'space-between !important',
-										sm: 'flex-start !important',
-									},
+									justifyContent: 'flex-start !important',
 								}}
 							>
 								<Flex align="center" sx={{ mr: '4rem' }}>
@@ -131,7 +156,7 @@ export const ProductDetail = () => {
 								<Button
 									color="primary"
 									variant="outlined"
-									sx={{ fontSize: '2rem' }}
+									sx={{ fontSize: '1.6rem' }}
 									onClick={() => addToCart(product.id, qty)}
 								>
 									Add To Cart

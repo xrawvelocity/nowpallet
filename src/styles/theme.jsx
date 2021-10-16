@@ -8,12 +8,12 @@ export const coloring = {
 	blue: '#009DDC',
 
 	default: '#EAEAEA',
-	paper: '#F7F7F7',
+	paper: '#FFFFFF',
 	border: '#A5A5A5',
 	text1: '#0f0f0f',
-	text2: '#EAEAE0',
+	text2: '#F0F0F0',
 
-	white1: '#F7F7F7',
+	white1: '#FFFFFF',
 	white2: '#F0F0F0',
 	white3: '#EAEAEA',
 	white4: '#C2C2C2',

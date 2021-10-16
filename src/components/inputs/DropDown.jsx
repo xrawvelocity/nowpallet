@@ -50,10 +50,7 @@ export const DropDown = ({
 			borderRadius: '0.4rem',
 			...popperStyle,
 		},
-		paper: {
-			border: `2px solid ${theme.palette.permanent.white1}`,
-			boxShadow: `0 .2rem .4rem ${theme.palette.permanent.white1}`,
-		},
+		paper: {},
 		menuList: {
 			display: 'flex',
 			flexDirection: 'column',
@@ -178,6 +175,7 @@ export const DropDown = ({
 								justifyContent: { xs: 'center', sm: 'flex-end' },
 								float: { xs: 'right' },
 							}}
+							elevation={4}
 						>
 							<ClickAwayListener onClickAway={handleClose}>
 								<div

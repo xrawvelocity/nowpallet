@@ -31,9 +31,9 @@ export const Contact = () => {
 	}
 
 	return (
-		<Flex direction="column" align="center">
+		<Flex direction="column" align="center" sx={{ py: '4rem' }}>
 			<Flex direction="column" align="center">
-				<Typography sx={{ fontSize: '2.6rem', fontWeight: '700', mt: '4rem' }}>
+				<Typography sx={{ fontSize: '2.6rem', fontWeight: '700' }}>
 					Reach out to us
 				</Typography>
 				<Typography sx={{ fontSize: '1.8rem', fontWeight: '400' }}>
@@ -49,7 +49,7 @@ export const Contact = () => {
 				<Paper
 					sx={{
 						p: { xs: '2rem', sm: '4rem' },
-						my: { xs: '2rem', sm: '0' },
+						my: { xs: '4rem', sm: '0' },
 						mr: { sm: '4rem' },
 					}}
 					elevation={4}
@@ -74,7 +74,7 @@ export const Contact = () => {
 									rows={4}
 									sm={12}
 								/>
-								<Grid item xs={12}>
+								<Grid item xs={12} style={{ textAlign: 'center' }}>
 									<LinkButton>Send Email</LinkButton>
 								</Grid>
 							</Grid>

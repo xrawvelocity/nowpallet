@@ -12,9 +12,11 @@ import RemoveIcon from '@mui/icons-material/Remove'
 import AddIcon from '@mui/icons-material/Add'
 import Flex from '../../components/structure/Flex'
 import { useStore } from '../../context/storeCtx'
+import { useHistory } from 'react-router'
 
 export const CartItem = ({ product }) => {
 	const { updateQty, removeFromCart } = useStore()
+	const history = useHistory()
 
 	console.log(product)
 
@@ -24,6 +26,7 @@ export const CartItem = ({ product }) => {
 				image={product.media.source}
 				alt={product.name}
 				style={{ height: '20rem' }}
+				onClick={() => history.push(`/product/${product.product_id}`)}
 			/>
 			<CardContent>
 				<Typography variant="h5" sx={{ mb: '2rem' }}>

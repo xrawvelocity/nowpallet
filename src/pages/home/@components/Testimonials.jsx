@@ -8,11 +8,7 @@ import { Title } from '../../../components/typography/Title'
 
 export const Testimonials = () => {
 	return (
-		<Flex direction="column" align="center" sx={{ m: '6rem 0 9rem' }}>
-			<Fade>
-				<Title>Customer Testimonials</Title>
-			</Fade>
-
+		<Flex direction="column" align="center" sx={{ m: '3rem 0 9rem' }}>
 			<Flex
 				sx={{
 					flexDirection: { xs: 'column !important', sm: 'row !important' },
@@ -24,7 +20,7 @@ export const Testimonials = () => {
 					elevation={4}
 					sx={{
 						width: { xs: '100%', sm: '32%' },
-						height: { xs: '188px', sm: '188px' },
+						height: { xs: '200px', sm: '188px' },
 						mb: { xs: '2rem', sm: '0' },
 					}}
 				>

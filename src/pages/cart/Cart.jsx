@@ -1,17 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useStore } from '../../context/storeCtx'
-import { Container, Grid, Typography, Button, Box, Paper } from '@mui/material'
+import {
+	Container,
+	Grid,
+	Typography,
+	Button,
+	Box,
+	Paper,
+	CircularProgress,
+} from '@mui/material'
 import { CartItem } from './CartItem'
 import Flex from '../../components/structure/Flex'
 import { LinkButton } from '../../components/buttons/LinkButton'
 
 export const Cart = () => {
-	const { cart, emptyCart } = useStore()
+	const { cart, emptyCart, cartLoading } = useStore()
 
 	const EmptyCart = () => {
 		return (
-			<Paper style={{ padding: '6rem 0' }} align="center">
+			<Box style={{ padding: '6rem 0', width: '100%', textAlign: 'center' }}>
 				<Typography
 					variant="h6"
 					style={{ marginBottom: '3rem' }}
@@ -20,7 +28,7 @@ export const Cart = () => {
 					Your cart is empty, please add a product.
 				</Typography>
 				<LinkButton to="/store">Go To Store</LinkButton>
-			</Paper>
+			</Box>
 		)
 	}
 
@@ -34,15 +42,6 @@ export const Cart = () => {
 				>
 					Your Shopping Cart
 				</Typography>
-				<Grid container spacing={3}>
-					{cart.line_items.map((each) => {
-						return (
-							<Grid item xs={12} sm={3}>
-								<CartItem product={each} />
-							</Grid>
-						)
-					})}
-				</Grid>
 				<Flex
 					justify="space-between"
 					align="center"
@@ -75,13 +74,30 @@ export const Cart = () => {
 						</LinkButton>
 					</Flex>
 				</Flex>
+				<Grid sx={{ mb: '6rem' }} container spacing={3}>
+					{cart.line_items.map((each) => {
+						return (
+							<Grid item xs={12} sm={3}>
+								<CartItem product={each} />
+							</Grid>
+						)
+					})}
+				</Grid>
 			</Flex>
 		)
 	}
 
 	return (
 		<Box style={{ paddingTop: '4rem' }}>
-			{cart.total_items ? <FilledCart /> : <EmptyCart />}
+			{cartLoading ? (
+				<Flex justify="center" sx={{ mt: '4rem' }}>
+					<CircularProgress />
+				</Flex>
+			) : cart.total_items ? (
+				<FilledCart />
+			) : (
+				<EmptyCart />
+			)}
 		</Box>
 	)
 }

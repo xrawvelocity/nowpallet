@@ -27,8 +27,6 @@ export const NavBar = () => {
 
 	const handleOnClick = useCallback((text) => history.push(text), [history])
 
-	console.log(products)
-
 	return (
 		<Flex direction="column">
 			<Box
@@ -42,7 +40,7 @@ export const NavBar = () => {
 					zIndex: '101',
 					display: 'flex',
 					alignItems: 'center',
-					bgcolor: 'background.default',
+					bgcolor: 'background.paper',
 					justifyContent: { xs: 'center', sm: 'space-between' },
 				}}
 			>
@@ -93,7 +91,7 @@ export const NavBar = () => {
 					</Flex>
 				</Box>
 				<Flex align="center">
-					<Box
+					{/* <Box
 						sx={{
 							display: { xs: 'none', sm: 'flex' },
 							alignItems: 'center',
@@ -104,7 +102,7 @@ export const NavBar = () => {
 						}}
 					>
 						<ThemeSwitch checked={!lightThemeSelected} />
-					</Box>
+					</Box> */}
 					<Box
 						style={{ alignItems: 'center' }}
 						sx={{

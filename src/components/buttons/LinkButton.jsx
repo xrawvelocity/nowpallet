@@ -6,7 +6,7 @@ export const LinkButton = ({ to, sx, children, ...props }) => {
 	return (
 		<Button
 			sx={{
-				color: 'permanent.black3',
+				color: 'text.secondary',
 				':hover': { bgcolor: 'permanent.orange2' },
 				...sx,
 			}}

@@ -16,60 +16,66 @@ export const Footer = () => {
 			justify="space-between"
 			align="center"
 			sx={{
-				padding: { xs: '20px 5%', sm: '20px 15%' },
-				width: '100%',
-				height: '200px',
-				zIndex: '100',
-				borderTop: '2px solid #000',
 				bgcolor: 'permanent.black2',
+				padding: { xs: '20px 5%', sm: '20px 15%' },
+				borderTop: '2px solid #000',
+				width: '100%',
+				zIndex: '100',
+				height: '200px',
 				color: 'permanent.white1',
 			}}
 		>
 			<Flex style={{ width: '30%' }} direction="column">
-				<Link to={'/store'}>
-					<Typography
-						sx={{
-							color: 'permanent.white1',
-							':hover': { color: 'primary.main' },
+				<Typography>(305) 685-1061</Typography>
+				<Typography
+					sx={{
+						display: 'inline',
+						my: '.5rem',
+						'& > a, & > a:hover, & > a:visited': { color: 'permanent.blue' },
+					}}
+				>
+					<a href="mailto:Manuel_mic@live.com">manuel_mic@live.com</a>
+				</Typography>
+				<Typography>4641 E 10th Ave, Hialeah, FL 33013</Typography>
+				<Flex
+					style={{
+						display: 'flex',
+						justifyContent: 'flex-start',
+					}}
+					sx={{ mt: '1rem' }}
+				>
+					<a
+						href="https://www.facebook.com/micturbo"
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{
+							marginRight: '1rem',
 						}}
-						variant="h6"
 					>
-						Store
-					</Typography>
-				</Link>
-				<Link to={'/about'}>
-					<Typography
-						sx={{
-							color: 'permanent.white1',
-							':hover': { color: 'primary.main' },
-						}}
-						variant="h6"
+						<FacebookIcon
+							style={{
+								height: '2.4rem',
+								width: '2.4rem',
+								color: '#4267B2',
+								cursor: 'pointer',
+							}}
+						/>
+					</a>
+					<a
+						href="https://www.instagram.com/mic_turbo"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						About
-					</Typography>
-				</Link>
-				<Link to={'/contact'}>
-					<Typography
-						sx={{
-							color: 'permanent.white1',
-							':hover': { color: 'primary.main' },
-						}}
-						variant="h6"
-					>
-						Contact
-					</Typography>
-				</Link>
-				<Link to={'/faq'}>
-					<Typography
-						sx={{
-							color: 'permanent.white1',
-							':hover': { color: 'primary.main' },
-						}}
-						variant="h6"
-					>
-						FAQ
-					</Typography>
-				</Link>
+						<InstagramIcon
+							style={{
+								height: '2.4rem',
+								width: '2.4rem',
+								color: '#E1306C',
+								cursor: 'pointer',
+							}}
+						/>
+					</a>
+				</Flex>
 			</Flex>
 			<Box
 				sx={{
@@ -85,52 +91,32 @@ export const Footer = () => {
 			</Box>
 
 			<Flex direction="column" align="flex-end" style={{ width: '30%' }}>
-				<Box sx={{ height: '35px', width: 'auto' }}>
+				<Box sx={{ height: { xs: '25px', sm: '35px' }, width: 'auto' }}>
 					<img
 						src={creditCards}
 						alt="cards"
 						style={{ height: '100%', width: 'auto', objectFit: 'cover' }}
 					/>
 				</Box>
-				<Flex
-					style={{
-						display: 'flex',
-						justifyContent: 'flex-start',
-					}}
-					sx={{ mt: '2rem' }}
-				>
-					<a
-						href="https://www.facebook.com/micturbo"
-						target="_blank"
-						rel="noopener noreferrer"
-						style={{
-							marginRight: '2rem',
+				<Typography sx={{ color: 'permanent.gray1', mt: '2rem' }}>
+					© 2021 MIC Turbo. Ecommerce Software by{' '}
+					<Typography
+						sx={{
+							display: 'inline',
+							'& > a, & > a:hover, & > a:visited': {
+								color: 'permanent.blue',
+							},
 						}}
 					>
-						<FacebookIcon
-							style={{
-								height: '3rem',
-								width: '3rem',
-								color: '#4267B2',
-								cursor: 'pointer',
-							}}
-						/>
-					</a>
-					<a
-						href="https://www.instagram.com/mic_turbo"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<InstagramIcon
-							style={{
-								height: '3rem',
-								width: '3rem',
-								color: '#E1306C',
-								cursor: 'pointer',
-							}}
-						/>
-					</a>
-				</Flex>
+						<a
+							href="https://www.vic-dev.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Vic Dev
+						</a>
+					</Typography>
+				</Typography>
 			</Flex>
 		</Flex>
 	)

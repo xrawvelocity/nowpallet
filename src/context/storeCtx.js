@@ -9,26 +9,33 @@ export const useStore = () => {
 
 const StoreProvider = ({ children }) => {
 	const [cart, setCart] = useState({})
+	const [cartLoading, setCartLoading] = useState(true)
 	const [products, setProducts] = useState([])
+	const [productsLoading, setProductsLoading] = useState(true)
 	const [categories, setCategories] = useState([])
+	const [categoriesLoading, setCategoriesLoading] = useState(true)
 	const [order, setOrder] = useState({})
 	const [errorMessage, setErrorMessage] = useState('')
 
 	const [lightThemeSelected, setLightThemeSelected] = useState(true)
 
 	useEffect(() => {
+		setCartLoading(true)
 		const getData = async () => {
 			try {
 				const cartRes = await commerce.cart.retrieve()
 				setCart(cartRes)
+				setCartLoading(false)
 			} catch (err) {
 				console.log(err)
 			}
+			await setCartLoading(false)
 		}
 		getData()
 	}, [])
 
 	useEffect(() => {
+		setProductsLoading(true)
 		const getData = async () => {
 			try {
 				const productsRes = await commerce.products.list()
@@ -36,11 +43,13 @@ const StoreProvider = ({ children }) => {
 			} catch (err) {
 				console.log(err)
 			}
+			await setProductsLoading(false)
 		}
 		getData()
 	}, [])
 
 	useEffect(() => {
+		setCategoriesLoading(true)
 		const getData = async () => {
 			try {
 				const categoriesRes = await commerce.categories.list()
@@ -48,6 +57,7 @@ const StoreProvider = ({ children }) => {
 			} catch (err) {
 				console.log(err)
 			}
+			await setCategoriesLoading(false)
 		}
 		getData()
 	}, [])
@@ -95,8 +105,11 @@ const StoreProvider = ({ children }) => {
 			value={{
 				cart,
 				setCart,
+				cartLoading,
 				products,
+				productsLoading,
 				categories,
+				categoriesLoading,
 				setProducts,
 				addToCart,
 				updateQty,
