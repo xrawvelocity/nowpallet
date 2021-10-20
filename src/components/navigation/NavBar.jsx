@@ -243,7 +243,7 @@ export const NavBar = () => {
 					<Box
 						sx={{
 							height: { xs: '4rem', sm: '4rem' },
-							width: 'auto',
+							width: { xs: '120px', sm: 'auto' },
 							marginLeft: { xs: '-3rem', sm: '0' },
 							marginTop: '.5rem',
 						}}
