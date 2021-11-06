@@ -19,7 +19,10 @@ export const About = () => {
 		<Flex
 			direction="column"
 			style={{ width: '100%' }}
-			sx={{ py: { xs: '4rem', sm: '8rem' } }}
+			sx={{
+				'& > *': { padding: { xs: '0 5%', sm: '0 15%' } },
+				py: { xs: '4rem', sm: '8rem' },
+			}}
 		>
 			<Title style={{ textAlign: 'center', width: '100%' }}>About Us</Title>
 			<Flex

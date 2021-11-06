@@ -14,9 +14,13 @@ export const TopCategories = () => {
 	let productCategories = categories.filter((each) => !each.description)
 
 	return (
-		<Flex direction="column" align="center">
+		<Flex
+			direction="column"
+			align="center"
+			sx={{ padding: { xs: '0 5%', sm: '0 15%' } }}
+		>
 			<Fade>
-				<Title>Top Categories</Title>
+				<Title sx={{ m: '6rem auto 5rem' }}>Top Categories</Title>
 			</Fade>
 			<Flex
 				direction="column"

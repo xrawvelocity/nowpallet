@@ -88,7 +88,10 @@ export const Cart = () => {
 	}
 
 	return (
-		<Box style={{ paddingTop: '4rem' }}>
+		<Box
+			style={{ paddingTop: '4rem' }}
+			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } } }}
+		>
 			{cartLoading ? (
 				<Flex justify="center" sx={{ mt: '4rem' }}>
 					<CircularProgress />

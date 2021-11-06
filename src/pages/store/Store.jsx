@@ -51,7 +51,11 @@ export default function Store() {
 	}
 
 	return (
-		<Flex direction="column" align="center" sx={{ py: '4rem' }}>
+		<Flex
+			direction="column"
+			align="center"
+			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '4rem' }}
+		>
 			<Flex
 				justify="space-between"
 				align="flex-start"

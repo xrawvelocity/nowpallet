@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade'
 import { Link } from 'react-router-dom'
 
 import background from '../../../assets/images/turbowallpaper.png'
+import allturbos from '../../../assets/images/allturbos.jpg'
 import { LinkButton } from '../../../components/buttons/LinkButton'
 import Flex from '../../../components/structure/Flex'
 
@@ -25,144 +26,98 @@ export const Hero = () => {
 						sm: 'center',
 						md: 'space-between',
 					},
-					height: { xs: 'calc(95vh - 110px)', sm: 'calc(90vh - 110px)' },
+					height: 'calc(100vh - 110px)',
 					width: '100%',
-					padding: { xs: '3rem 0 3rem', sm: '3rem 0 3rem' },
 					position: 'relative',
+					backgroundImage: `url(${allturbos})`,
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
 				}}
 			>
-				<Flex
-					direction="column"
-					sx={{
-						width: { xs: '100%', sm: '100%', md: '45%' },
-						alignItems: { xs: 'center', sm: 'flex-start' },
-					}}
-				>
-					<Typography
-						sx={{
-							fontSize: { xs: '3rem', sm: '3.5rem', md: '4rem' },
-							fontWeight: '700',
-							textAlign: { xs: 'center', sm: 'start' },
-							width: { xs: '100%' },
-							marginTop: { xs: '5rem' },
-							lineHeight: { xs: '1.2' },
-						}}
-					>
-						Do you need to rebuild, overhaul, or upgrade a turbocharger?
-					</Typography>
-					<Typography
-						sx={{
-							fontSize: '2rem',
-							fontWeight: '500',
-							margin: '2rem 0 4rem',
-							textAlign: { xs: 'center', sm: 'start' },
-							lineHeight: { sm: '1.7' },
-						}}
-					>
-						We've provided great service to our customers since 1968; whether
-						its for marine, automotive, industrial, trucking, construction, high
-						performance, or agriculture.
-					</Typography>
-					<Box
-						sx={{
-							display: 'flex',
-							flexDirection: { xs: 'column', sm: 'row' },
-							alignItems: { xs: 'center' },
-							justifyContent: { xs: 'center', sm: 'flex-start' },
-							width: { xs: '100%' },
-							marginBottom: { xs: '5rem' },
-						}}
-					>
-						<LinkButton
-							sx={{
-								fontSize: { xs: '1.4rem', s: '1.7rem' },
-								alignSelf: { sm: 'start' },
-								mr: { xs: '0', sm: '1.5rem' },
-							}}
-							to="/store"
-							size="large"
-						>
-							Shop Now
-						</LinkButton>
-						<Button
-							component={Link}
-							to="/contact"
-							variant="outlined"
-							color="primary"
-							sx={{
-								fontSize: { xs: '1.5rem', s: '1.7rem' },
-								alignSelf: { sm: 'start' },
-								mt: { xs: '3rem', sm: '0' },
-								ml: { xs: '0', sm: '1.5rem' },
-								color: 'text.main',
-							}}
-							size="large"
-						>
-							Contact Us
-						</Button>
-					</Box>
-				</Flex>
 				<Box
 					sx={{
-						height: { xs: '30rem', sm: '40rem', md: '55rem' },
-						width: { xs: '100%', sm: '100%', md: '50%' },
-						marginLeft: { md: '10rem' },
-						boxShadow: 15,
-						borderRadius: '20px',
-						objectPosition: { xs: 'bottom', sm: 'left', md: '-50px' },
+						width: '100%',
+						height: '100%',
+						backgroundColor: 'rgba(0,0,0,0.6)',
+						padding: { xs: '3rem 5%', sm: '3rem 15%' },
+						display: 'flex',
+						justifyContent: 'center',
 					}}
 				>
-					<img
-						src={background}
-						alt="turbo"
-						style={{
+					<Flex
+						direction="column"
+						justify="center"
+						align="center"
+						sx={{
+							width: { xs: '100%', sm: '45%' },
 							height: '100%',
-							width: '100%',
-							objectFit: 'cover',
-							overflow: 'hidden',
-							borderRadius: '20px',
-							filter: 'grayscale(1)',
+							color: 'text.secondary',
+							textAlign: 'center',
 						}}
-					/>
-					{/* <ReactCompareSlider
-					style={{ height: '100%' }}
-					itemOne={
-						<img
-							src={badturbo}
-							alt="turbo"
-							style={{
-								height: '100%',
-								width: '100%',
-								objectFit: 'cover',
-								overflow: 'hidden',
+					>
+						<Typography
+							sx={{
+								fontSize: { xs: '3rem', sm: '3.5rem', md: '4rem' },
+								fontWeight: '700',
+								width: { xs: '100%' },
+								marginTop: { xs: '5rem' },
+								lineHeight: { xs: '1.2' },
 							}}
-						/>
-					}
-					itemTwo={
-						<img
-							src={goodturbo}
-							alt="turbo"
-							style={{
-								height: '100%',
-								width: '100%',
-								objectFit: 'cover',
-								overflow: 'hidden',
+						>
+							Do you need to rebuild, overhaul, or upgrade a turbocharger?
+						</Typography>
+						<Typography
+							sx={{
+								fontSize: '2rem',
+								fontWeight: '500',
+								margin: '2rem 0 4rem',
+								lineHeight: { sm: '1.7' },
 							}}
-						/>
-					}
-				/> */}
+						>
+							We've provided great service to our customers since 1968
+						</Typography>
+						<Box
+							sx={{
+								display: 'flex',
+								flexDirection: { xs: 'column', sm: 'row' },
+								alignItems: { xs: 'center' },
+								justifyContent: { xs: 'center', sm: 'center' },
+								width: { xs: '100%' },
+								marginBottom: { xs: '5rem' },
+							}}
+						>
+							<LinkButton
+								sx={{
+									fontSize: { xs: '1.4rem', s: '1.7rem' },
+									alignSelf: { sm: 'start' },
+									mr: { xs: '0', sm: '1.5rem' },
+									color: 'text.main',
+								}}
+								to="/store"
+								size="large"
+							>
+								Shop Now
+							</LinkButton>
+							<Button
+								component={Link}
+								to="/contact"
+								variant="outlined"
+								color="primary"
+								sx={{
+									fontSize: { xs: '1.5rem', s: '1.7rem' },
+									alignSelf: { sm: 'start' },
+									mt: { xs: '3rem', sm: '0' },
+									ml: { xs: '0', sm: '1.5rem' },
+									color: 'text.secondary',
+								}}
+								size="large"
+							>
+								Contact Us
+							</Button>
+						</Box>
+					</Flex>
 				</Box>
-
-				{/* <KeyboardArrowDownIcon
-				sx={{
-					position: 'absolute',
-					bottom: '5%',
-					width: '100%',
-					height: '4rem',
-					margin: '0 auto',
-				}}
-				size="large"
-			/> */}
 			</Box>
 		</Fade>
 	)

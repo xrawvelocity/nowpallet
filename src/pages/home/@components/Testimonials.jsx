@@ -8,7 +8,14 @@ import { Title } from '../../../components/typography/Title'
 
 export const Testimonials = () => {
 	return (
-		<Flex direction="column" align="center" sx={{ m: '3rem 0 9rem' }}>
+		<Flex
+			direction="column"
+			align="center"
+			sx={{ m: '3rem 0 9rem', padding: { xs: '0 5%', sm: '0 15%' } }}
+		>
+			<Fade>
+				<Title sx={{ m: '3rem auto 5rem' }}>What our clients have to say</Title>
+			</Fade>
 			<Flex
 				sx={{
 					flexDirection: { xs: 'column !important', sm: 'row !important' },

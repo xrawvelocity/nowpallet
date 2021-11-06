@@ -20,7 +20,12 @@ export const FAQ = () => {
 	}
 
 	return (
-		<Flex direction="column" align="center" style={{ width: '100%' }}>
+		<Flex
+			direction="column"
+			align="center"
+			style={{ width: '100%' }}
+			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } } }}
+		>
 			<Title style={{ marginTop: '4rem' }}>Frequently Asked Questions</Title>
 			{showQuestions()}
 		</Flex>

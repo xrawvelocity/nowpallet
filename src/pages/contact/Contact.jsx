@@ -31,7 +31,11 @@ export const Contact = () => {
 	}
 
 	return (
-		<Flex direction="column" align="center" sx={{ py: '4rem' }}>
+		<Flex
+			direction="column"
+			align="center"
+			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '4rem' }}
+		>
 			<Flex direction="column" align="center">
 				<Typography sx={{ fontSize: '2.6rem', fontWeight: '700' }}>
 					Reach out to us

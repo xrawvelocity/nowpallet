@@ -12,14 +12,26 @@ import {
 
 import badturbo from '../../../assets/images/badturbo.jpg'
 import goodturbo from '../../../assets/images/goodturbo.jpg'
+import allproducts from '../../../assets/images/allproducts.jpg'
 import { Box } from '@mui/system'
 import { Link } from 'react-router-dom'
 
 export const TopServices = () => {
 	return (
-		<Flex direction="column" style={{ width: '100%', alignItems: 'center' }}>
+		<Flex
+			direction="column"
+			style={{
+				width: '100%',
+				alignItems: 'center',
+			}}
+			sx={{
+				padding: { xs: '0 5%', sm: '0 15%' },
+				bgcolor: 'permanent.black2',
+				color: 'permanent.white1',
+			}}
+		>
 			<Fade>
-				<Title sx={{ mb: '6rem' }}>Our Services</Title>
+				<Title sx={{ m: '6rem auto 5rem' }}>Our Services</Title>
 			</Fade>
 			<Fade left>
 				<Flex
@@ -36,7 +48,7 @@ export const TopServices = () => {
 				>
 					<Box
 						sx={{
-							width: { xs: '100%', sm: '50%' },
+							width: { xs: '100%', sm: '45%' },
 							height: '320px',
 							borderRadius: '20px',
 							overflow: 'hidden',
@@ -74,7 +86,7 @@ export const TopServices = () => {
 						direction="column"
 						sx={{
 							ml: { sm: '8rem' },
-							width: { xs: '100%', sm: '40%' },
+							width: { xs: '100%', sm: '45%' },
 							alignItems: {
 								xs: 'center !important',
 								sm: 'flex-start !important',
@@ -98,12 +110,12 @@ export const TopServices = () => {
 						<Button
 							component={Link}
 							to="/contact"
-							variant="outlined"
+							variant="contained"
 							color="primary"
 							sx={{
 								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
-								mt: '2rem',
+								mt: '4rem',
 								color: 'text.main',
 							}}
 						>
@@ -131,8 +143,8 @@ export const TopServices = () => {
 					<Flex
 						direction="column"
 						sx={{
-							ml: { sm: '8rem' },
-							width: { xs: '100%', sm: '40%' },
+							mr: { sm: '8rem' },
+							width: { xs: '100%', sm: '45%' },
 							alignItems: {
 								xs: 'center !important',
 								sm: 'flex-start !important',
@@ -143,156 +155,49 @@ export const TopServices = () => {
 							variant="h5"
 							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
 						>
-							Selling Turbos
+							Selling Turbos & More
 						</Typography>
 						<Typography
 							variant="h6"
 							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
 						>
 							If what you need is a brand new turbo instead of repairing your
-							old one, you can check out our expansive collection.
+							old one you can check out our expansive collection.
 						</Typography>
 						<Button
 							component={Link}
 							to="/store/turbochargers"
-							variant="outlined"
+							variant="contained"
 							color="primary"
 							sx={{
 								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
-								mt: '2rem',
+								mt: '4rem',
 								color: 'text.main',
 							}}
 						>
-							Shop Turbos
+							Shop Products
 						</Button>
 					</Flex>
 					<Box
 						sx={{
-							width: { xs: '100%', sm: '50%' },
+							width: { xs: '100%', sm: '45%' },
 							height: '320px',
 							borderRadius: '20px',
 							overflow: 'hidden',
 						}}
 					>
-						<ReactCompareSlider
-							style={{ height: '100%' }}
-							itemOne={
-								<img
-									src={badturbo}
-									alt="turbo"
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'cover',
-										overflow: 'hidden',
-									}}
-								/>
-							}
-							itemTwo={
-								<img
-									src={goodturbo}
-									alt="turbo"
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'cover',
-										overflow: 'hidden',
-									}}
-								/>
-							}
-						/>
-					</Box>
-				</Flex>
-			</Fade>
-			<Fade left>
-				<Flex
-					align="center"
-					sx={{
-						mb: '16rem',
-						width: '100%',
-						justifyContent: {
-							xs: 'center !important',
-							sm: 'space-between !important',
-						},
-						flexDirection: { xs: 'column !important', sm: 'row !important' },
-					}}
-				>
-					<Box
-						sx={{
-							width: { xs: '100%', sm: '50%' },
-							height: '320px',
-							borderRadius: '20px',
-							overflow: 'hidden',
-						}}
-					>
-						<ReactCompareSlider
-							style={{ height: '100%' }}
-							itemOne={
-								<img
-									src={badturbo}
-									alt="turbo"
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'cover',
-										overflow: 'hidden',
-									}}
-								/>
-							}
-							itemTwo={
-								<img
-									src={goodturbo}
-									alt="turbo"
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'cover',
-										overflow: 'hidden',
-									}}
-								/>
-							}
-						/>
-					</Box>
-					<Flex
-						direction="column"
-						sx={{
-							ml: { sm: '8rem' },
-							width: { xs: '100%', sm: '40%' },
-							alignItems: {
-								xs: 'center !important',
-								sm: 'flex-start !important',
-							},
-						}}
-					>
-						<Typography
-							variant="h5"
-							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
-						>
-							Selling Parts
-						</Typography>
-						<Typography
-							variant="h6"
-							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
-						>
-							In case you just need a specific part like housings, cartridges,
-							etc. then you should take a look at all our categories.
-						</Typography>
-						<Button
-							component={Link}
-							to="/store"
-							variant="outlined"
-							color="primary"
-							sx={{
-								fontSize: { xs: '1.5rem', s: '1.7rem' },
-								alignSelf: { sm: 'start' },
-								mt: '2rem',
-								color: 'text.main',
+						<img
+							src={allproducts}
+							alt="all products"
+							style={{
+								height: '100%',
+								width: '100%',
+								objectFit: 'cover',
+								overflow: 'hidden',
 							}}
-						>
-							All Categories
-						</Button>
-					</Flex>
+						/>
+					</Box>
 				</Flex>
 			</Fade>
 		</Flex>

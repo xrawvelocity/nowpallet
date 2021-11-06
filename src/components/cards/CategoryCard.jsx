@@ -16,7 +16,18 @@ const CategoryCard = ({ path, image, text, imgStyles }) => {
 				cursor: 'pointer',
 			}}
 		>
-			<Flex direction="column" align="center" style={{ width: '100%' }}>
+			<Flex
+				direction="column"
+				align="center"
+				sx={{
+					width: '100%',
+					':hover': {
+						'& > p': {
+							boxShadow: `0 4px 2px -2px #FF8303`,
+						},
+					},
+				}}
+			>
 				<Paper
 					sx={{
 						height: '20rem',

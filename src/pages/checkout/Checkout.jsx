@@ -75,7 +75,14 @@ export const Checkout = () => {
 		)
 
 	return (
-		<Container maxWidth="m" sx={{ py: '4rem', height: '100%' }}>
+		<Container
+			maxWidth="m"
+			sx={{
+				'& > *': { padding: { xs: '0 5%', sm: '0 15%' } },
+				py: '4rem',
+				height: '100%',
+			}}
+		>
 			<Paper
 				style={{ padding: '4rem' }}
 				sx={{ color: 'text.main' }}
