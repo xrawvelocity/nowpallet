@@ -65,6 +65,9 @@ export const Footer = () => {
 						href="https://www.instagram.com/mic_turbo"
 						target="_blank"
 						rel="noopener noreferrer"
+						style={{
+							marginRight: '1rem',
+						}}
 					>
 						<InstagramIcon
 							style={{
@@ -73,6 +76,17 @@ export const Footer = () => {
 								color: '#E1306C',
 								cursor: 'pointer',
 							}}
+						/>
+					</a>
+					<a
+						href="https://www.ebay.com/usr/mic_turbo"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png"
+							alt="Ebay logo"
+							style={{ width: 'auto', height: '2.4rem' }}
 						/>
 					</a>
 				</Flex>

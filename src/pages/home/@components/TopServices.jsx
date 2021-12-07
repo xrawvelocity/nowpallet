@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade'
 import background from '../../../assets/images/turbowallpaper.png'
 import Flex from '../../../components/structure/Flex'
 import { Title } from '../../../components/typography/Title'
+import { Testimonials } from './Testimonials'
 import {
 	ReactCompareSlider,
 	ReactCompareSliderImage,
@@ -37,7 +38,7 @@ export const TopServices = () => {
 				<Flex
 					align="center"
 					sx={{
-						mb: '16rem',
+						mb: '10rem',
 						width: '100%',
 						justifyContent: {
 							xs: 'center !important',
@@ -128,7 +129,7 @@ export const TopServices = () => {
 				<Flex
 					align="center"
 					sx={{
-						mb: '16rem',
+						mb: '10rem',
 						width: '100%',
 						justifyContent: {
 							xs: 'center !important',
@@ -200,6 +201,7 @@ export const TopServices = () => {
 					</Box>
 				</Flex>
 			</Fade>
+			<Testimonials />
 		</Flex>
 	)
 }

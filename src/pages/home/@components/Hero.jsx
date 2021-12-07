@@ -40,7 +40,7 @@ export const Hero = () => {
 						width: '100%',
 						height: '100%',
 						backgroundColor: 'rgba(0,0,0,0.6)',
-						padding: { xs: '3rem 5%', sm: '3rem 15%' },
+						padding: { xs: '3rem 5% 12rem', sm: '3rem 15%' },
 						display: 'flex',
 						justifyContent: 'center',
 					}}
@@ -100,8 +100,9 @@ export const Hero = () => {
 								Shop Now
 							</LinkButton>
 							<Button
-								component={Link}
-								to="/contact"
+								component="a"
+								href="https://www.ebay.com/str/micturboandinjection"
+								target="_blank"
 								variant="outlined"
 								color="primary"
 								sx={{
@@ -113,7 +114,7 @@ export const Hero = () => {
 								}}
 								size="large"
 							>
-								Contact Us
+								Ebay Store
 							</Button>
 						</Box>
 					</Flex>

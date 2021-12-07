@@ -17,7 +17,7 @@ export const TopCategories = () => {
 		<Flex
 			direction="column"
 			align="center"
-			sx={{ padding: { xs: '0 5%', sm: '0 15%' } }}
+			sx={{ padding: { xs: '0 5% 5rem', sm: '0 15% 5rem' } }}
 		>
 			<Fade>
 				<Title sx={{ m: '6rem auto 5rem' }}>Top Categories</Title>
