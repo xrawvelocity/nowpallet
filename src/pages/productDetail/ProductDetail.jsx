@@ -7,7 +7,7 @@ import {
 	Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import Flex from '../../components/structure/Flex'
 import { useStore } from '../../context/storeCtx'
@@ -30,6 +30,14 @@ export const ProductDetail = () => {
 	const product = products.filter((each) => each.id === id)[0]
 
 	const [qty, setQty] = useState(1)
+
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		})
+	}, [id])
 
 	let companyCategories = categories.filter(
 		(each) => each.description === 'company'
