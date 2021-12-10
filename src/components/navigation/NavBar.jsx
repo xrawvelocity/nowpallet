@@ -211,7 +211,7 @@ export const NavBar = () => {
 					<Box
 						sx={{
 							height: { xs: '5rem', sm: '5.4rem' },
-							width: { xs: 'auto', sm: 'auto' },
+							width: { xs: '106px', sm: 'auto' },
 							marginLeft: { xs: '-3rem', sm: '0' },
 							// marginTop: '.5rem',
 						}}
