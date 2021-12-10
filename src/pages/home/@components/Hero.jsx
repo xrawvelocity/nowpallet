@@ -92,7 +92,6 @@ export const Hero = () => {
 									fontSize: { xs: '1.4rem', s: '1.7rem' },
 									alignSelf: { sm: 'start' },
 									mr: { xs: '0', sm: '1.5rem' },
-									color: 'text.main',
 								}}
 								to="/store"
 								size="large"

@@ -7,7 +7,7 @@ export const LinkButton = ({ to, sx, children, ...props }) => {
 		<Button
 			sx={{
 				color: 'text.secondary',
-				':hover': { bgcolor: 'permanent.orange2' },
+				':hover': { bgcolor: 'permanent.red' },
 				...sx,
 			}}
 			component={Link}

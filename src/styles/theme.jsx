@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles'
 
 export const coloring = {
-	orange: '#FF8303',
+	orange: '#fb4c04',
 	orange2: '#FF9323',
 	red: '#FF3D00',
 	green: '#138A36',

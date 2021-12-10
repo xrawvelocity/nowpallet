@@ -1,6 +1,7 @@
 import { ShoppingCartOutlined } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import FlightIcon from '@mui/icons-material/Flight'
+import EmailIcon from '@mui/icons-material/Email'
 import MenuIcon from '@mui/icons-material/Menu'
 import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
@@ -16,7 +17,9 @@ import { DrawerMenu } from './DrawerMenu'
 import { NavLink } from './NavLink'
 
 import logo from '../../assets/images/micturbologo.png'
-import ThemeSwitch from '../inputs/ThemeSwitch'
+import newlogo from '../../assets/images/newlogo.png'
+import newlogo2 from '../../assets/images/newlogo2.png'
+import newlogoname from '../../assets/images/newlogoname.png'
 
 export const NavBar = () => {
 	const { cart, products, lightThemeSelected, setLightThemeSelected } =
@@ -80,13 +83,15 @@ export const NavBar = () => {
 						sx={{
 							color: 'text.main',
 						}}
+						component="a"
+						href="mailto:manuel_mic@live.com"
 					>
-						<FlightIcon style={{ marginRight: '1rem' }} />
+						<EmailIcon style={{ marginRight: '1rem' }} />
 						<Typography
 							variant="body1"
 							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
 						>
-							Free Shipping in the US
+							manuel_mic@live.com
 						</Typography>
 					</Flex>
 				</Box>
@@ -203,53 +208,16 @@ export const NavBar = () => {
 					/>
 				</Box>
 				<Link to="/">
-					{/* <Box
-						sx={{
-							height: { xs: '70px', sm: '4rem' },
-							width: 'auto',
-							marginLeft: { xs: '-3rem', sm: '0' },
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-							fontFamily: 'Saira',
-							color: 'primary.main',
-						}}
-					>
-						<Typography
-							sx={{
-								lineHeight: '1.2',
-								fontWeight: '900',
-								fontStyle: 'italic',
-								fontSize: '3rem',
-								textShadow: '0 0 .5rem #FF3D00',
-							}}
-						>
-							MIC Turbo
-						</Typography>
-						<Typography
-							sx={{
-								lineHeight: '1.2',
-								fontWeight: '900',
-								fontStyle: 'italic',
-								fontSize: '1.5rem',
-								marginRight: { xs: '.5rem' },
-								textShadow: '0 0 .5rem #FF3D00',
-							}}
-						>
-							& Injection. INC
-						</Typography>
-					</Box> */}
 					<Box
 						sx={{
-							height: { xs: '4rem', sm: '4rem' },
+							height: { xs: '4rem', sm: '5.4rem' },
 							width: { xs: '120px', sm: 'auto' },
 							marginLeft: { xs: '-3rem', sm: '0' },
-							marginTop: '.5rem',
+							// marginTop: '.5rem',
 						}}
 					>
 						<img
-							src={logo}
+							src={newlogo}
 							alt="logo"
 							style={{ height: '100%', width: '100%' }}
 						/>

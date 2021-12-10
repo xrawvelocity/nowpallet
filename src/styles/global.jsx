@@ -98,6 +98,23 @@ const globalStyles = (coloring) => {
 		'#root': {
 			height: 'auto',
 		},
+		'.faq-row-wrapper': {
+			width: '100%',
+			border: '1px solid #ccc',
+			borderRadius: '6px',
+		},
+		'.faq-row': {
+			padding: '1rem 2rem 0 !important',
+		},
+		'.row-content': {
+			paddingBottom: '1rem !important',
+		},
+		'.row-content[aria-expanded="true"]': {
+			height: 'auto !important',
+		},
+		'.icon-wrapper': {
+			top: '2rem !important',
+		},
 	}
 }
 export default globalStyles

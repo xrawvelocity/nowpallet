@@ -23,7 +23,7 @@ const CategoryCard = ({ path, image, text, imgStyles }) => {
 					width: '100%',
 					':hover': {
 						'& > p': {
-							boxShadow: `0 4px 2px -2px #FF8303`,
+							boxShadow: `0 4px 2px -2px #fb4c04`,
 						},
 					},
 				}}

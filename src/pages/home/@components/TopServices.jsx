@@ -16,6 +16,7 @@ import goodturbo from '../../../assets/images/goodturbo.jpg'
 import allproducts from '../../../assets/images/allproducts.jpg'
 import { Box } from '@mui/system'
 import { Link } from 'react-router-dom'
+import { LinkButton } from '../../../components/buttons/LinkButton'
 
 export const TopServices = () => {
 	return (
@@ -108,7 +109,7 @@ export const TopServices = () => {
 							new as the first day it was installed in a car. Send us a message
 							with your information for a free estimate.
 						</Typography>
-						<Button
+						<LinkButton
 							component={Link}
 							to="/contact"
 							variant="contained"
@@ -117,11 +118,10 @@ export const TopServices = () => {
 								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
 								mt: '4rem',
-								color: 'text.main',
 							}}
 						>
 							Contact Us
-						</Button>
+						</LinkButton>
 					</Flex>
 				</Flex>
 			</Fade>
@@ -165,7 +165,7 @@ export const TopServices = () => {
 							If what you need is a brand new turbo instead of repairing your
 							old one you can check out our expansive collection.
 						</Typography>
-						<Button
+						<LinkButton
 							component={Link}
 							to="/store/turbochargers"
 							variant="contained"
@@ -174,11 +174,10 @@ export const TopServices = () => {
 								fontSize: { xs: '1.5rem', s: '1.7rem' },
 								alignSelf: { sm: 'start' },
 								mt: '4rem',
-								color: 'text.main',
 							}}
 						>
 							Shop Products
-						</Button>
+						</LinkButton>
 					</Flex>
 					<Box
 						sx={{

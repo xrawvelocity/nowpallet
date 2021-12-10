@@ -3,7 +3,7 @@ import React from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 
-import logo from '../../assets/images/micturbologo.png'
+import newlogo from '../../assets/images/newlogo.png'
 import creditCards from '../../assets/images/creditCards.png'
 import Flex from '../../components/structure/Flex'
 import { Box } from '@mui/system'
@@ -93,15 +93,18 @@ export const Footer = () => {
 			</Flex>
 			<Box
 				sx={{
-					height: { xs: '4rem', sm: '4rem' },
+					height: { xs: '4rem', sm: '8rem' },
 					width: '30%',
 					display: { xs: 'none', sm: 'flex' },
 					justifyContent: 'center',
 					marginLeft: { xs: '-3rem', sm: '0' },
-					marginTop: '.5rem',
 				}}
 			>
-				<img src={logo} alt="logo" style={{ height: '100%', width: 'auto' }} />
+				<img
+					src={newlogo}
+					alt="logo"
+					style={{ height: '100%', width: 'auto' }}
+				/>
 			</Box>
 
 			<Flex direction="column" align="flex-end" style={{ width: '30%' }}>
