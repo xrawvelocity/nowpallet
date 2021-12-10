@@ -99,7 +99,7 @@ export const TopServices = () => {
 							variant="h5"
 							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
 						>
-							Repairing Turbos
+							Turbocharger Repairs
 						</Typography>
 						<Typography
 							variant="h6"
@@ -156,7 +156,7 @@ export const TopServices = () => {
 							variant="h5"
 							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
 						>
-							Selling Turbos & More
+							Turbocharger & Component Sales
 						</Typography>
 						<Typography
 							variant="h6"
