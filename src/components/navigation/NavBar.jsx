@@ -244,6 +244,12 @@ export const NavBar = () => {
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
+							to="/guides"
+							text="Guides"
+							sx={{ display: { xs: 'none', sm: 'block' } }}
+							style={{ marginRight: '2rem' }}
+						/>
+						<NavLink
 							to="/faq"
 							text="FAQ"
 							sx={{ display: { xs: 'none', sm: 'block' } }}

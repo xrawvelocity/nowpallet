@@ -66,6 +66,17 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
 						onClick={() => {
+							history.push('/guides')
+							setDrawerOpen(false)
+						}}
+					>
+						<Typography sx={{ fontSize: '2rem' }}>Guides</Typography>
+					</ListItem>
+					<ListItem
+						sx={{
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
 							history.push('/faq')
 							setDrawerOpen(false)
 						}}

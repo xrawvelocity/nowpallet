@@ -11,6 +11,7 @@ import { Cart } from './pages/cart/Cart'
 import { Checkout } from './pages/checkout/Checkout'
 import { Contact } from './pages/contact/Contact'
 import { FAQ } from './pages/faq/FAQ'
+import { Guides } from './pages/guides/Guides'
 import { Footer } from './pages/footer/Footer'
 import Home from './pages/home/Home'
 import { ProductDetail } from './pages/productDetail/ProductDetail'
@@ -59,6 +60,9 @@ export default function App() {
 						</Route>
 						<Route path="/faq">
 							<FAQ />
+						</Route>
+						<Route path="/guides">
+							<Guides />
 						</Route>
 						<Route path="/product/:id">
 							<ProductDetail />
