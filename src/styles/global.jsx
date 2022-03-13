@@ -115,6 +115,15 @@ const globalStyles = (coloring) => {
 		'.icon-wrapper': {
 			top: '2rem !important',
 		},
+		red: {
+			color: coloring.red,
+		},
+		blue: {
+			color: coloring.blue,
+		},
+		ul: {
+			marginLeft: '5rem',
+		},
 	}
 }
 export default globalStyles

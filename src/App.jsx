@@ -19,6 +19,8 @@ import Store from './pages/store/Store'
 import { darkColoring, darkTheme } from './styles/darkTheme'
 import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
+import Warranty from './pages/warranty/Warranty'
+import Sponsorship from './pages/sponsorship/Sponsorship'
 
 export default function App() {
 	const { lightThemeSelected } = useStore()
@@ -63,6 +65,12 @@ export default function App() {
 						</Route>
 						<Route path="/guides">
 							<Guides />
+						</Route>
+						<Route path="/warranty">
+							<Warranty />
+						</Route>
+						<Route path="/sponsorship">
+							<Sponsorship />
 						</Route>
 						<Route path="/product/:id">
 							<ProductDetail />

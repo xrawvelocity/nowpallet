@@ -77,6 +77,28 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
 						onClick={() => {
+							history.push('/warranty')
+							setDrawerOpen(false)
+						}}
+					>
+						<Typography sx={{ fontSize: '2rem' }}>Warranty</Typography>
+					</ListItem>
+					<ListItem
+						sx={{
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
+							history.push('/sponsorship')
+							setDrawerOpen(false)
+						}}
+					>
+						<Typography sx={{ fontSize: '2rem' }}>Sponsorship</Typography>
+					</ListItem>
+					<ListItem
+						sx={{
+							':hover': { cursor: 'pointer', color: 'primary.main' },
+						}}
+						onClick={() => {
 							history.push('/faq')
 							setDrawerOpen(false)
 						}}

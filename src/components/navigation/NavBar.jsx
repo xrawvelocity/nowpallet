@@ -44,7 +44,7 @@ export const NavBar = () => {
 					display: 'flex',
 					alignItems: 'center',
 					bgcolor: 'background.paper',
-					justifyContent: { xs: 'center', sm: 'space-between' },
+					justifyContent: { xs: 'center', md: 'space-between' },
 				}}
 			>
 				<Box
@@ -54,8 +54,8 @@ export const NavBar = () => {
 						alignItems: 'center',
 					}}
 					sx={{
-						width: { xs: '100%', sm: 'auto' },
-						justifyContent: { xs: 'space-between', sm: 'flex-start' },
+						width: { xs: '100%', md: 'auto' },
+						justifyContent: { xs: 'space-between', md: 'flex-start' },
 					}}
 				>
 					<Flex
@@ -73,7 +73,7 @@ export const NavBar = () => {
 						<PhoneIcon style={{ marginRight: '1rem' }} />
 						<Typography
 							variant="body1"
-							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
+							sx={{ fontSize: { xs: '1.6rem', md: '1.5rem' } }}
 						>
 							(305) 685-1061
 						</Typography>
@@ -89,25 +89,13 @@ export const NavBar = () => {
 						<EmailIcon style={{ marginRight: '1rem' }} />
 						<Typography
 							variant="body1"
-							sx={{ fontSize: { xs: '1.6rem', sm: '1.5rem' } }}
+							sx={{ fontSize: { xs: '1.6rem', md: '1.5rem' } }}
 						>
 							manuel_mic@live.com
 						</Typography>
 					</Flex>
 				</Box>
 				<Flex align="center">
-					{/* <Box
-						sx={{
-							display: { xs: 'none', sm: 'flex' },
-							alignItems: 'center',
-							':hover': { cursor: 'pointer', color: 'primary.main' },
-						}}
-						onClick={() => {
-							setLightThemeSelected((prev) => !prev)
-						}}
-					>
-						<ThemeSwitch checked={!lightThemeSelected} />
-					</Box> */}
 					<Box
 						style={{ alignItems: 'center' }}
 						sx={{
@@ -118,7 +106,7 @@ export const NavBar = () => {
 							},
 							display: {
 								xs: 'none',
-								sm: 'flex',
+								md: 'flex',
 							},
 						}}
 						onClick={() => handleOnClick('/cart')}
@@ -164,7 +152,7 @@ export const NavBar = () => {
 				<Box
 					style={{ alignItems: 'center' }}
 					sx={{
-						display: { xs: 'flex', sm: 'none' },
+						display: { xs: 'flex', md: 'none' },
 					}}
 				>
 					{!drawerOpen ? (
@@ -210,9 +198,9 @@ export const NavBar = () => {
 				<Link to="/">
 					<Box
 						sx={{
-							height: { xs: '5rem', sm: '5.4rem' },
-							width: { xs: '106px', sm: 'auto' },
-							marginLeft: { xs: '-3rem', sm: '0' },
+							height: { xs: '5rem', md: '5.4rem' },
+							width: { xs: '106px', md: 'auto' },
+							marginLeft: { xs: '-3rem', md: '0' },
 							// marginTop: '.5rem',
 						}}
 					>
@@ -228,38 +216,50 @@ export const NavBar = () => {
 						<NavLink
 							to="/store"
 							text="Store"
-							sx={{ display: { xs: 'none', sm: 'block' } }}
+							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
 							to="/about"
 							text="About"
-							sx={{ display: { xs: 'none', sm: 'block' } }}
+							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
 							to="/contact"
 							text="Contact"
-							sx={{ display: { xs: 'none', sm: 'block' } }}
+							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
 							to="/guides"
 							text="Guides"
-							sx={{ display: { xs: 'none', sm: 'block' } }}
+							sx={{ display: { xs: 'none', md: 'block' } }}
+							style={{ marginRight: '2rem' }}
+						/>
+						<NavLink
+							to="/warranty"
+							text="Warranty"
+							sx={{ display: { xs: 'none', md: 'block' } }}
+							style={{ marginRight: '2rem' }}
+						/>
+						<NavLink
+							to="/sponsorship"
+							text="Sponsorship"
+							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
 							to="/faq"
 							text="FAQ"
-							sx={{ display: { xs: 'none', sm: 'block' } }}
+							sx={{ display: { xs: 'none', md: 'block' } }}
 						/>
 						<SearchIcon
 							onClick={() => setSearchOpen((prev) => !prev)}
 							fontSize="large"
 							sx={{
 								marginLeft: '4rem',
-								display: { xs: 'none', sm: 'block' },
+								display: { xs: 'none', md: 'block' },
 								color: 'permanent.white1',
 								':hover': {
 									cursor: 'pointer',
@@ -277,7 +277,7 @@ export const NavBar = () => {
 							},
 							display: {
 								xs: 'flex',
-								sm: 'none',
+								md: 'none',
 							},
 						}}
 						onClick={() => handleOnClick('/cart')}
@@ -313,9 +313,9 @@ export const NavBar = () => {
 						}}
 						sx={{
 							bgcolor: 'permanent.black2',
-							float: { sm: 'right' },
-							width: { xs: '100%', sm: '400px' },
-							marginRight: { sm: '14%' },
+							float: { md: 'right' },
+							width: { xs: '100%', md: '400px' },
+							marginRight: { md: '14%' },
 							boxShadow: 5,
 						}}
 					>

@@ -1,9 +1,11 @@
 import {
+	Alert,
 	Breadcrumbs,
 	Button,
 	CircularProgress,
 	IconButton,
 	Paper,
+	Snackbar,
 	Typography,
 } from '@mui/material'
 import { Box } from '@mui/system'
@@ -31,6 +33,16 @@ export const ProductDetail = () => {
 
 	const [qty, setQty] = useState(1)
 
+	const [successOpen, setSuccessOpen] = useState(false)
+
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
+
+		setSuccessOpen(false)
+	}
+
 	useEffect(() => {
 		window.scroll({
 			top: 0,
@@ -47,7 +59,6 @@ export const ProductDetail = () => {
 		(each) => !companyCategories.map((each) => each.name).includes(each.name)
 	)
 
-	console.log(productCategory)
 	return (
 		<Box sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '4rem' }}>
 			<Flex direction="column">
@@ -239,12 +250,28 @@ export const ProductDetail = () => {
 										color="primary"
 										variant="outlined"
 										sx={{ fontSize: '1.6rem' }}
-										onClick={() => addToCart(product.id, qty)}
+										onClick={() => {
+											addToCart(product.id, qty)
+											setSuccessOpen(true)
+										}}
 									>
 										Add To Cart
 									</Button>
 								</Flex>
 							</Flex>
+							<Snackbar
+								open={successOpen}
+								autoHideDuration={3000}
+								onClose={handleClose}
+							>
+								<Alert
+									onClose={handleClose}
+									severity="success"
+									sx={{ width: '100%' }}
+								>
+									Product added successfully
+								</Alert>
+							</Snackbar>
 						</Box>
 					) : (
 						<Flex justify="center">

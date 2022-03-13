@@ -77,7 +77,7 @@ export const Cart = () => {
 				<Grid sx={{ mb: '6rem' }} container spacing={3}>
 					{cart.line_items.map((each) => {
 						return (
-							<Grid item xs={12} sm={3}>
+							<Grid item xs={12} sm={6} md={4}>
 								<CartItem product={each} />
 							</Grid>
 						)

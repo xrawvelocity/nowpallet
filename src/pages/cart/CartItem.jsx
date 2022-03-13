@@ -18,8 +18,6 @@ export const CartItem = ({ product }) => {
 	const { updateQty, removeFromCart } = useStore()
 	const history = useHistory()
 
-	console.log(product)
-
 	return (
 		<Card sx={{ color: 'text.main' }} elevation={4}>
 			<CardMedia

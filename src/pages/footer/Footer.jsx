@@ -25,7 +25,7 @@ export const Footer = () => {
 				color: 'permanent.white1',
 			}}
 		>
-			<Flex style={{ width: '30%' }} direction="column">
+			<Flex sx={{ width: { xs: '45%', md: '30%' } }} direction="column">
 				<Typography>(305) 685-1061</Typography>
 				<Typography
 					sx={{
@@ -93,11 +93,11 @@ export const Footer = () => {
 			</Flex>
 			<Box
 				sx={{
-					height: { xs: '4rem', sm: '8rem' },
+					height: { xs: '4rem', md: '8rem' },
 					width: '30%',
-					display: { xs: 'none', sm: 'flex' },
+					display: { xs: 'none', md: 'flex' },
 					justifyContent: 'center',
-					marginLeft: { xs: '-3rem', sm: '0' },
+					marginLeft: { xs: '-3rem', md: '0' },
 				}}
 			>
 				<img
@@ -107,7 +107,11 @@ export const Footer = () => {
 				/>
 			</Box>
 
-			<Flex direction="column" align="flex-end" style={{ width: '30%' }}>
+			<Flex
+				direction="column"
+				align="flex-end"
+				sx={{ width: { xs: '45%', md: '30%' } }}
+			>
 				<Box sx={{ height: { xs: '25px', sm: '35px' }, width: 'auto' }}>
 					<img
 						src={creditCards}
@@ -116,7 +120,10 @@ export const Footer = () => {
 					/>
 				</Box>
 				<Typography sx={{ color: 'permanent.gray1', mt: '2rem' }}>
-					© 2021 MIC Turbo. Ecommerce Software by{' '}
+					© 2021 MIC Turbo
+				</Typography>
+				<Typography sx={{ color: 'permanent.gray1', whiteSpace: 'nowrap' }}>
+					Ecommerce Software by{' '}
 					<Typography
 						sx={{
 							display: 'inline',

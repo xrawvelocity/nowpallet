@@ -169,10 +169,10 @@ export const DropDown = ({
 						<Paper
 							className={classes.paper}
 							sx={{
-								width: { xs: 'calc(90% - 28px)', sm: '400px' },
-								margin: { xs: '0 52px 0 0', sm: '0 14% 0 0' },
+								width: { xs: 'calc(90% - 28px)', md: '400px' },
+								margin: { xs: '0 52px 0 0', md: '0 14% 0 0' },
 								display: 'flex',
-								justifyContent: { xs: 'center', sm: 'flex-end' },
+								justifyContent: { xs: 'center', md: 'flex-end' },
 								float: { xs: 'right' },
 							}}
 							elevation={4}
