@@ -7,7 +7,7 @@ export const coloring = {
 	green: '#138A36',
 	blue: '#009DDC',
 
-	default: '#EAEAEA',
+	default: '#021826',
 	paper: '#FFFFFF',
 	border: '#A5A5A5',
 	text1: '#0f0f0f',
@@ -22,9 +22,9 @@ export const coloring = {
 	gray2: '#5C5C5C',
 	gray3: '#343330',
 	gray4: '#2D2D2D',
-	black1: '#1B1A17',
-	black2: '#121212',
-	black3: '#0f0f0f',
+	black1: '#001724',
+	black2: '#001722',
+	black3: '#001520',
 }
 
 export const theme = createTheme({
@@ -32,7 +32,7 @@ export const theme = createTheme({
 		values: { xs: 0, s: 350, sm: 640, m: 800, md: 1024, lg: 1280 },
 	},
 	typography: {
-		fontFamily: "'Roboto', sans-serif ",
+		fontFamily: "'Noto Sans Georgian', sans-serif ",
 		fontWeight: '400',
 
 		fontSize: 20,
@@ -84,6 +84,22 @@ export const theme = createTheme({
 			},
 			inputAdornedStart: {
 				paddingLeft: '0 !important',
+			},
+		},
+		MuiInputLabel: {
+			styleOverrides: {
+				root: {
+					color: '#111111',
+				},
+			},
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: {
+					'& fieldset': {
+						borderColor: '#111111',
+					},
+				},
 			},
 		},
 	},

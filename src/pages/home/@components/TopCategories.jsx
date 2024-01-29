@@ -6,12 +6,10 @@ import { Link } from 'react-router-dom'
 import CategoryCard from '../../../components/cards/CategoryCard'
 import Flex from '../../../components/structure/Flex'
 import { Title } from '../../../components/typography/Title'
-import { useStore } from '../../../context/storeCtx'
+import categories from '../../../assets/data'
 
 export const TopCategories = () => {
-	const { categories } = useStore()
-
-	let productCategories = categories.filter((each) => !each.description)
+	console.log('categories', categories)
 
 	return (
 		<Flex
@@ -35,13 +33,13 @@ export const TopCategories = () => {
 						justify="center"
 						style={{ marginBottom: '4rem' }}
 					>
-						{productCategories.map((each, index) => {
+						{Object.keys(categories).map((each, index) => {
 							if (index < 6) {
 								return (
 									<CategoryCard
-										image={each.assets[0]?.url}
-										text={each.name}
-										path={`/store/${each.slug}`}
+										image={categories[each][3].image}
+										text={each}
+										path={`/catalog/${each}`}
 									/>
 								)
 							} else return
@@ -51,7 +49,7 @@ export const TopCategories = () => {
 			</Flex>
 			<Button
 				component={Link}
-				to="/store"
+				to="/catalog"
 				variant="outlined"
 				color="primary"
 				sx={{

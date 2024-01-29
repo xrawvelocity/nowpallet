@@ -60,7 +60,7 @@ const CategoryCard = ({ path, image, text, imgStyles }) => {
 						marginTop: '.5rem',
 					}}
 				>
-					{text}
+					{text.charAt(0).toUpperCase() + text.slice(1)}
 				</Typography>
 			</Flex>
 		</Grid>

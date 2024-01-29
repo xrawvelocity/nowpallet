@@ -35,12 +35,12 @@ const globalStyles = (coloring) => {
 		},
 
 		body: {
-			fontFamily: 'Roboto, sans-serif',
+			fontFamily: "'Noto Sans Georgia', sans-serif",
 			webkitFontSmoothing: 'antialiased',
-			height: 'calc(100vh - 110px)',
+			height: 'calc(100vh - 70px)',
 			position: 'absolute',
 			left: 0,
-			top: '110px',
+			top: '70px',
 			width: '100vw',
 			padding: '0 !important',
 		},
@@ -123,6 +123,11 @@ const globalStyles = (coloring) => {
 		},
 		ul: {
 			marginLeft: '5rem',
+		},
+
+		'@font-face': {
+			fontFamily: 'Raleway',
+			src: `local('Raleway'), url(../assets/fonts/Raleway-BlackItalic.ttf) format('ttf');`,
 		},
 	}
 }

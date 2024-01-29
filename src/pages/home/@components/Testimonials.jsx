@@ -6,36 +6,33 @@ import React from 'react'
 import Flex from '../../../components/structure/Flex'
 import { Title } from '../../../components/typography/Title'
 import { Link } from 'react-router-dom'
+import { LinkButton } from '../../../components/buttons/LinkButton'
 
 export const Testimonials = () => {
 	const allTestimonials = [
 		{
-			source: 'Facebook',
-			name: 'Martin J. Padilla',
-			link: 'https://www.facebook.com/bolingchris/posts/10208478404874718',
+			name: 'Sarah Johnson',
 			content:
-				'They are awesome! they helped me out to find what I need and got me back and up thank you so much!! A+++',
+				"I've been working with NowPallet for a year now, and they've been a game-changer for my retail business. The quality of their products and their commitment to my success is unmatched. Highly recommended!",
+			rating: 5,
 		},
 		{
-			source: 'Facebook',
-			name: 'Chris Boling',
-			link: 'https://www.facebook.com/bolingchris/posts/10208478404874718',
+			name: 'David Anderson',
 			content:
-				'Manuel assisted me in getting a replacement turbo actuator for my 2019 Ram 2500. I received the new part very quickly and was able to get my truck working as it should. Manuel was very informative and helpful and I would recommend their service very highly.',
+				'NowPallet has made bulk ordering a breeze for us. Their diverse product range means we can get everything we need from one place. Their customer-centric approach makes us feel valued as partners, not just clients.',
+			rating: 4,
 		},
 		{
-			source: 'Ebay',
-			name: 'cn-batteries',
-			link: 'https://www.ebay.com/fdbk/feedback_profile/mic_turbo?filter=feedback_page:RECEIVED_AS_SELLER&_trksid=p2047675.l2560',
-			content: 'Great communication. A pleasure to do business with.',
+			name: 'Emily Martinez',
+			content:
+				"As a boutique retailer, finding flexible bulk order options was crucial for us. NowPallet not only provided that but also ensured timely deliveries. They've been an essential part of our growth strategy.",
+			rating: 5,
 		},
 	]
 
 	const TestimonialCard = ({ each }) => {
 		return (
 			<Paper
-				component="a"
-				href={each.link}
 				target="_blank"
 				elevation={4}
 				sx={{
@@ -46,66 +43,65 @@ export const Testimonials = () => {
 				}}
 			>
 				<Flex direction="column" align="flex-start" justify="center">
+					<Typography sx={{ fontSize: '1.6rem' }}>
+						&#8220;{each.content}&#8221;
+					</Typography>
 					<Flex
 						align="center"
 						justify="space-between"
-						sx={{ width: '100%', marginBottom: '2rem' }}
+						sx={{ width: '100%', marginTop: '2rem' }}
 					>
 						<Typography sx={{ fontSize: '1.8rem', fontWeight: 'bold' }}>
 							{each.name}
 						</Typography>
-						{each.source === 'Facebook' && (
-							<img
-								src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
-								alt="Facebook logo"
-								style={{ width: 'auto', height: '3rem' }}
-							/>
-						)}
-						{each.source === 'Ebay' && (
-							<img
-								src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png"
-								alt="Ebay logo"
-								style={{ width: 'auto', height: '2rem' }}
-							/>
-						)}
+						<Flex>{'⭐'.repeat(each.rating)}</Flex>
 					</Flex>
-					<Typography sx={{ fontSize: '1.6rem' }}>{each.content}</Typography>
 				</Flex>
 			</Paper>
 		)
 	}
 
 	return (
-		<Flex direction="column" align="center" sx={{ m: '3rem 0 9rem' }}>
-			<Fade>
-				<Title sx={{ m: '0 auto 5rem' }}>What our clients have to say</Title>
+		<Flex
+			direction="column"
+			style={{
+				width: '100%',
+				alignItems: 'center',
+			}}
+			sx={{
+				padding: { xs: '0 5%', sm: '0 15%' },
+				bgcolor: 'permanent.black2',
+				color: 'permanent.white1',
+			}}
+		>
+			<Flex direction="column" align="center" sx={{ m: '3rem 0 9rem' }}>
+				<Fade>
+					<Title sx={{ m: '0 auto 5rem' }}>What our clients have to say</Title>
 
-				<Flex
-					sx={{
-						flexDirection: { xs: 'column !important', sm: 'row !important' },
-						justifyContent: { sm: 'space-between !important' },
-						width: '100%',
-					}}
-				>
-					{allTestimonials.map((each) => {
-						return <TestimonialCard each={each} />
-					})}
-				</Flex>
-				<Button
-					component="a"
-					href="https://www.ebay.com/fdbk/feedback_profile/mic_turbo?filter=feedback_page:RECEIVED_AS_SELLER&_trksid=p2047675.l2560"
-					target="_blank"
-					variant="outlined"
-					color="primary"
-					sx={{
-						fontSize: { xs: '1.5rem', s: '1.7rem' },
-						mt: '6rem',
-						color: 'text.secondary',
-					}}
-				>
-					See our ebay reviews
-				</Button>
-			</Fade>
+					<Flex
+						sx={{
+							flexDirection: { xs: 'column !important', sm: 'row !important' },
+							justifyContent: { sm: 'space-between !important' },
+							width: '100%',
+						}}
+					>
+						{allTestimonials.map((each) => {
+							return <TestimonialCard each={each} />
+						})}
+					</Flex>
+					<LinkButton
+						sx={{
+							fontSize: { xs: '1.4rem', s: '1.7rem' },
+							alignSelf: { sm: 'start' },
+							mt: { xs: '0', sm: '5rem' },
+						}}
+						to="/membership"
+						size="large"
+					>
+						Become a member
+					</LinkButton>
+				</Fade>
+			</Flex>
 		</Flex>
 	)
 }

@@ -33,7 +33,7 @@ export const About = () => {
 					alignItems: { xs: 'center !important', sm: 'flex-start !important' },
 				}}
 			>
-				<Box
+				{/* <Box
 					sx={{
 						overflow: 'hidden',
 						mb: { xs: '4rem', sm: '0' },
@@ -46,31 +46,59 @@ export const About = () => {
 						alt="about"
 						style={{ marginBottom: '-150px' }}
 					/>
-				</Box>
+				</Box> */}
 				<Typography
 					variant="h6"
-					sx={{ width: { xs: '100%', sm: '50%' }, ml: { xs: '0', sm: '8rem' } }}
+					sx={{
+						width: { xs: '100%', sm: '100%' },
+						ml: { xs: '0', sm: '8rem' },
+					}}
 				>
-					Our company has been servicing Turbochargers and Diesel Fuel Injection
-					Parts for over 31 years. Established in 1968 with the name L& J
-					Diesel, we changed the name to Miami International Components, Inc in
-					1979 and in 2007 to the current name MIC Turbo and Injection. “MIC”
-					stands for our previous name Miami International Components. We
-					overhaul most turbochargers between $250.00 - $350.00 if your turbo
-					requires only a basic rebuild (bearings, seals, balancing, and
-					cleaning). In case your turbocharger requires extra parts, we will
-					give you a free quote. If you approve the quote, we will promptly
-					repair the turbocharger (1-3 Days in most cases). Once the repairs are
-					done we will require payment via any major credit card, PayPal, bank
-					transfer, or cash in person. If the quote is not approve by you, we
-					will ship your turbo back to you for the shipping cost only, or it can
-					pick it up at no charge. We also sell and repair diesel fuel pumps,
-					injectors (gas and diesel), supply pumps, and many more parts of the
-					diesel fuel system. Please contact us with any questions you may have
-					and one of our representatives will gladly assist you. Our company
-					stocks a high variety automotive, high performance, commercial, and
-					marine turbochargers, diesel fuel pumps, injectors, diesel fuel pump
-					parts, injector nozzles, and turbocharger parts.
+					Welcome to NowPallet, your trusted partner in the world of wholesale
+					distribution. Established in 2020, we embarked on a journey with a
+					singular vision: to redefine the wholesale purchasing experience.
+					Today, we stand proudly as a beacon of excellence in bulk orders,
+					dedicated to supporting local retailers and e-commerce sellers on
+					their path to growth and success.
+					<br />
+					<br />
+					Our mission is simple but profound: We aim to be the first choice for
+					businesses seeking quality and value in wholesale. We understand the
+					unique challenges that businesses face when sourcing products in bulk,
+					and we are committed to streamlining procurement with a vast range of
+					products, all tailored to your business needs.
+					<br />
+					<br />
+					What sets NowPallet apart? It's our unwavering commitment to quality
+					assurance, ensuring that every product you receive meets rigorous
+					standards. From Health & Beauty to Grocery items, our extensive
+					catalog caters to all your needs. But beyond the products, it's our
+					customer-centric approach that truly distinguishes us. We prioritize
+					your success, offering personalized solutions to foster lasting
+					partnerships.
+					<br />
+					<br />
+					Our services are designed to cater to a diverse range of businesses.
+					Whether you're a local retailer looking for flexible bulk order
+					options or an e-commerce seller in need of supply chain optimization,
+					we have tailored solutions to meet your specific needs.
+					<br />
+					<br />
+					With a vast distribution network spanning across Florida, Texas,
+					California, and Arizona, we strategically position ourselves for
+					optimal delivery. Timeliness is essential in the fast-paced world of
+					business, and we ensure your orders arrive when and where you need
+					them.
+					<br />
+					<br />
+					We invite you to join our wholesale network and experience the
+					NowPallet difference. Reach out to discuss solutions, request a quote,
+					or simply learn how we can contribute to your business's growth.
+					Partner with us, and let's build a successful future together.
+					<br />
+					<br />
+					Thank you for considering NowPallet as your wholesale partner. We look
+					forward to serving you with excellence in every order.
 				</Typography>
 			</Flex>
 		</Flex>

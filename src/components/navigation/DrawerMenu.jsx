@@ -1,13 +1,9 @@
 import { Drawer, List, ListItem, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router'
 
-import { useStore } from '../../context/storeCtx'
-import ThemeSwitch from '../inputs/ThemeSwitch'
-
 export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
-	const { lightThemeSelected, setLightThemeSelected } = useStore()
 	const history = useHistory()
 	return (
 		<Drawer
@@ -15,9 +11,9 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 			open={drawerOpen}
 			onClose={() => setDrawerOpen(false)}
 			PaperProps={{
-				style: { width: '35%', marginTop: '110px' },
+				style: { width: '35%', marginTop: '70px' },
 			}}
-			sx={{ marginTop: '110px', zIndex: '98' }}
+			sx={{ marginTop: '70px', zIndex: '98' }}
 		>
 			<Box
 				sx={{
@@ -33,11 +29,11 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
 						onClick={() => {
-							history.push('/store')
+							history.push('/catalog')
 							setDrawerOpen(false)
 						}}
 					>
-						<Typography sx={{ fontSize: '2rem' }}>Store</Typography>
+						<Typography sx={{ fontSize: '2rem' }}>Catalog</Typography>
 					</ListItem>
 					<ListItem
 						sx={{
@@ -66,33 +62,11 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 							':hover': { cursor: 'pointer', color: 'primary.main' },
 						}}
 						onClick={() => {
-							history.push('/guides')
+							history.push('/membership')
 							setDrawerOpen(false)
 						}}
 					>
-						<Typography sx={{ fontSize: '2rem' }}>Guides</Typography>
-					</ListItem>
-					<ListItem
-						sx={{
-							':hover': { cursor: 'pointer', color: 'primary.main' },
-						}}
-						onClick={() => {
-							history.push('/warranty')
-							setDrawerOpen(false)
-						}}
-					>
-						<Typography sx={{ fontSize: '2rem' }}>Warranty</Typography>
-					</ListItem>
-					<ListItem
-						sx={{
-							':hover': { cursor: 'pointer', color: 'primary.main' },
-						}}
-						onClick={() => {
-							history.push('/sponsorship')
-							setDrawerOpen(false)
-						}}
-					>
-						<Typography sx={{ fontSize: '2rem' }}>Sponsorship</Typography>
+						<Typography sx={{ fontSize: '2rem' }}>Membership</Typography>
 					</ListItem>
 					<ListItem
 						sx={{
@@ -105,17 +79,6 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 					>
 						<Typography sx={{ fontSize: '2rem' }}>FAQ</Typography>
 					</ListItem>
-					{/* <ListItem
-						sx={{
-							marginLeft: '-1rem',
-							':hover': { cursor: 'pointer', color: 'primary.main' },
-						}}
-						onClick={() => {
-							setLightThemeSelected((prev) => !prev)
-						}}
-					>
-						<ThemeSwitch checked={!lightThemeSelected} />
-					</ListItem> */}
 				</List>
 			</Box>
 		</Drawer>

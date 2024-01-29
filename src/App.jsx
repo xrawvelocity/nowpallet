@@ -5,30 +5,21 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { NavBar } from './components/navigation/NavBar'
-import { useStore } from './context/storeCtx'
 import { About } from './pages/about/About'
-import { Cart } from './pages/cart/Cart'
-import { Checkout } from './pages/checkout/Checkout'
-import { Contact } from './pages/contact/Contact'
+import { Contact } from './pages/home/@components/Contact'
 import { FAQ } from './pages/faq/FAQ'
-import { Guides } from './pages/guides/Guides'
 import { Footer } from './pages/footer/Footer'
 import Home from './pages/home/Home'
 import { ProductDetail } from './pages/productDetail/ProductDetail'
 import Store from './pages/store/Store'
-import { darkColoring, darkTheme } from './styles/darkTheme'
 import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
-import Warranty from './pages/warranty/Warranty'
-import Sponsorship from './pages/sponsorship/Sponsorship'
+import Membership from './pages/membership/Membership'
 
 export default function App() {
-	const { lightThemeSelected } = useStore()
 	return (
-		<ThemeProvider theme={lightThemeSelected ? theme : darkTheme}>
-			<GlobalStyles
-				styles={globalStyles(lightThemeSelected ? coloring : darkColoring)}
-			/>
+		<ThemeProvider theme={theme}>
+			<GlobalStyles styles={globalStyles(coloring)} />
 			<CssBaseline />
 			<Router>
 				<NavBar />
@@ -45,14 +36,8 @@ export default function App() {
 						<Route exact path={['', '/']}>
 							<Home />
 						</Route>
-						<Route path={['/store/:category', '/store']}>
+						<Route path={['/catalog/:category', '/catalog']}>
 							<Store />
-						</Route>
-						<Route path="/cart">
-							<Cart />
-						</Route>
-						<Route path="/checkout">
-							<Checkout />
 						</Route>
 						<Route path="/about">
 							<About />
@@ -60,17 +45,11 @@ export default function App() {
 						<Route path="/contact">
 							<Contact />
 						</Route>
+						<Route path="/membership">
+							<Membership />
+						</Route>
 						<Route path="/faq">
 							<FAQ />
-						</Route>
-						<Route path="/guides">
-							<Guides />
-						</Route>
-						<Route path="/warranty">
-							<Warranty />
-						</Route>
-						<Route path="/sponsorship">
-							<Sponsorship />
 						</Route>
 						<Route path="/product/:id">
 							<ProductDetail />

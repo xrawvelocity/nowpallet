@@ -1,10 +1,11 @@
 import { Box } from '@mui/system'
 import React, { useEffect } from 'react'
-import Companies from './@components/Companies'
 
 import { Hero } from './@components/Hero'
 import { TopCategories } from './@components/TopCategories'
 import { TopServices } from './@components/TopServices'
+import { Testimonials } from './@components/Testimonials'
+import { Contact } from './@components/Contact'
 
 export default function Home() {
 	useEffect(() => {
@@ -17,9 +18,10 @@ export default function Home() {
 	return (
 		<Box>
 			<Hero />
-			<Companies />
 			<TopServices />
 			<TopCategories />
+			<Testimonials />
+			<Contact />
 		</Box>
 	)
 }

@@ -1,11 +1,8 @@
-import { Button, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
-import { Link } from 'react-router-dom'
-
-import background from '../../../assets/images/turbowallpaper.png'
-import allturbos from '../../../assets/images/allturbos.jpg'
+import herovector from '../../../assets/images/hero-vector.svg'
 import { LinkButton } from '../../../components/buttons/LinkButton'
 import Flex from '../../../components/structure/Flex'
 
@@ -29,7 +26,7 @@ export const Hero = () => {
 					height: 'calc(100vh - 110px)',
 					width: '100%',
 					position: 'relative',
-					backgroundImage: `url(${allturbos})`,
+					backgroundImage: `url(${herovector})`,
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
@@ -65,7 +62,7 @@ export const Hero = () => {
 								lineHeight: { xs: '1.2' },
 							}}
 						>
-							Do you need to rebuild, overhaul, or upgrade a turbocharger?
+							Welcome to NowPallet
 						</Typography>
 						<Typography
 							sx={{
@@ -75,7 +72,7 @@ export const Hero = () => {
 								lineHeight: { sm: '1.7' },
 							}}
 						>
-							We've provided great service to our customers since 1968
+							Excellence in Bulk Orders Since 2020
 						</Typography>
 						<Box
 							sx={{
@@ -92,29 +89,30 @@ export const Hero = () => {
 									fontSize: { xs: '1.4rem', s: '1.7rem' },
 									alignSelf: { sm: 'start' },
 									mr: { xs: '0', sm: '1.5rem' },
+									mb: { xs: '2.5rem', sm: '0' },
 								}}
-								to="/store"
+								to="/membership"
 								size="large"
 							>
-								Shop Now
+								Become a member
 							</LinkButton>
-							<Button
-								component="a"
-								href="https://www.ebay.com/str/micturboandinjection"
-								target="_blank"
-								variant="outlined"
-								color="primary"
+							<LinkButton
 								sx={{
-									fontSize: { xs: '1.5rem', s: '1.7rem' },
+									fontSize: { xs: '1.4rem', s: '1.7rem' },
 									alignSelf: { sm: 'start' },
-									mt: { xs: '3rem', sm: '0' },
-									ml: { xs: '0', sm: '1.5rem' },
-									color: 'text.secondary',
+									mr: { xs: '0', sm: '1.5rem' },
+									backgroundColor: '#FFFFFF',
+									color: '#000000;',
+
+									'&:hover': {
+										backgroundColor: '#ddd',
+									},
 								}}
+								to="/catalog"
 								size="large"
 							>
-								Ebay Store
-							</Button>
+								View our Catalog
+							</LinkButton>
 						</Box>
 					</Flex>
 				</Box>

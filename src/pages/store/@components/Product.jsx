@@ -1,27 +1,17 @@
-import {
-	Button,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Paper,
-	Typography,
-} from '@mui/material'
+import { Paper, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { useHistory } from 'react-router'
-import { useStore } from '../../../context/storeCtx'
 import Flex from '../../../components/structure/Flex'
 
 export const Product = ({ product }) => {
-	const { addToCart } = useStore()
 	const history = useHistory()
 
 	console.log(product)
 
 	return (
 		<Paper
-			onClick={() => history.push(`/product/${product.id}`)}
+			onClick={() => history.push(`/product/${product.sku}`)}
 			sx={{
 				height: 'auto',
 				width: 'auto',
@@ -52,8 +42,8 @@ export const Product = ({ product }) => {
 					}}
 				>
 					<img
-						src={product.assets[0]?.url}
-						alt={product.name}
+						src={product.image}
+						alt={product.title}
 						style={{ height: '100%', width: '100%', objectFit: 'contain' }}
 					/>
 				</Box>
@@ -68,10 +58,10 @@ export const Product = ({ product }) => {
 					}}
 				>
 					<Typography variant="h6" sx={{ textAlign: 'left' }}>
-						{product.name}
+						{product.title}
 					</Typography>
 					<Typography variant="h6" sx={{ py: '2rem' }}>
-						{product.price.formatted_with_symbol}
+						${product.ourPrice.toFixed(2)}
 					</Typography>
 				</Flex>
 			</Flex>

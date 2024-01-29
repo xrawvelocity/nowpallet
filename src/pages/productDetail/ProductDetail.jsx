@@ -1,47 +1,16 @@
-import {
-	Alert,
-	Breadcrumbs,
-	Button,
-	CircularProgress,
-	IconButton,
-	Paper,
-	Snackbar,
-	Typography,
-} from '@mui/material'
+import { Breadcrumbs, CircularProgress, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import Flex from '../../components/structure/Flex'
-import { useStore } from '../../context/storeCtx'
-import RemoveIcon from '@mui/icons-material/Remove'
-import AddIcon from '@mui/icons-material/Add'
-import FavoriteIcon from '@mui/icons-material/Favorite'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
-import {
-	FacebookIcon,
-	FacebookShareButton,
-	WhatsappIcon,
-	WhatsappShareButton,
-} from 'react-share'
 import { Link } from 'react-router-dom'
+import { products } from '../../assets/data'
 
 export const ProductDetail = () => {
-	const { products, categories, addToCart } = useStore()
 	const { id } = useParams()
 
-	const product = products.filter((each) => each.id === id)[0]
-
-	const [qty, setQty] = useState(1)
-
-	const [successOpen, setSuccessOpen] = useState(false)
-
-	const handleClose = (event, reason) => {
-		if (reason === 'clickaway') {
-			return
-		}
-
-		setSuccessOpen(false)
-	}
+	const product = products.filter((each) => each.sku === id)[0]
 
 	useEffect(() => {
 		window.scroll({
@@ -50,14 +19,6 @@ export const ProductDetail = () => {
 			behavior: 'smooth',
 		})
 	}, [id])
-
-	let companyCategories = categories.filter(
-		(each) => each.description === 'company'
-	)
-
-	let productCategory = product.categories.filter(
-		(each) => !companyCategories.map((each) => each.name).includes(each.name)
-	)
 
 	return (
 		<Box sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '4rem' }}>
@@ -84,7 +45,7 @@ export const ProductDetail = () => {
 							Home
 						</Typography>
 					</Link>
-					<Link to="/store">
+					<Link to="/catalog">
 						<Typography
 							sx={{
 								color: 'text.main',
@@ -96,10 +57,10 @@ export const ProductDetail = () => {
 							}}
 							variant="body1"
 						>
-							Store
+							Catalog
 						</Typography>
 					</Link>
-					<Link to={`/store/${productCategory[0].slug}`}>
+					<Link to={`/catalog/${product.category}`}>
 						<Typography
 							sx={{
 								color: 'text.main',
@@ -111,13 +72,14 @@ export const ProductDetail = () => {
 							}}
 							variant="body1"
 						>
-							{productCategory[0].name}
+							{product.category.charAt(0).toUpperCase() +
+								product.category.slice(1)}
 						</Typography>
 					</Link>
 					<Typography color="text.main">
-						{product.name.length > 24
-							? `${product.name.slice(0, 24)}...`
-							: product.name}
+						{product.title.length > 24
+							? `${product.title.slice(0, 24)}...`
+							: product.title}
 					</Typography>
 				</Breadcrumbs>
 				<Box
@@ -151,8 +113,8 @@ export const ProductDetail = () => {
 								}}
 							>
 								<img
-									src={product.assets[0]?.url}
-									alt="product image"
+									src={product.image}
+									alt={product.title + ' image'}
 									style={{
 										height: '100%',
 										width: '100%',
@@ -175,7 +137,7 @@ export const ProductDetail = () => {
 										mb: '2rem',
 									}}
 								>
-									{product.name}
+									{product.title}
 								</Typography>
 								<Flex align="center" sx={{ mb: '2rem' }}>
 									<Typography
@@ -184,23 +146,8 @@ export const ProductDetail = () => {
 											fontWeight: '600',
 										}}
 									>
-										{product.price.formatted_with_symbol}
+										${product.ourPrice.toFixed(2)}
 									</Typography>
-									<Flex align="center" style={{ marginLeft: '4rem' }}>
-										<Typography>Share product to:</Typography>
-										<Flex style={{ margin: '.5rem 0 0 1rem' }}>
-											<FacebookShareButton
-												url={'micturbo.netlify.app'}
-												quote="Check this out"
-												style={{ marginRight: '1rem' }}
-											>
-												<FacebookIcon size={28} round />
-											</FacebookShareButton>
-											<WhatsappShareButton url={'micturbo.netlify.app'}>
-												<WhatsappIcon size={28} round />
-											</WhatsappShareButton>
-										</Flex>
-									</Flex>
 								</Flex>
 
 								<Typography
@@ -216,62 +163,7 @@ export const ProductDetail = () => {
 										__html: product.description,
 									}}
 								></Typography>
-								<Flex
-									width="100%"
-									align="flex-start"
-									sx={{
-										mt: '4rem',
-										justifyContent: 'flex-start !important',
-									}}
-								>
-									<Flex align="center" sx={{ mr: '4rem' }}>
-										<IconButton
-											sx={{ color: 'text.main' }}
-											size="small"
-											style={{ width: '3rem', height: '3rem' }}
-											disabled={qty < 2}
-											onClick={() => setQty((prev) => prev - 1)}
-										>
-											<RemoveIcon />
-										</IconButton>
-										<Typography style={{ margin: '0 1rem', fontSize: '2rem' }}>
-											{qty}
-										</Typography>
-										<IconButton
-											sx={{ color: 'text.main' }}
-											size="small"
-											style={{ width: '3rem', height: '3rem' }}
-											onClick={() => setQty((prev) => prev + 1)}
-										>
-											<AddIcon />
-										</IconButton>
-									</Flex>
-									<Button
-										color="primary"
-										variant="outlined"
-										sx={{ fontSize: '1.6rem' }}
-										onClick={() => {
-											addToCart(product.id, qty)
-											setSuccessOpen(true)
-										}}
-									>
-										Add To Cart
-									</Button>
-								</Flex>
 							</Flex>
-							<Snackbar
-								open={successOpen}
-								autoHideDuration={3000}
-								onClose={handleClose}
-							>
-								<Alert
-									onClose={handleClose}
-									severity="success"
-									sx={{ width: '100%' }}
-								>
-									Product added successfully
-								</Alert>
-							</Snackbar>
 						</Box>
 					) : (
 						<Flex justify="center">

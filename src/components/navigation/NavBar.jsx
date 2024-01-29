@@ -1,138 +1,27 @@
-import { ShoppingCartOutlined } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
-import FlightIcon from '@mui/icons-material/Flight'
-import EmailIcon from '@mui/icons-material/Email'
 import MenuIcon from '@mui/icons-material/Menu'
-import PhoneIcon from '@mui/icons-material/Phone'
 import SearchIcon from '@mui/icons-material/Search'
-import { IconButton, Slide, Typography, SwitchUnstyled } from '@mui/material'
+import { Slide, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
-import { useStore } from '../../context/storeCtx'
 import { DropDown } from '../inputs/DropDown'
 import Flex from '../structure/Flex'
 import { DrawerMenu } from './DrawerMenu'
 import { NavLink } from './NavLink'
 
-import logo from '../../assets/images/micturbologo.png'
-import newlogo from '../../assets/images/newlogo.png'
-import newlogo2 from '../../assets/images/newlogo2.png'
-import newlogoname from '../../assets/images/newlogoname.png'
+import Logo from '../logo/Logo'
+
+import { products } from '../../assets/data'
 
 export const NavBar = () => {
-	const { cart, products, lightThemeSelected, setLightThemeSelected } =
-		useStore()
 	const history = useHistory()
 	const [searchOpen, setSearchOpen] = useState(false)
 	const [drawerOpen, setDrawerOpen] = useState(false)
 
-	const handleOnClick = useCallback((text) => history.push(text), [history])
-
 	return (
 		<Flex direction="column">
-			<Box
-				sx={{
-					padding: { xs: '10px 5%', sm: '10px 15%' },
-					position: 'fixed',
-					width: '100%',
-					top: 0,
-					minHeight: '20px',
-					height: '40px',
-					zIndex: '101',
-					display: 'flex',
-					alignItems: 'center',
-					bgcolor: 'background.paper',
-					justifyContent: { xs: 'center', md: 'space-between' },
-				}}
-			>
-				<Box
-					style={{
-						display: 'flex',
-						height: '20px',
-						alignItems: 'center',
-					}}
-					sx={{
-						width: { xs: '100%', md: 'auto' },
-						justifyContent: { xs: 'space-between', md: 'flex-start' },
-					}}
-				>
-					<Flex
-						align="center"
-						sx={{
-							color: 'text.main',
-							':hover': {
-								color: 'primary.main',
-							},
-						}}
-						component={Link}
-						to="/contact"
-						style={{ marginRight: '2rem' }}
-					>
-						<PhoneIcon style={{ marginRight: '1rem' }} />
-						<Typography
-							variant="body1"
-							sx={{ fontSize: { xs: '1.6rem', md: '1.5rem' } }}
-						>
-							(305) 685-1061
-						</Typography>
-					</Flex>
-					<Flex
-						align="center"
-						sx={{
-							color: 'text.main',
-						}}
-						component="a"
-						href="mailto:manuel_mic@live.com"
-					>
-						<EmailIcon style={{ marginRight: '1rem' }} />
-						<Typography
-							variant="body1"
-							sx={{ fontSize: { xs: '1.6rem', md: '1.5rem' } }}
-						>
-							manuel_mic@live.com
-						</Typography>
-					</Flex>
-				</Box>
-				<Flex align="center">
-					<Box
-						style={{ alignItems: 'center' }}
-						sx={{
-							color: 'text.main',
-							':hover': {
-								cursor: 'pointer',
-								color: 'primary.main',
-							},
-							display: {
-								xs: 'none',
-								md: 'flex',
-							},
-						}}
-						onClick={() => handleOnClick('/cart')}
-					>
-						<IconButton
-							aria-label="Show cart items"
-							onClick={() => handleOnClick('/cart')}
-							style={{ marginLeft: '2rem', color: 'inherit' }}
-						>
-							<ShoppingCartOutlined />
-						</IconButton>
-						<Typography
-							style={{
-								fontSize: '1.5rem',
-								marginRight: '.5rem',
-								fontWeight: '700',
-							}}
-						>
-							Cart
-						</Typography>
-						<Typography style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-							{cart?.total_items}
-						</Typography>
-					</Box>
-				</Flex>
-			</Box>
 			<Flex
 				component="nav"
 				justify="space-between"
@@ -141,7 +30,7 @@ export const NavBar = () => {
 					padding: { xs: '20px 5%', sm: '20px 15%' },
 					position: 'fixed',
 					width: '100%',
-					top: '40px',
+					top: '0px',
 					maxHeight: '70px',
 					zIndex: '100',
 					borderTop: '2px solid #000',
@@ -183,39 +72,22 @@ export const NavBar = () => {
 							}}
 						/>
 					)}
-					<SearchIcon
-						onClick={() => setSearchOpen((prev) => !prev)}
-						fontSize="large"
-						sx={{
-							color: 'permanent.white1',
-							':hover': {
-								cursor: 'pointer',
-								color: 'primary.main',
-							},
-						}}
-					/>
 				</Box>
 				<Link to="/">
 					<Box
 						sx={{
-							height: { xs: '5rem', md: '5.4rem' },
-							width: { xs: '106px', md: 'auto' },
 							marginLeft: { xs: '-3rem', md: '0' },
 							// marginTop: '.5rem',
 						}}
 					>
-						<img
-							src={newlogo}
-							alt="logo"
-							style={{ height: '100%', width: '100%' }}
-						/>
+						<Logo />
 					</Box>
 				</Link>
 				<Flex align="center" justify="flex-end" style={{ width: 'auto' }}>
 					<Flex align="center" justify="space-between">
 						<NavLink
-							to="/store"
-							text="Store"
+							to="/catalog"
+							text="Catalog"
 							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
@@ -232,20 +104,8 @@ export const NavBar = () => {
 							style={{ marginRight: '2rem' }}
 						/>
 						<NavLink
-							to="/guides"
-							text="Guides"
-							sx={{ display: { xs: 'none', md: 'block' } }}
-							style={{ marginRight: '2rem' }}
-						/>
-						<NavLink
-							to="/warranty"
-							text="Warranty"
-							sx={{ display: { xs: 'none', md: 'block' } }}
-							style={{ marginRight: '2rem' }}
-						/>
-						<NavLink
-							to="/sponsorship"
-							text="Sponsorship"
+							to="/membership"
+							text="Membership"
 							sx={{ display: { xs: 'none', md: 'block' } }}
 							style={{ marginRight: '2rem' }}
 						/>
@@ -259,7 +119,7 @@ export const NavBar = () => {
 							fontSize="large"
 							sx={{
 								marginLeft: '4rem',
-								display: { xs: 'none', md: 'block' },
+								display: { xs: 'block', md: 'block' },
 								color: 'permanent.white1',
 								':hover': {
 									cursor: 'pointer',
@@ -268,31 +128,6 @@ export const NavBar = () => {
 							}}
 						/>
 					</Flex>
-					<Box
-						style={{ alignItems: 'center' }}
-						sx={{
-							color: 'permanent.white1',
-							':hover': {
-								color: 'primary.main',
-							},
-							display: {
-								xs: 'flex',
-								md: 'none',
-							},
-						}}
-						onClick={() => handleOnClick('/cart')}
-					>
-						<IconButton
-							aria-label="Show cart items"
-							onClick={() => handleOnClick('/cart')}
-							style={{ color: 'inherit' }}
-						>
-							<ShoppingCartOutlined fontSize="large" />
-						</IconButton>
-						<Typography style={{ fontSize: '2rem', fontWeight: '700' }}>
-							{cart?.total_items}
-						</Typography>
-					</Box>
 				</Flex>
 			</Flex>
 			<Slide in={searchOpen} direction="down">
@@ -300,7 +135,7 @@ export const NavBar = () => {
 					style={{
 						width: '100%',
 						position: 'fixed',
-						top: '110px',
+						top: '70px',
 						zIndex: '99',
 					}}
 				>
@@ -323,7 +158,7 @@ export const NavBar = () => {
 							width="100%"
 							placeholder="Search products..."
 							options={products}
-							filterBy={(each) => each.name}
+							filterBy={(each) => each.title}
 							renderOption={(option) => {
 								return (
 									<Flex justify="space-between" width="100%">
@@ -336,17 +171,17 @@ export const NavBar = () => {
 												textOverflow: 'ellipsis',
 											}}
 										>
-											{option.name}
+											{option.title}
 										</Typography>
 										<Typography variant="h6">
-											{option.price.formatted_with_symbol}
+											${option.ourPrice.toFixed(2)}
 										</Typography>
 									</Flex>
 								)
 							}}
 							onSelect={(option) => {
 								setSearchOpen(false)
-								history.push(`/product/${option.id}`)
+								history.push(`/product/${option.sku}`)
 							}}
 							closeOnClick
 						/>
