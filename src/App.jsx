@@ -15,6 +15,7 @@ import Store from './pages/store/Store'
 import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
 import Membership from './pages/membership/Membership'
+import Login from './pages/login/Login'
 
 export default function App() {
 	return (
@@ -50,6 +51,9 @@ export default function App() {
 						</Route>
 						<Route path="/faq">
 							<FAQ />
+						</Route>
+						<Route path="/login">
+							<Login />
 						</Route>
 						<Route path="/product/:id">
 							<ProductDetail />

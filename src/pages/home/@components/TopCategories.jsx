@@ -37,7 +37,7 @@ export const TopCategories = () => {
 							if (index < 6) {
 								return (
 									<CategoryCard
-										image={categories[each][3].image}
+										image={categories[each][7].image}
 										text={each}
 										path={`/catalog/${each}`}
 									/>

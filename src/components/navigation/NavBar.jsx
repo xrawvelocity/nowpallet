@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
+import PersonIcon from '@mui/icons-material/Person'
 import { Slide, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
@@ -76,8 +77,7 @@ export const NavBar = () => {
 				<Link to="/">
 					<Box
 						sx={{
-							marginLeft: { xs: '-3rem', md: '0' },
-							// marginTop: '.5rem',
+							marginLeft: { xs: '5rem', md: '0' },
 						}}
 					>
 						<Logo />
@@ -114,11 +114,25 @@ export const NavBar = () => {
 							text="FAQ"
 							sx={{ display: { xs: 'none', md: 'block' } }}
 						/>
+						<Link to="/login">
+							<PersonIcon
+								fontSize="large"
+								sx={{
+									marginLeft: { xs: '3rem' },
+									display: { xs: 'block', md: 'block' },
+									color: 'permanent.white1',
+									':hover': {
+										cursor: 'pointer',
+										color: 'primary.main',
+									},
+								}}
+							/>
+						</Link>
 						<SearchIcon
 							onClick={() => setSearchOpen((prev) => !prev)}
 							fontSize="large"
 							sx={{
-								marginLeft: '4rem',
+								marginLeft: { xs: '3rem' },
 								display: { xs: 'block', md: 'block' },
 								color: 'permanent.white1',
 								':hover': {

@@ -11,9 +11,16 @@ import {
 	Typography,
 	InputLabel,
 	FormControl,
+	FormControlLabel,
+	FormGroup,
+	Checkbox,
 } from '@mui/material'
+
 import ReactSignatureCanvas from 'react-signature-canvas'
+
 import { Title } from '../../components/typography/Title'
+import FileUpload from '../../components/inputs/FileUpload'
+import Flex from '../../components/structure/Flex'
 
 const validationSchema = Yup.object({
 	businessName: Yup.string().required('Required'),
@@ -27,18 +34,27 @@ const validationSchema = Yup.object({
 		.matches(/^[0-9]{10}$/, 'Must be exactly 10 digits')
 		.required('Required'),
 	emailAddress: Yup.string().email('Invalid email format').required('Required'),
+	name: Yup.string().required('Required'),
+	date: Yup.date().nullable().required('Date is required'),
 })
 
 const countryOptions = [
 	{ value: 'US', label: 'United States' },
 	{ value: 'CA', label: 'Canada' },
+	{ value: 'MX', label: 'Mexico' },
 ]
 
 const Membership = () => {
-	const [value, setValue] = useState('')
+	const [checked, setChecked] = useState(false)
 
-	const handleChange = (event) => {
-		setValue(event.target.value)
+	const handleCheck = () => {
+		setChecked(!checked)
+	}
+
+	const [country, setCountry] = useState('')
+
+	const handleCountry = (event) => {
+		setCountry(event.target.country)
 	}
 
 	const sigPad = useRef(null)
@@ -58,6 +74,8 @@ const Membership = () => {
 			country: '',
 			businessPhoneNumber: '',
 			emailAddress: '',
+			name: '',
+			date: '',
 		},
 		validationSchema,
 		onSubmit: (values) => {
@@ -82,7 +100,7 @@ const Membership = () => {
 			}}
 		>
 			<Title>Membership Application</Title>
-			<Box sx={{ width: { sm: '100%', md: '50%' } }}>
+			<Box sx={{ width: { xs: '100%', md: '50%' } }}>
 				<form onSubmit={formik.handleSubmit}>
 					<Grid container spacing={2}>
 						<Grid item xs={12} sm={6}>
@@ -171,8 +189,8 @@ const Membership = () => {
 								<Select
 									sx={{ width: '100%' }}
 									label="Country"
-									value={value}
-									onChange={handleChange}
+									value={country}
+									onChange={handleCountry}
 									{...formik.getFieldProps('country')}
 									error={
 										formik.touched.country && Boolean(formik.errors.country)
@@ -209,7 +227,7 @@ const Membership = () => {
 								}
 							/>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item xs={12} sm={6}>
 							<TextField
 								sx={{ width: '100%' }}
 								label="Email Address"
@@ -224,6 +242,17 @@ const Membership = () => {
 							/>
 						</Grid>
 
+						<Grid item xs={12}>
+							<Flex direction="column" sx={{ pb: '2rem' }}>
+								<Typography variant="h6">
+									Attach copies of the following:
+								</Typography>
+								<Typography>- Driver's License</Typography>
+								<Typography>- Resale Certificate</Typography>
+							</Flex>
+							<FileUpload />
+						</Grid>
+
 						<Grid
 							item
 							xs={12}
@@ -231,6 +260,7 @@ const Membership = () => {
 								display: 'flex',
 								flexDirection: 'column',
 								position: 'relative',
+								mt: '1.5rem',
 							}}
 						>
 							<Box sx={{ border: '1px solid black', borderRadius: '10px' }}>
@@ -257,7 +287,50 @@ const Membership = () => {
 								Clear
 							</Button>
 						</Grid>
+						<Grid item xs={12} sm={6}>
+							<TextField
+								sx={{ width: '100%' }}
+								label="Name"
+								{...formik.getFieldProps('name')}
+								error={formik.touched.name && Boolean(formik.errors.name)}
+								helperText={formik.touched.name && formik.errors.name}
+							/>
+						</Grid>
+						<Grid item xs={12} sm={6}>
+							<TextField
+								label="Date"
+								type="date"
+								variant="outlined"
+								fullWidth
+								InputLabelProps={{ shrink: true }}
+								{...formik.getFieldProps('dateOfBirth')}
+								error={formik.touched.name && Boolean(formik.errors.name)}
+								helperText={formik.touched.name && formik.errors.name}
+							/>
+						</Grid>
 						<Grid item xs={12}>
+							<FormGroup>
+								<FormControlLabel
+									control={
+										<Checkbox checked={checked} onChange={handleCheck} />
+									}
+									label={
+										<Typography variant="body1">
+											By signing and submitting this customer application, I
+											acknowledge and agree that I am entering into a legally
+											binding agreement with NowPallet. I fully comprehend and
+											consent to the{' '}
+											<a style={{ color: 'blue' }} href="/terms-and-conditions">
+												terms and conditions
+											</a>
+											, which govern my customer application with NowPallet.
+										</Typography>
+									}
+								/>
+							</FormGroup>
+						</Grid>
+						<Typography></Typography>
+						<Grid item xs={12} sx={{ my: 3 }}>
 							<Button variant="contained" type="submit">
 								Submit
 							</Button>

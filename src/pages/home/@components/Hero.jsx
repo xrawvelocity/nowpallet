@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
-import herovector from '../../../assets/images/hero-vector.svg'
+import herobg from '../../../assets/images/herobg.png'
 import { LinkButton } from '../../../components/buttons/LinkButton'
 import Flex from '../../../components/structure/Flex'
 
@@ -26,7 +26,7 @@ export const Hero = () => {
 					height: 'calc(100vh - 110px)',
 					width: '100%',
 					position: 'relative',
-					backgroundImage: `url(${herovector})`,
+					backgroundImage: `url(${herobg})`,
 					backgroundRepeat: 'no-repeat',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',

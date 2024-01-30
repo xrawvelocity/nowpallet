@@ -34,7 +34,7 @@ export const Contact = () => {
 		<Flex
 			direction="column"
 			align="center"
-			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '4rem' }}
+			sx={{ '& > *': { padding: { xs: '0 5%', sm: '0 15%' } }, py: '6rem' }}
 		>
 			<Flex direction="column" align="center">
 				<Title>Contact Us</Title>

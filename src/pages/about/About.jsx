@@ -1,10 +1,11 @@
-import { Typography } from '@mui/material'
-import { Box } from '@mui/system'
+import { Box, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 
-import aboutPicture from '../../assets/images/aboutPicture.webp'
 import Flex from '../../components/structure/Flex'
 import { Title } from '../../components/typography/Title'
+
+import about1 from '../../assets/images/about1.png'
+import about2 from '../../assets/images/about2.png'
 
 export const About = () => {
 	useEffect(() => {
@@ -25,6 +26,46 @@ export const About = () => {
 			}}
 		>
 			<Title style={{ textAlign: 'center', width: '100%' }}>About Us</Title>
+			<Flex justify="center" sx={{ width: '100%' }}>
+				<Box
+					sx={{
+						width: { xs: '100%', md: '40%' },
+						height: '320px',
+						overflow: 'hidden',
+						mb: '4rem',
+					}}
+				>
+					<img
+						src={about1}
+						alt="About Us"
+						style={{
+							height: '100%',
+							width: '100%',
+							objectFit: 'contain',
+							overflow: 'hidden',
+						}}
+					/>
+				</Box>
+				<Box
+					sx={{
+						width: { xs: '100%', md: '40%' },
+						height: '320px',
+						overflow: 'hidden',
+						mb: '4rem',
+					}}
+				>
+					<img
+						src={about2}
+						alt="About Us"
+						style={{
+							height: '100%',
+							width: '100%',
+							objectFit: 'contain',
+							overflow: 'hidden',
+						}}
+					/>
+				</Box>
+			</Flex>
 			<Flex
 				sx={{
 					width: '100%',
@@ -33,20 +74,6 @@ export const About = () => {
 					alignItems: { xs: 'center !important', sm: 'flex-start !important' },
 				}}
 			>
-				{/* <Box
-					sx={{
-						overflow: 'hidden',
-						mb: { xs: '4rem', sm: '0' },
-						mt: { sm: '.5rem' },
-						width: { xs: '100%', sm: '50%' },
-					}}
-				>
-					<img
-						src={aboutPicture}
-						alt="about"
-						style={{ marginBottom: '-150px' }}
-					/>
-				</Box> */}
 				<Typography
 					variant="h6"
 					sx={{
@@ -85,10 +112,10 @@ export const About = () => {
 					<br />
 					<br />
 					With a vast distribution network spanning across Florida, Texas,
-					California, and Arizona, we strategically position ourselves for
-					optimal delivery. Timeliness is essential in the fast-paced world of
-					business, and we ensure your orders arrive when and where you need
-					them.
+					California, Washington, and New Jersey, we strategically position
+					ourselves for optimal delivery. Timeliness is essential in the
+					fast-paced world of business, and we ensure your orders arrive when
+					and where you need them.
 					<br />
 					<br />
 					We invite you to join our wholesale network and experience the

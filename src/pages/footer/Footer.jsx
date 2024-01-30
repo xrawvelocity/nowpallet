@@ -53,7 +53,7 @@ export const Footer = () => {
 				align="flex-end"
 				sx={{ width: { xs: '45%', md: '30%' } }}
 			>
-				<Typography sx={{ color: 'permanent.gray1', mt: '2rem' }}>
+				<Typography sx={{ color: 'permanent.gray1' }}>
 					© {new Date().getFullYear()} Now Pallet
 				</Typography>
 				<Typography sx={{ color: 'permanent.gray1', whiteSpace: 'nowrap' }}>

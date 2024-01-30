@@ -7,7 +7,7 @@ export const Title = ({ children, sx, ...props }) => {
 			sx={{
 				textTransform: 'uppercase',
 				mb: '3rem',
-				fontSize: { xs: '2rem', md: '2.4rem' },
+				fontSize: { xs: '2rem', sm: '3rem' },
 				textAlign: 'center',
 				fontWeight: '600',
 				...sx,

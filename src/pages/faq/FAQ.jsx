@@ -40,7 +40,7 @@ export const FAQ = () => {
 			{
 				title: 'Where are your distribution centers located?',
 				content:
-					'We have a vast distribution network across Florida, Texas, California, and Arizona. These strategic locations allow us to provide optimal delivery services to our customers.',
+					'We have a vast distribution network across Florida, Texas, California, Washington, and New Jersey. These strategic locations allow us to provide optimal delivery services to our customers.',
 			},
 		],
 	}

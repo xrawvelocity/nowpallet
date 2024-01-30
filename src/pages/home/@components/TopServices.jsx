@@ -6,6 +6,9 @@ import Flex from '../../../components/structure/Flex'
 import { Title } from '../../../components/typography/Title'
 
 import herovector from '../../../assets/images/hero-vector.svg'
+import distributionChain from '../../../assets/images/distribution-chain.png'
+import ecomsol from '../../../assets/images/ecomsol.png'
+
 import { Box } from '@mui/system'
 import { Link } from 'react-router-dom'
 import { LinkButton } from '../../../components/buttons/LinkButton'
@@ -19,7 +22,7 @@ export const TopServices = () => {
 				alignItems: 'center',
 			}}
 			sx={{
-				padding: { xs: '0 5%', sm: '0 15%' },
+				padding: { xs: '0 5%', sm: '0 15% 2rem' },
 				bgcolor: 'permanent.black2',
 				color: 'permanent.white1',
 			}}
@@ -44,17 +47,16 @@ export const TopServices = () => {
 						sx={{
 							width: { xs: '100%', sm: '45%' },
 							height: '320px',
-							borderRadius: '20px',
 							overflow: 'hidden',
 						}}
 					>
 						<img
 							src={herovector}
-							alt="all products"
+							alt="Pallet Orders for Local Retailers"
 							style={{
 								height: '100%',
 								width: '100%',
-								objectFit: 'cover',
+								objectFit: 'contain',
 								overflow: 'hidden',
 							}}
 						/>
@@ -145,7 +147,7 @@ export const TopServices = () => {
 						</Typography>
 						<LinkButton
 							component={Link}
-							to="/store/turbochargers"
+							to="/catalog"
 							variant="contained"
 							color="primary"
 							sx={{
@@ -166,8 +168,8 @@ export const TopServices = () => {
 						}}
 					>
 						<img
-							src={herovector}
-							alt="all products"
+							src={ecomsol}
+							alt="E-Commerce Solutions"
 							style={{
 								height: '100%',
 								width: '100%',
@@ -198,17 +200,16 @@ export const TopServices = () => {
 						sx={{
 							width: { xs: '100%', sm: '45%' },
 							height: '320px',
-							borderRadius: '20px',
 							overflow: 'hidden',
 						}}
 					>
 						<img
-							src={herovector}
+							src={distributionChain}
 							alt="all products"
 							style={{
 								height: '100%',
 								width: '100%',
-								objectFit: 'cover',
+								objectFit: 'contain',
 								overflow: 'hidden',
 							}}
 						/>
@@ -235,10 +236,10 @@ export const TopServices = () => {
 							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
 						>
 							With a vast distribution chain spanning across Florida, Texas,
-							California, and Arizona, ByThePallet ensures efficient and timely
-							delivery of your wholesale orders. Our strategic presence in these
-							key regions allows us to serve businesses with speed and
-							reliability.
+							California, Washington, and New Jersey, NowPallet ensures
+							efficient and timely delivery of your wholesale orders. Our
+							strategic presence in these key regions allows us to serve
+							businesses with speed and reliability.
 						</Typography>
 						<LinkButton
 							component={Link}

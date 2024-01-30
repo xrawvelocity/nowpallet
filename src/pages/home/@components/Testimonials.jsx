@@ -74,9 +74,9 @@ export const Testimonials = () => {
 				color: 'permanent.white1',
 			}}
 		>
-			<Flex direction="column" align="center" sx={{ m: '3rem 0 9rem' }}>
+			<Flex direction="column" align="center" sx={{ m: '6rem 0 9rem' }}>
 				<Fade>
-					<Title sx={{ m: '0 auto 5rem' }}>What our clients have to say</Title>
+					<Title sx={{ m: '0 auto 5rem' }}>What our members have to say</Title>
 
 					<Flex
 						sx={{
