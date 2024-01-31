@@ -16,6 +16,8 @@ import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
 import Membership from './pages/membership/Membership'
 import Login from './pages/login/Login'
+import { Privacy } from './pages/privacy/Privacy'
+import { Terms } from './pages/terms/Terms'
 
 export default function App() {
 	return (
@@ -51,6 +53,12 @@ export default function App() {
 						</Route>
 						<Route path="/faq">
 							<FAQ />
+						</Route>
+						<Route path="/privacy-policy">
+							<Privacy />
+						</Route>
+						<Route path="/terms-and-conditions">
+							<Terms />
 						</Route>
 						<Route path="/login">
 							<Login />

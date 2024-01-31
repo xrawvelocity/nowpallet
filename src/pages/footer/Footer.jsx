@@ -1,11 +1,9 @@
-import { Typography } from '@mui/material'
+import { Typography, Link } from '@mui/material'
 import React from 'react'
-
-import nowpalletlogo from '../../assets/images/nowpalletlogo.png'
-import creditCards from '../../assets/images/creditCards.png'
 import Flex from '../../components/structure/Flex'
 import { Box } from '@mui/system'
 import Logo from '../../components/logo/Logo'
+import { Link as RouterLink } from 'react-router-dom'
 
 export const Footer = () => {
 	return (
@@ -53,6 +51,21 @@ export const Footer = () => {
 				align="flex-end"
 				sx={{ width: { xs: '45%', md: '30%' } }}
 			>
+				<Link
+					component={RouterLink}
+					to="/privacy-policy"
+					sx={{ color: 'permanent.blue' }}
+				>
+					Privacy Policy
+				</Link>
+				<Link
+					component={RouterLink}
+					to="/terms-and-conditions"
+					sx={{ color: 'permanent.blue' }}
+				>
+					Terms and Conditions
+				</Link>
+				{/* Add more links as needed */}
 				<Typography sx={{ color: 'permanent.gray1' }}>
 					© {new Date().getFullYear()} Now Pallet
 				</Typography>
