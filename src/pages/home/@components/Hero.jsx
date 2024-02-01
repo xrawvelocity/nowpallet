@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
-import herobg from '../../../assets/images/herobg.png'
+import herobg from '../../../assets/images/herobg.jpg'
 import { LinkButton } from '../../../components/buttons/LinkButton'
 import Flex from '../../../components/structure/Flex'
 
@@ -72,7 +72,9 @@ export const Hero = () => {
 								lineHeight: { sm: '1.7' },
 							}}
 						>
-							Excellence in Bulk Orders Since 2020
+							Your trusted partner in wholesale distribution since 2020. We take
+							pride in offering high-quality products and excellent service to
+							local retailers and e-commerce sellers.
 						</Typography>
 						<Box
 							sx={{

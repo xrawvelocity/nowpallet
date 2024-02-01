@@ -14,15 +14,15 @@ export default function Flex({
 }) {
 	return (
 		<Box
-			style={{
+			sx={{
 				display: 'flex',
 				flexDirection: direction,
 				justifyContent: justify,
 				alignItems: align,
 				flexWrap: wrap,
 				...style,
+				...sx,
 			}}
-			sx={sx}
 			{...props}
 		>
 			{children}

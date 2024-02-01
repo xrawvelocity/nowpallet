@@ -13,7 +13,7 @@ export const Product = ({ product }) => {
 		<Paper
 			onClick={() => history.push(`/product/${product.sku}`)}
 			sx={{
-				height: 'auto',
+				height: '350px',
 				width: 'auto',
 				borderRadius: '10px',
 				overflow: 'hidden',
@@ -58,10 +58,9 @@ export const Product = ({ product }) => {
 					}}
 				>
 					<Typography variant="h6" sx={{ textAlign: 'left' }}>
-						{product.title}
-					</Typography>
-					<Typography variant="h6" sx={{ py: '2rem' }}>
-						${product.ourPrice.toFixed(2)}
+						{product.title.length > 48
+							? `${product.title.slice(0, 48)}...`
+							: product.title}
 					</Typography>
 				</Flex>
 			</Flex>

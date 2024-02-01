@@ -51,7 +51,7 @@ const countryOptions = [
 
 const Membership = () => {
 	const [checked, setChecked] = useState(false)
-	const [submitted, setSubmitted] = useState(true)
+	const [submitted, setSubmitted] = useState(false)
 
 	const handleCheck = () => {
 		setChecked(!checked)
