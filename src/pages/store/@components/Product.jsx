@@ -20,6 +20,11 @@ export const Product = ({ product }) => {
 				padding: '1rem 3rem',
 				cursor: 'pointer',
 				color: 'text.main',
+				transition: 'all 0.2s ease-in-out',
+
+				'&:hover': {
+					transform: 'scale3d(1.05, 1.05, 1)',
+				},
 			}}
 			elevation={4}
 		>

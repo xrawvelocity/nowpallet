@@ -48,7 +48,11 @@ export const Contact = () => {
 				>
 					Discover the benefits of partnering with us. Contact our dedicated
 					team to discuss your wholesale needs, request a quote, or explore how
-					we can support your business.
+					we can support your business. You can write to us at{' '}
+					<a href="mailto:sales@nowpallet.com" target="_blank">
+						sales@nowpallet.com
+					</a>{' '}
+					or you can fill out the form below.
 				</Typography>
 			</Flex>
 			<Flex
