@@ -155,7 +155,7 @@ const Footer = () => {
 						<br />
 						200 Syracuse Ct Lakewood, NJ 08701
 						<br />
-						1919 golden heights rd ste 221 Fort Worth, TX 6177
+						1919 golden heights rd ste 221 Fort Worth, TX 76177
 						<br />
 						13230 SW 132nd Ave Miami, FL 33186
 					</Typography>
