@@ -7,8 +7,6 @@ import Flex from '../../../components/structure/Flex'
 export const Product = ({ product }) => {
 	const history = useHistory()
 
-	console.log(product)
-
 	return (
 		<Paper
 			onClick={() => history.push(`/product/${product.sku}`)}

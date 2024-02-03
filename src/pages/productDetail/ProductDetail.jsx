@@ -7,9 +7,12 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import { Link } from 'react-router-dom'
 import { products } from '../../assets/data'
 import { Product } from '../store/@components/Product'
+import { useAuth } from '../../context/authCtx'
 
 export const ProductDetail = () => {
 	const { id } = useParams()
+	const { currentUser } = useAuth()
+	console.log('currentUser', currentUser)
 
 	const product = products.filter((each) => each.sku === id)[0]
 
@@ -28,7 +31,7 @@ export const ProductDetail = () => {
 		(each) => each.category === product.category && each.sku !== product.sku
 	)
 
-	const randomElements = getRandomElements(relatedProducts, 5)
+	const randomElements = getRandomElements(relatedProducts, 4)
 
 	useEffect(() => {
 		window.scroll({
@@ -207,9 +210,9 @@ export const ProductDetail = () => {
 								Related Products
 							</Typography>
 							<Grid container spacing={3}>
-								{randomElements.map((product) => {
+								{randomElements.map((product, i) => {
 									return (
-										<Grid item xs={12} md={2.3} align="center">
+										<Grid key={i} item xs={12} md={3} align="center">
 											<Product product={product} />
 										</Grid>
 									)

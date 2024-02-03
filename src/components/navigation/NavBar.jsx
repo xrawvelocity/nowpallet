@@ -32,7 +32,7 @@ export const NavBar = () => {
 					position: 'fixed',
 					width: '100%',
 					top: '0px',
-					maxHeight: '70px',
+					maxHeight: '100px',
 					zIndex: '100',
 					borderTop: '2px solid #000',
 					borderBottom: '2px solid #000',

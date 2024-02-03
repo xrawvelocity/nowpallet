@@ -1,25 +1,18 @@
-import { Typography } from '@mui/material'
 import React from 'react'
+import logo from '../../assets/images/np-logo-dark.png'
+import text from '../../assets/images/np-text-dark.png'
+import Flex from '../structure/Flex'
 
 const Logo = () => {
 	return (
-		<Typography
-			sx={{
-				'&:visited, &:hover, &:active, &': {
-					color: 'primary.main',
-					fontFamily: "'Raleway', sans-serif",
-					fontWeight: '900',
-					fontSize: '2.6rem',
-					fontStyle: 'italic',
-					textAlign: 'center',
-					lineHeight: '0.9',
-				},
-			}}
-		>
-			NOW
-			<br />
-			PALLET
-		</Typography>
+		<Flex align="center">
+			<img
+				style={{ height: '100px', width: '100px', marginRight: '10px' }}
+				src={logo}
+				alt="logo"
+			/>
+			<img style={{ height: '100px', width: 'auto' }} src={text} alt="text" />
+		</Flex>
 	)
 }
 export default Logo

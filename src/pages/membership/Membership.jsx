@@ -91,8 +91,8 @@ const Membership = () => {
 			// Get the data URL of the image
 			let dataURL = canvas.toDataURL()
 			// Store or use the data URL as needed
-			console.log(dataURL)
-			console.log(values)
+			// console.log(dataURL)
+			// console.log(values)
 			setSubmitted(true)
 		},
 	})

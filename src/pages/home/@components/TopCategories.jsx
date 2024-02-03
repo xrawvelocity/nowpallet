@@ -9,8 +9,6 @@ import { Title } from '../../../components/typography/Title'
 import categories from '../../../assets/data'
 
 export const TopCategories = () => {
-	console.log('categories', categories)
-
 	return (
 		<Flex
 			direction="column"

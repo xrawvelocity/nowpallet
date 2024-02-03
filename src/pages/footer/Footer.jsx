@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { Typography, Link, Box } from '@mui/material'
 import Flex from '../../components/structure/Flex'
-import Logo from '../../components/logo/Logo'
+import logo from '../../assets/images/np-logo-vert-dark.png'
 
 const Footer = () => {
 	return (
@@ -30,14 +30,13 @@ const Footer = () => {
 				<Flex direction="column" align="center">
 					<Box
 						sx={{
-							height: { xs: '4rem', md: '6rem' },
 							width: { xs: '100%', md: '20%' },
 							display: 'flex',
 							justifyContent: 'center',
-							mb: { xs: '2rem', md: '0' },
+							mb: { xs: '2rem', md: '1rem' },
 						}}
 					>
-						<Logo />
+						<img style={{ height: '100px' }} src={logo} alt="logo" />
 					</Box>
 					<Typography sx={{ color: 'permanent.gray1' }}>
 						© {new Date().getFullYear()} Now Pallet
