@@ -191,7 +191,7 @@ export const TopServices = () => {
 							sm: 'space-between !important',
 						},
 						flexDirection: {
-							xs: 'column-reverse !important',
+							xs: 'column !important',
 							sm: 'row !important',
 						},
 					}}

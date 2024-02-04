@@ -5,13 +5,13 @@ import Flex from '../structure/Flex'
 
 const Logo = () => {
 	return (
-		<Flex align="center">
+		<Flex sx={{ height: { xs: '60px', md: '100px' } }} align="center">
 			<img
-				style={{ height: '100px', width: '100px', marginRight: '10px' }}
+				style={{ height: '100%', width: '100%', marginRight: '10px' }}
 				src={logo}
 				alt="logo"
 			/>
-			<img style={{ height: '100px', width: 'auto' }} src={text} alt="text" />
+			<img style={{ height: '100%', width: 'auto' }} src={text} alt="text" />
 		</Flex>
 	)
 }
