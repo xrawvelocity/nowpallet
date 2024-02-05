@@ -18,6 +18,7 @@ import Membership from './pages/membership/Membership'
 import LoginPage from './pages/login/Login'
 import { Privacy } from './pages/privacy/Privacy'
 import { Terms } from './pages/terms/Terms'
+import ScrollToTop from './components/wrappers/ScrollToTop'
 
 export default function App() {
 	return (
@@ -25,6 +26,7 @@ export default function App() {
 			<GlobalStyles styles={globalStyles(coloring)} />
 			<CssBaseline />
 			<Router>
+				<ScrollToTop />
 				<NavBar />
 				<Switch>
 					<Box
