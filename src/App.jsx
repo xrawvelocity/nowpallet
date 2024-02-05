@@ -15,7 +15,7 @@ import Store from './pages/store/Store'
 import globalStyles from './styles/global'
 import { coloring, theme } from './styles/theme'
 import Membership from './pages/membership/Membership'
-import Login from './pages/login/Login'
+import LoginPage from './pages/login/Login'
 import { Privacy } from './pages/privacy/Privacy'
 import { Terms } from './pages/terms/Terms'
 
@@ -61,7 +61,7 @@ export default function App() {
 							<Terms />
 						</Route>
 						<Route path="/login">
-							<Login />
+							<LoginPage />
 						</Route>
 						<Route path="/product/:id">
 							<ProductDetail />

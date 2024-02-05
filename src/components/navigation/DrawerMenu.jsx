@@ -11,9 +11,9 @@ export const DrawerMenu = ({ drawerOpen, setDrawerOpen }) => {
 			open={drawerOpen}
 			onClose={() => setDrawerOpen(false)}
 			PaperProps={{
-				style: { width: '35%', marginTop: '70px' },
+				style: { width: '35%', marginTop: '100px' },
 			}}
-			sx={{ marginTop: '70px', zIndex: '98' }}
+			sx={{ marginTop: '100px', zIndex: '98' }}
 		>
 			<Box
 				sx={{

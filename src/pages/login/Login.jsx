@@ -14,7 +14,7 @@ import { useAuth } from '../../context/authCtx'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom'
 import { Title } from '../../components/typography/Title'
 
-const Login = () => {
+const LoginPage = () => {
 	const { signIn, resetPassword } = useAuth()
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -128,4 +128,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default LoginPage

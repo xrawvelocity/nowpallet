@@ -149,7 +149,7 @@ export const NavBar = () => {
 					style={{
 						width: '100%',
 						position: 'fixed',
-						top: '70px',
+						top: { xs: '100px', md: '70px' },
 						zIndex: '99',
 					}}
 				>
@@ -158,7 +158,7 @@ export const NavBar = () => {
 							display: 'flex',
 							alignItems: 'center',
 							padding: '1.5rem 2rem',
-							maxHeight: '70px',
+							maxHeight: { xs: '100px', md: '70px' },
 						}}
 						sx={{
 							bgcolor: 'permanent.black2',

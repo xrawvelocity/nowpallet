@@ -37,10 +37,10 @@ const globalStyles = (coloring) => {
 		body: {
 			fontFamily: "'Noto Sans Georgia', sans-serif",
 			webkitFontSmoothing: 'antialiased',
-			height: 'calc(100vh - 70px)',
+			height: 'calc(100vh - 100px)',
 			position: 'absolute',
 			left: 0,
-			top: '70px',
+			top: '100px',
 			width: '100vw',
 			padding: '0 !important',
 		},

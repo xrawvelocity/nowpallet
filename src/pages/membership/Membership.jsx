@@ -105,6 +105,7 @@ const Membership = () => {
 				flexDirection: 'column',
 				width: '100%',
 				alignItems: 'center',
+				px: { xs: '5%', md: '0' },
 			}}
 		>
 			<Title>Membership Application</Title>
