@@ -11,7 +11,7 @@ export const Product = ({ product }) => {
 		<Paper
 			onClick={() => history.push(`/product/${product.sku}`)}
 			sx={{
-				height: '350px',
+				height: { xs: '130px', md: '350px' },
 				width: 'auto',
 				borderRadius: '10px',
 				overflow: 'hidden',
