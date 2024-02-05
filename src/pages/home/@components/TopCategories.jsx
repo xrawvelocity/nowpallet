@@ -62,7 +62,6 @@ export const TopCategories = () => {
 			<LinkButton
 				sx={{
 					fontSize: { xs: '1.4rem', s: '1.7rem' },
-					mt: { xs: '0', md: '5rem' },
 				}}
 				to="/catalog"
 				size="large"
