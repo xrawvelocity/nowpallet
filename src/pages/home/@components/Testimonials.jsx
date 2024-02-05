@@ -74,7 +74,7 @@ export const Testimonials = () => {
 				color: 'permanent.white1',
 			}}
 		>
-			<Flex direction="column" align="center" sx={{ m: '6rem 0 9rem' }}>
+			<Flex direction="column" align="center" sx={{ m: '6rem 0' }}>
 				<Fade>
 					<Title sx={{ m: '0 auto 5rem' }}>What our members have to say</Title>
 
@@ -93,7 +93,7 @@ export const Testimonials = () => {
 						sx={{
 							fontSize: { xs: '1.4rem', s: '1.7rem' },
 							alignSelf: { sm: 'start' },
-							mt: { xs: '0', sm: '5rem' },
+							mt: '5rem',
 						}}
 						to="/membership"
 						size="large"

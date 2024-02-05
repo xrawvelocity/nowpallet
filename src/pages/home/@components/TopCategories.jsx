@@ -7,6 +7,7 @@ import CategoryCard from '../../../components/cards/CategoryCard'
 import Flex from '../../../components/structure/Flex'
 import { Title } from '../../../components/typography/Title'
 import categories from '../../../assets/data'
+import { LinkButton } from '../../../components/buttons/LinkButton'
 
 export const TopCategories = () => {
 	return (
@@ -16,7 +17,7 @@ export const TopCategories = () => {
 			sx={{ padding: { xs: '0 5% 5rem', sm: '0 15% 5rem' } }}
 		>
 			<Fade>
-				<Title sx={{ m: '6rem auto 5rem' }}>Top Categories</Title>
+				<Title sx={{ m: '6rem auto 5rem' }}>Our Categories</Title>
 			</Fade>
 			<Flex
 				direction="column"
@@ -45,7 +46,7 @@ export const TopCategories = () => {
 					</Grid>
 				</Fade>
 			</Flex>
-			<Button
+			{/* <Button
 				component={Link}
 				to="/catalog"
 				variant="outlined"
@@ -57,7 +58,17 @@ export const TopCategories = () => {
 				}}
 			>
 				See all categories
-			</Button>
+			</Button> */}
+			<LinkButton
+				sx={{
+					fontSize: { xs: '1.4rem', s: '1.7rem' },
+					mt: { xs: '0', md: '5rem' },
+				}}
+				to="/catalog"
+				size="large"
+			>
+				View Our Catalog
+			</LinkButton>
 		</Flex>
 	)
 }

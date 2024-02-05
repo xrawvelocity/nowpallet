@@ -9,7 +9,7 @@ const Footer = () => {
 		<Flex
 			component="footer"
 			direction={{ xs: 'column', md: 'row' }}
-			justify="space-between"
+			justify={{ xs: 'center', md: 'space-between' }}
 			align="center"
 			sx={{
 				bgcolor: 'permanent.black2',
@@ -24,7 +24,8 @@ const Footer = () => {
 			{/* Logo */}
 			<Flex
 				direction="column"
-				align="flex-start"
+				align={{ xs: 'center', md: 'flex-start' }}
+				justify={{ xs: 'center', md: 'flex-start' }}
 				sx={{ width: { xs: '100%', md: '20%' } }}
 			>
 				<Flex direction="column" align="center">
@@ -65,14 +66,29 @@ const Footer = () => {
 				direction={{ xs: 'column', md: 'row' }}
 				align="center"
 				justify="space-around"
-				sx={{ width: { xs: '100%', md: '80%' }, mb: { xs: '2rem', md: '0' } }}
+				sx={{
+					width: { xs: '100%', md: '80%' },
+					mb: { xs: '2rem', md: '0' },
+					mt: { xs: '3rem', md: '0' },
+				}}
 			>
 				<Flex
-					direction={{ xs: 'column', md: 'row' }}
+					component="links"
+					direction="row"
 					align="center"
-					sx={{ width: { xs: '100%', md: '40%' }, mb: { xs: '2rem', md: '0' } }}
+					justify={{ xs: 'center', md: 'space-between' }}
+					sx={{ width: { xs: '100%', md: '40%' }, mb: { xs: '3rem', md: '0' } }}
 				>
-					<Flex direction="column" sx={{ width: { xs: '100%', md: '50%' } }}>
+					<Flex
+						direction="column"
+						align={{ xs: 'center', md: 'flex-start' }}
+						sx={{
+							width: { xs: '40%', md: '50%' },
+							'& > *': {
+								lineHeight: { xs: '2.5', md: '1.5' },
+							},
+						}}
+					>
 						<Typography
 							component={RouterLink}
 							to="/catalog"
@@ -107,7 +123,16 @@ const Footer = () => {
 						</Typography>
 					</Flex>
 
-					<Flex direction="column" sx={{ width: { xs: '100%', md: '50%' } }}>
+					<Flex
+						direction="column"
+						align={{ xs: 'center', md: 'flex-start' }}
+						sx={{
+							width: { xs: '40%', md: '50%' },
+							'& > *': {
+								lineHeight: { xs: '2.5', md: '1.5' },
+							},
+						}}
+					>
 						<Typography
 							component={RouterLink}
 							to="/faq"
@@ -134,7 +159,7 @@ const Footer = () => {
 						</Typography>
 						<Typography
 							component={RouterLink}
-							to="/my-account"
+							to="/login"
 							variant="body1"
 							sx={{ color: 'permanent.white1', mb: '0.5rem' }}
 						>
@@ -144,8 +169,8 @@ const Footer = () => {
 				</Flex>
 				<Flex
 					direction="column"
-					align="flex-end"
-					sx={{ width: { xs: '100%', md: '60%' } }}
+					align={{ xs: 'center', md: 'flex-end' }}
+					sx={{ width: { xs: '100%', md: '60%' }, textAlign: 'center' }}
 				>
 					<Typography sx={{ color: 'permanent.gray1', lineHeight: '28px' }}>
 						4140 E Marginal Way S, Seattle, WA 98134
@@ -154,7 +179,7 @@ const Footer = () => {
 						<br />
 						200 Syracuse Ct Lakewood, NJ 08701
 						<br />
-						1919 golden heights rd ste 221 Fort Worth, TX 76177
+						1919 Golden Heights Rd ste 221 Fort Worth, TX 76177
 						<br />
 						13230 SW 132nd Ave Miami, FL 33186
 					</Typography>

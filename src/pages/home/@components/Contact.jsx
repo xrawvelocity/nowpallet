@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import emailjs, { init } from 'emailjs-com'
 import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -49,7 +49,7 @@ export const Contact = () => {
 					Discover the benefits of partnering with us. Contact our dedicated
 					team to discuss your wholesale needs, request a quote, or explore how
 					we can support your business. You can write to us at{' '}
-					<a href="mailto:sales@nowpallet.com" target="_blank">
+					<a href="mailto:sales@nowpallet.com" target="_blank" rel="noreferrer">
 						sales@nowpallet.com
 					</a>{' '}
 					or you can fill out the form below.
@@ -58,13 +58,13 @@ export const Contact = () => {
 			<Flex
 				sx={{
 					flexDirection: { xs: 'column !important', sm: 'row !important' },
-					py: { sm: '4rem' },
+					pt: { sm: '4rem' },
 				}}
 			>
 				<Box
 					sx={{
-						p: { xs: '2rem', sm: '4rem' },
-						my: { xs: '4rem', sm: '0' },
+						px: { xs: '2rem', sm: '4rem' },
+						mt: { xs: '4rem', sm: '0' },
 					}}
 				>
 					<FormProvider {...methods}>
@@ -92,7 +92,7 @@ export const Contact = () => {
 										sx={{
 											fontSize: { xs: '1.5rem', s: '1.7rem' },
 											alignSelf: { sm: 'center' },
-											mt: '4rem',
+											mt: { xs: '2rem', md: '4rem' },
 										}}
 									>
 										Send Email
