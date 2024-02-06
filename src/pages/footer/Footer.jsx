@@ -73,7 +73,6 @@ const Footer = () => {
 				}}
 			>
 				<Flex
-					component="links"
 					direction="row"
 					align="center"
 					justify={{ xs: 'center', md: 'space-between' }}

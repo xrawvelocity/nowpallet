@@ -38,9 +38,9 @@ const validationSchema = Yup.object({
 	emailAddress: Yup.string().email('Invalid email format').required('Required'),
 	name: Yup.string().required('Required'),
 	date: Yup.date().nullable().required('Date is required'),
-	agreement: Yup.boolean()
-		.oneOf([true], 'You must agree to the terms and conditions')
-		.required('You must agree to the terms and conditions'),
+	agreement: Yup.boolean().required(
+		'You must agree to the terms and conditions'
+	),
 })
 
 const countryOptions = [
@@ -87,13 +87,14 @@ const Membership = () => {
 		validationSchema,
 		onSubmit: (values) => {
 			// Get the underlying canvas element
-			let canvas = sigPad.getCanvas()
+			// let canvas = sigPad.getCanvas()
 			// Get the data URL of the image
-			let dataURL = canvas.toDataURL()
+			// let dataURL = canvas.toDataURL()
 			// Store or use the data URL as needed
 			// console.log(dataURL)
 			// console.log(values)
 			setSubmitted(true)
+			window.scrollTo(0, 0)
 		},
 	})
 
@@ -326,15 +327,8 @@ const Membership = () => {
 										control={
 											<Checkbox
 												{...formik.getFieldProps('agreement')}
-												error={
-													formik.touched.agreement &&
-													Boolean(formik.errors.agreement)
-												}
-												helperText={
-													formik.touched.agreement && formik.errors.agreement
-												}
-												checked={checked}
-												onChange={handleCheck}
+												checked={formik.values.agreement}
+												onChange={formik.handleChange}
 											/>
 										}
 										label={
@@ -352,12 +346,24 @@ const Membership = () => {
 												, which govern my customer application with NowPallet.
 											</Typography>
 										}
+										error={
+											formik.touched.agreement &&
+											Boolean(formik.errors.agreement)
+												? 'true'
+												: undefined
+										}
+										helperText={
+											formik.touched.agreement && formik.errors.agreement
+										}
 									/>
 								</FormGroup>
 							</Grid>
-							<Typography></Typography>
 							<Grid item xs={12} sx={{ my: 3 }}>
-								<Button variant="contained" type="submit">
+								<Button
+									variant="contained"
+									type="submit"
+									onClick={formik.handleSubmit}
+								>
 									Submit
 								</Button>
 							</Grid>
