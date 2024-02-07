@@ -50,12 +50,7 @@ const countryOptions = [
 ]
 
 const Membership = () => {
-	const [checked, setChecked] = useState(false)
-	const [submitted, setSubmitted] = useState(false)
-
-	const handleCheck = () => {
-		setChecked(!checked)
-	}
+	const [submitted, setSubmitted] = useState(true)
 
 	const [country, setCountry] = useState('')
 
@@ -94,7 +89,7 @@ const Membership = () => {
 			// console.log(dataURL)
 			// console.log(values)
 			setSubmitted(true)
-			window.scrollTo(0, 0)
+			window.scroll(0, 0)
 		},
 	})
 
@@ -387,16 +382,32 @@ const Success = () => {
 				alignItems: 'center',
 			}}
 		>
-			<Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
-				<TaskAltIcon sx={{ color: 'green', fontSize: '5rem', mr: '1rem' }} />
-				Thank you for submitting your membership request!
+			<Typography
+				variant="h5"
+				sx={{
+					display: 'flex',
+					alignItems: 'center',
+					flexDirection: { xs: 'column', md: 'row' },
+					mb: '4rem',
+					textAlign: 'center',
+				}}
+			>
+				<TaskAltIcon
+					sx={{
+						color: 'green',
+						fontSize: '5rem',
+						mr: '1rem',
+						mb: { xs: '2rem', md: 0 },
+					}}
+				/>
+				Thank you for submitting your&nbsp;membership&nbsp;request!
 			</Typography>
-			<br />
-			<Typography variant="h6">
-				Please wait while one of our staff members reviews your information
-			</Typography>
-			<Typography variant="h6">
-				For any question don't hesitate to reach to us at{' '}
+			<Typography variant="h6" sx={{ textAlign: 'center' }}>
+				Please wait while one of our staff members
+				reviews&nbsp;your&nbsp;information.
+				<br />
+				<br />
+				For any question don't hesitate to reach out to&nbsp;us&nbsp;at&nbsp;
 				<a href="mailto:sales@nowpallet.com">sales@nowpallet.com</a>
 			</Typography>
 		</Box>
