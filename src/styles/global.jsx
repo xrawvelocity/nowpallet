@@ -125,6 +125,11 @@ const globalStyles = (coloring) => {
 			marginLeft: '5rem',
 		},
 
+		li: {
+			listStylePosition: 'inside',
+			padding: 0,
+		},
+
 		'@font-face': {
 			fontFamily: 'Raleway',
 			src: `local('Raleway'), url(../assets/fonts/Raleway-BlackItalic.ttf) format('ttf');`,

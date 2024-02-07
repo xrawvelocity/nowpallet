@@ -50,7 +50,7 @@ const countryOptions = [
 ]
 
 const Membership = () => {
-	const [submitted, setSubmitted] = useState(true)
+	const [submitted, setSubmitted] = useState(false)
 
 	const [country, setCountry] = useState('')
 

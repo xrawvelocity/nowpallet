@@ -26,50 +26,51 @@ export default function App() {
 			<GlobalStyles styles={globalStyles(coloring)} />
 			<CssBaseline />
 			<Router>
-				<ScrollToTop />
-				<NavBar />
-				<Switch>
-					<Box
-						component="main"
-						sx={{
-							bgcolor: 'background.paper',
-							color: 'text.main',
-							height: 'auto',
-							minHeight: 'calc(100vh - 310px)',
-						}}
-					>
-						<Route exact path={['', '/']}>
-							<Home />
-						</Route>
-						<Route path={['/catalog/:category', '/catalog']}>
-							<Store />
-						</Route>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/contact">
-							<Contact />
-						</Route>
-						<Route path="/membership">
-							<Membership />
-						</Route>
-						<Route path="/faq">
-							<FAQ />
-						</Route>
-						<Route path="/privacy-policy">
-							<Privacy />
-						</Route>
-						<Route path="/terms-and-conditions">
-							<Terms />
-						</Route>
-						<Route path="/login">
-							<LoginPage />
-						</Route>
-						<Route path="/product/:id">
-							<ProductDetail />
-						</Route>
-					</Box>
-				</Switch>
+				<ScrollToTop>
+					<NavBar />
+					<Switch>
+						<Box
+							component="main"
+							sx={{
+								bgcolor: 'background.paper',
+								color: 'text.main',
+								height: 'auto',
+								minHeight: 'calc(100vh - 310px)',
+							}}
+						>
+							<Route exact path={['', '/']}>
+								<Home />
+							</Route>
+							<Route path={['/catalog/:category', '/catalog']}>
+								<Store />
+							</Route>
+							<Route path="/about">
+								<About />
+							</Route>
+							<Route path="/contact">
+								<Contact />
+							</Route>
+							<Route path="/membership">
+								<Membership />
+							</Route>
+							<Route path="/faq">
+								<FAQ />
+							</Route>
+							<Route path="/privacy-policy">
+								<Privacy />
+							</Route>
+							<Route path="/terms-and-conditions">
+								<Terms />
+							</Route>
+							<Route path="/login">
+								<LoginPage />
+							</Route>
+							<Route path="/product/:id">
+								<ProductDetail />
+							</Route>
+						</Box>
+					</Switch>
+				</ScrollToTop>
 				<Footer />
 			</Router>
 		</ThemeProvider>
