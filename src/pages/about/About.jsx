@@ -26,11 +26,15 @@ export const About = () => {
 			}}
 		>
 			<Title style={{ textAlign: 'center', width: '100%' }}>About Us</Title>
-			<Flex justify="center" sx={{ width: '100%' }}>
+			<Flex
+				justify="center"
+				direction={{ xs: 'column', md: 'row' }}
+				sx={{ width: '100%' }}
+			>
 				<Box
 					sx={{
 						width: { xs: '100%', md: '40%' },
-						height: '320px',
+						height: { xs: '200px', md: '320px' },
 						overflow: 'hidden',
 						mb: '4rem',
 					}}
@@ -49,7 +53,7 @@ export const About = () => {
 				<Box
 					sx={{
 						width: { xs: '100%', md: '40%' },
-						height: '320px',
+						height: { xs: '200px', md: '320px' },
 						overflow: 'hidden',
 						mb: '4rem',
 					}}
@@ -78,7 +82,7 @@ export const About = () => {
 					variant="h6"
 					sx={{
 						width: { xs: '100%', sm: '100%' },
-						ml: { xs: '0', sm: '8rem' },
+						pb: '3rem',
 					}}
 				>
 					Welcome to NowPallet, your trusted partner in the world of wholesale
