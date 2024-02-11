@@ -24,6 +24,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [loading, setLoading] = useState(true);
 
     const signUp = (email, password) => {
@@ -44,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            console.log('user', user);
+            user.uid === "iEdig61saWYDeS0uJHEhvwc8eyd2" ? setIsAdmin(true) : setIsAdmin(false)
             setCurrentUser(user);
             setLoading(false);
         });
@@ -54,6 +55,7 @@ export const AuthProvider = ({ children }) => {
 
     const value = {
         currentUser,
+        isAdmin,
         signUp,
         signIn,
         signOutUser,

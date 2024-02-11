@@ -15,11 +15,14 @@ import { NavLink } from './NavLink'
 import Logo from '../logo/Logo'
 
 import { products } from '../../assets/data'
+import { useAuth } from '../../context/authCtx'
 
 export const NavBar = () => {
 	const history = useHistory()
 	const [searchOpen, setSearchOpen] = useState(false)
 	const [drawerOpen, setDrawerOpen] = useState(false)
+
+	const { isAdmin } = useAuth()
 
 	return (
 		<Flex direction="column">
@@ -114,6 +117,14 @@ export const NavBar = () => {
 							text="FAQ"
 							sx={{ display: { xs: 'none', md: 'block' } }}
 						/>
+						{isAdmin && (
+							<NavLink
+								to="/admin"
+								text="Admin"
+								sx={{ display: { xs: 'none', md: 'block' } }}
+								style={{ marginLeft: '2rem' }}
+							/>
+						)}
 						<Link to="/login">
 							<PersonIcon
 								fontSize="large"

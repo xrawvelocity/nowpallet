@@ -187,7 +187,10 @@ export const ProductDetail = () => {
 												fontWeight: '400',
 											}}
 										>
-											Become a member to see our price!
+											<a style={{ color: 'blue' }} href="/membership">
+												Become a member
+											</a>{' '}
+											to see our price!
 										</Typography>
 									</Flex>
 

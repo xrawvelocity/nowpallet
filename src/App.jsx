@@ -19,8 +19,12 @@ import LoginPage from './pages/login/Login'
 import { Privacy } from './pages/privacy/Privacy'
 import { Terms } from './pages/terms/Terms'
 import ScrollToTop from './components/wrappers/ScrollToTop'
+import { useAuth } from './context/authCtx'
+import { Admin } from './pages/admin/Admin'
 
 export default function App() {
+	const { isAdmin } = useAuth()
+
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles styles={globalStyles(coloring)} />
@@ -68,6 +72,11 @@ export default function App() {
 							<Route path="/product/:id">
 								<ProductDetail />
 							</Route>
+							{isAdmin && (
+								<Route path="/admin">
+									<Admin />
+								</Route>
+							)}
 						</Box>
 					</Switch>
 				</ScrollToTop>
