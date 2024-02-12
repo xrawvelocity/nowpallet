@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            user.uid === "iEdig61saWYDeS0uJHEhvwc8eyd2" ? setIsAdmin(true) : setIsAdmin(false)
+            user?.uid === "iEdig61saWYDeS0uJHEhvwc8eyd2" ? setIsAdmin(true) : setIsAdmin(false)
             setCurrentUser(user);
             setLoading(false);
         });
