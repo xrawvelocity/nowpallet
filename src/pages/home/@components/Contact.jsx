@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import emailjs, { init } from 'emailjs-com'
 import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -55,8 +55,8 @@ export const Contact = () => {
 								rowSpacing={3}
 								sx={{ width: { xs: '100%', sm: '100%' } }}
 							>
-								<InputField name="name" label="First Name" sm={12} />
-								<InputField name="email" label="Last Name" sm={12} />
+								<InputField name="name" label="Name" sm={12} />
+								<InputField name="email" label="Email" type="email" sm={12} />
 								<InputField
 									name="message"
 									label="Message"
@@ -65,16 +65,19 @@ export const Contact = () => {
 									sm={12}
 								/>
 								<Grid item xs={12} style={{ textAlign: 'center' }}>
-									<LinkButton
+									<Button
 										sx={{
 											fontSize: { xs: '1.5rem', s: '1.7rem' },
 											alignSelf: { sm: 'center' },
 											mt: { xs: '2rem', md: '4rem' },
+											color: 'text.secondary',
+											':hover': { bgcolor: 'permanent.red' },
 										}}
+										variant="contained"
 										type="submit"
 									>
 										Send Email
-									</LinkButton>
+									</Button>
 								</Grid>
 							</Grid>
 						</form>

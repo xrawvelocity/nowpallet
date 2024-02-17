@@ -25,6 +25,7 @@ export const InputField = ({
 					defaultValue=""
 					render={({ field: { onChange, value } }) => (
 						<TextField
+							name={name}
 							size="small"
 							variant="outlined"
 							fullWidth
