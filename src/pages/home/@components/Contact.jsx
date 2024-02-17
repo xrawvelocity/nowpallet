@@ -11,25 +11,6 @@ import { Title } from '../../../components/typography/Title'
 export const Contact = () => {
 	const methods = useForm()
 
-	init(process.env.REACT_APP_EMAILJS_USER_ID)
-
-	const sendEmail = (params) => {
-		emailjs
-			.sendForm(
-				process.env.REACT_APP_EMAILJS_SERVICE_ID,
-				process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-				params
-			)
-			.then(
-				(result) => {
-					console.log(result.text)
-				},
-				(error) => {
-					console.log(error.text)
-				}
-			)
-	}
-
 	return (
 		<Flex
 			direction="column"
@@ -68,11 +49,7 @@ export const Contact = () => {
 					}}
 				>
 					<FormProvider {...methods}>
-						<form
-							onSubmit={methods.handleSubmit((data) => {
-								sendEmail({ ...data })
-							})}
-						>
+						<form action="https://formspree.io/f/xnqedgdl" method="POST">
 							<Grid
 								container
 								rowSpacing={3}
@@ -94,6 +71,7 @@ export const Contact = () => {
 											alignSelf: { sm: 'center' },
 											mt: { xs: '2rem', md: '4rem' },
 										}}
+										type="submit"
 									>
 										Send Email
 									</LinkButton>
