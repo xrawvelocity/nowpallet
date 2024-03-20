@@ -74,7 +74,7 @@ export const Hero = () => {
 						>
 							Your trusted partner in wholesale distribution since 2020. We take
 							pride in offering high-quality products and excellent service to
-							local retailers and e-commerce sellers.
+							local retailers.
 						</Typography>
 						<Box
 							sx={{

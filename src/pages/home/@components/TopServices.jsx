@@ -103,83 +103,6 @@ export const TopServices = () => {
 					</Flex>
 				</Flex>
 			</Fade>
-			<Fade right>
-				<Flex
-					align="center"
-					sx={{
-						mb: '10rem',
-						width: '100%',
-						justifyContent: {
-							xs: 'center !important',
-							sm: 'space-between !important',
-						},
-						flexDirection: {
-							xs: 'column-reverse !important',
-							sm: 'row !important',
-						},
-					}}
-				>
-					<Flex
-						direction="column"
-						sx={{
-							mr: { sm: '8rem' },
-							width: { xs: '100%', sm: '45%' },
-							alignItems: {
-								xs: 'center !important',
-								sm: 'flex-start !important',
-							},
-						}}
-					>
-						<Typography
-							variant="h5"
-							sx={{ mt: { xs: '2rem' }, mb: '2rem', fontWeight: '700' }}
-						>
-							E-Commerce Solutions
-						</Typography>
-						<Typography
-							variant="h6"
-							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
-						>
-							In the fast-paced world of e-commerce, efficient sourcing is key.
-							We collaborate with e-commerce sellers, offering tailored pallet
-							solutions to optimize your supply chain and keep your online store
-							stocked with in-demand products.
-						</Typography>
-						<LinkButton
-							component={Link}
-							to="/catalog"
-							variant="contained"
-							color="primary"
-							sx={{
-								fontSize: { xs: '1.5rem', s: '1.7rem' },
-								alignSelf: { sm: 'start' },
-								mt: '4rem',
-							}}
-						>
-							View our Catalog
-						</LinkButton>
-					</Flex>
-					<Box
-						sx={{
-							width: { xs: '100%', sm: '45%' },
-							height: '320px',
-							borderRadius: '20px',
-							overflow: 'hidden',
-						}}
-					>
-						<img
-							src={ecomsol}
-							alt="E-Commerce Solutions"
-							style={{
-								height: '100%',
-								width: '100%',
-								objectFit: 'cover',
-								overflow: 'hidden',
-							}}
-						/>
-					</Box>
-				</Flex>
-			</Fade>
 			<Fade left>
 				<Flex
 					align="center"
@@ -196,24 +119,6 @@ export const TopServices = () => {
 						},
 					}}
 				>
-					<Box
-						sx={{
-							width: { xs: '100%', sm: '45%' },
-							height: '320px',
-							overflow: 'hidden',
-						}}
-					>
-						<img
-							src={distributionChain}
-							alt="all products"
-							style={{
-								height: '100%',
-								width: '100%',
-								objectFit: 'contain',
-								overflow: 'hidden',
-							}}
-						/>
-					</Box>
 					<Flex
 						direction="column"
 						sx={{
@@ -235,11 +140,10 @@ export const TopServices = () => {
 							variant="h6"
 							sx={{ textAlign: { xs: 'center', sm: 'left' } }}
 						>
-							With a vast distribution chain spanning across Florida, Texas,
-							California, Washington, and New Jersey, NowPallet ensures
-							efficient and timely delivery of your wholesale orders. Our
-							strategic presence in these key regions allows us to serve
-							businesses with speed and reliability.
+							With a vast distribution chain spanning across Florida and Texas,
+							NowPallet ensures efficient and timely delivery of your wholesale
+							orders. Our strategic presence in these key regions allows us to
+							serve businesses with speed and reliability.
 						</Typography>
 						<LinkButton
 							component={Link}
@@ -255,6 +159,24 @@ export const TopServices = () => {
 							About Us
 						</LinkButton>
 					</Flex>
+					<Box
+						sx={{
+							width: { xs: '100%', sm: '45%' },
+							height: '320px',
+							overflow: 'hidden',
+						}}
+					>
+						<img
+							src={distributionChain}
+							alt="all products"
+							style={{
+								height: '100%',
+								width: '100%',
+								objectFit: 'contain',
+								overflow: 'hidden',
+							}}
+						/>
+					</Box>
 				</Flex>
 			</Fade>
 		</Flex>

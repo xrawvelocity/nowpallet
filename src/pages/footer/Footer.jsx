@@ -172,12 +172,6 @@ const Footer = () => {
 					sx={{ width: { xs: '100%', md: '60%' }, textAlign: 'center' }}
 				>
 					<Typography sx={{ color: 'permanent.gray1', lineHeight: '28px' }}>
-						4140 E Marginal Way S, Seattle, WA 98134
-						<br />
-						7361 Ethel Ave, North Hollywood, CA 91605
-						<br />
-						200 Syracuse Ct Lakewood, NJ 08701
-						<br />
 						1919 Golden Heights Rd ste 221 Fort Worth, TX 76177
 						<br />
 						13230 SW 132nd Ave Miami, FL 33186

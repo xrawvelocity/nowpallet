@@ -89,8 +89,8 @@ export const About = () => {
 					distribution. Established in 2020, we embarked on a journey with a
 					singular vision: to redefine the wholesale purchasing experience.
 					Today, we stand proudly as a beacon of excellence in bulk orders,
-					dedicated to supporting local retailers and e-commerce sellers on
-					their path to growth and success.
+					dedicated to supporting local retailers on their path to growth and
+					success.
 					<br />
 					<br />
 					Our mission is simple but profound: We aim to be the first choice for
@@ -109,17 +109,10 @@ export const About = () => {
 					partnerships.
 					<br />
 					<br />
-					Our services are designed to cater to a diverse range of businesses.
-					Whether you're a local retailer looking for flexible bulk order
-					options or an e-commerce seller in need of supply chain optimization,
-					we have tailored solutions to meet your specific needs.
-					<br />
-					<br />
-					With a vast distribution network spanning across Florida, Texas,
-					California, Washington, and New Jersey, we strategically position
-					ourselves for optimal delivery. Timeliness is essential in the
-					fast-paced world of business, and we ensure your orders arrive when
-					and where you need them.
+					With a vast distribution network spanning across Florida and Texas, we
+					strategically position ourselves for optimal delivery. Timeliness is
+					essential in the fast-paced world of business, and we ensure your
+					orders arrive when and where you need them.
 					<br />
 					<br />
 					We invite you to join our wholesale network and experience the

@@ -15,7 +15,7 @@ export const FAQ = () => {
 			{
 				title: 'What types of businesses do you cater to?',
 				content:
-					'We cater to a wide range of businesses, including local retailers, boutiques, retail chains, and e-commerce sellers. Our services are tailored to meet the specific needs of each type of business.',
+					'We cater to a wide range of businesses, including local retailers, boutiques, and retail chains. Our services are tailored to meet the specific needs of each type of business.',
 			},
 			{
 				title: 'How can I place an order?',
@@ -40,7 +40,7 @@ export const FAQ = () => {
 			{
 				title: 'Where are your distribution centers located?',
 				content:
-					'We have a vast distribution network across Florida, Texas, California, Washington, and New Jersey. These strategic locations allow us to provide optimal delivery services to our customers.',
+					'We have a vast distribution network across Florida and Texas. These strategic locations allow us to provide optimal delivery services to our customers.',
 			},
 		],
 	}
