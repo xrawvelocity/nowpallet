@@ -103,7 +103,7 @@ export const TopServices = () => {
 					</Flex>
 				</Flex>
 			</Fade>
-			<Fade left>
+			<Fade right>
 				<Flex
 					align="center"
 					sx={{
